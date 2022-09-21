@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="ko-KR">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>AS2 정리</title>
@@ -7,6 +7,7 @@
 code {
     padding: 0.25rem;
     background-color: #F1F1F1;
+	border: 1px solid #CCC;
     border-radius: 5px;
     font-family: "Cascadia Code", "Consolas", "Sans Mono", "Courier", "monospace", "나눔고딕", "굴림";
     font-size: .8rem;
@@ -16,6 +17,7 @@ code {
 	padding: .3em .3em;
 	margin: .3em 0 -1em;
 	background-color: #F1F1F1;
+	border: 1px solid #CCC;
 	border-radius: 5px;
 	font-size: .8rem;
 	line-height: 20px;
@@ -24,6 +26,9 @@ code {
 }
 .font1 {
 	font-family: "나눔고딕";
+}
+tab {
+	padding-left: 2em;
 }
 </style>
 </head>
@@ -65,7 +70,8 @@ code {
     조건연산자 <code>?</code><br />
     <div id="code">( a ) ? b : c ;</div><br />
     - <code>a</code> 조건이 맞으면 <code>b</code> 틀리면 <code>c</code> 실행<br />
-    <div id="code">x=5;<br />y=10;<br />z=(x&lt;6) ? x: y;<br />trace (z);</div>
+    <div id="code">x = 5;<br />y = 10;<br />z = ( x &lt; 6 ) ? x: y;<br />
+    trace (z);</div>
     <br />- <code>z</code>는 <code>5</code>이다<br />
     문자연산자 <code>eq  ne  not  or  add</code><br />
     - <code>eq</code>(<code>==</code>) <code>ne</code>(<code>!=</code>) <code>not</code>(<code>!</code>) <code>or</code>(<code>||</code>) <code>add</code>(<code>+</code> 문자열의 연결)<br />
@@ -73,17 +79,25 @@ code {
     - 연산의 순서를 정한다<br />
     <div id="code">[ ]</div><br />
     - 배열을 지정한다<br />
-    &quot; &quot;                                       //  문자를 지정한다<br />
-    a=1+2;  trace(a);                         //  연산 결과 출력.  결과는 3<br />
-    aaa=1;  set(&quot;ccc&quot;, aaa );  trace(ccc);    //  변수에 값을 지정.  결과는 1<br />
-    aaa=1;  set(&quot;ccc&quot;, &quot;aaa&quot;);  trace(ccc);   //  변수에 값을 지정.  결과는 aaa<br />
-    set(&quot;ooo&quot;, getProperty (&quot;ppp&quot;, _x ));     //  ppp x 좌표를  ooo 에 지정.<br />
+    <div id="code">&quot; &quot;</div><br />
+    - 문자를 지정한다<br />
+    <div id="code">a = 1 + 2;<br />trace(a);</div><br />
+    - 연산 결과를 출력한다.  결과는 <code>3</code>.<br />
+    <div id="code">aaa = 1;<br />set(&quot;ccc&quot;, aaa );<br />trace(ccc);</div>
+    <br>- 변수에 값을 지정한다.  결과는 <code>1</code><br />
+    <div id="code">aaa = 1;<br>set(&quot;ccc&quot;, &quot;aaa&quot;);<br>trace(ccc);</div><br />
+    - 변수에 값을 지정한다.  결과는 <code>aaa</code><br />
+    <div id="code">set(&quot;ooo&quot;, getProperty (&quot;ppp&quot;, _x ));</div><br>
+    <code>ppp</code> x 좌표를 <code>ooo</code> 에 지정.<br />
   </p>
 </div>
-  ----------------------------------------------------------------------------<br />
-  for (a=1; a&lt;=10; a++)  { trace(&quot;a=&quot;+a); };             //  for  반복문<br />
-  for (i=1; i&lt;=120;  i+=12) { continue; };               //  for step 반복문<br />
-  while(true) {  if(a == 0) { break; }; };               //  while  반복문<br />
+  <h3>4. 반복문과 조건문</h3><div style="padding:0px 0px 0px 20px">
+  <div id="code">for (a=1; a&lt;=10; a++) {<br><tab></tab>trace(&quot;a=&quot;+a);<br>};</div><br>
+  - for  반복문<br />
+  <div id="code">for (i=1; i&lt;=120;  i+=12) {<br><tab></tab>continue;<br>};</div>
+  <br>- for step 반복문<br />
+  <div id="code">while (true) {<br><tab></tab>if (a == 0) {
+  <br><tab></tab><tab></tab>break;<br><tab></tab>};<br>};</div><br>- while  반복문<br />
   do { if(a == 0) { break; }; };  while(true);           //  do 반복문<br />
   if((n == 0) || (n &gt;= 5)  &amp;&amp;  (n &lt;= 55)  !(n=15)) {     //  if 조건문<br />
   gotoAndPlay(1);<br />
@@ -97,7 +111,7 @@ code {
   case 1:    trace ( &quot; case 1 tested true &quot; );  break;<br />
   case 2:    trace ( &quot; case 2 tested true &quot; );  break;<br />
   default:    trace ( &quot; no case tested true &quot; );<br />
-  };<br />
+  };<br /></div>
   ----------------------------------------------------------------------------<br />
   function sumnumber(a,b,c) {  return(aaa= a+b+c); };    // 함수<br />
   sumnumber(1,2,3);<br />
