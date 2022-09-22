@@ -72,7 +72,7 @@ tab {
     - <code>a</code> 조건이 맞으면 <code>b</code> 틀리면 <code>c</code> 실행<br />
     <div id="code">x = 5;<br />y = 10;<br />z = ( x &lt; 6 ) ? x: y;<br />
     trace (z);</div>
-    <br />- <code>z</code>는 <code>5</code>이다<br />
+    <br />- <code>z</code>는 <code>5</code><br />
     문자연산자 <code>eq  ne  not  or  add</code><br />
     - <code>eq</code>(<code>==</code>) <code>ne</code>(<code>!=</code>) <code>not</code>(<code>!</code>) <code>or</code>(<code>||</code>) <code>add</code>(<code>+</code> 문자열의 연결)<br />
     <div id="code">( )</div><br />
@@ -98,39 +98,61 @@ tab {
   <br>- for step 반복문<br />
   <div id="code">while (true) {<br><tab></tab>if (a == 0) {
   <br><tab></tab><tab></tab>break;<br><tab></tab>};<br>};</div><br>- while  반복문<br />
-  do { if(a == 0) { break; }; };  while(true);           //  do 반복문<br />
-  if((n == 0) || (n &gt;= 5)  &amp;&amp;  (n &lt;= 55)  !(n=15)) {     //  if 조건문<br />
-  gotoAndPlay(1);<br />
+  <div id="code">do {<br>
+  	<tab></tab>if(a == 0) {<br>
+     <tab></tab><tab></tab>  	break;<br>
+     <tab></tab>  };<br>
+    };<br>
+    while(true);</div><br>- do 반복문<br />
+  <div id="code">if ((n == 0) || (n &gt;= 5) &amp;&amp; (n &lt;= 55) !(n=15)) {<br />
+  <tab></tab>gotoAndPlay(1);<br />
   } else if (n == 2) {<br />
-  gotoAndPlay(2);<br />
+  <tab></tab>gotoAndPlay(2);<br />
   } else {<br />
-  gotoAndPlay(3);<br />
-  };<br />
-  num_ch = 3;                                             //  switch 조건문<br />
-  switch (num_ch) { <br />
-  case 1:    trace ( &quot; case 1 tested true &quot; );  break;<br />
-  case 2:    trace ( &quot; case 2 tested true &quot; );  break;<br />
-  default:    trace ( &quot; no case tested true &quot; );<br />
-  };<br /></div>
-  ----------------------------------------------------------------------------<br />
-  function sumnumber(a,b,c) {  return(aaa= a+b+c); };    // 함수<br />
-  sumnumber(1,2,3);<br />
-  trace(aaa);<br />
-  ----------------------------------------------------------------------------<br />
-  Math.abs(-1)              //  절대값.   결과는 1<br />
-  Math.sin(1)               //  sin 값.   결과는 0.841470984807897<br />
-  Math.cos(1)               //  cos 값.   결과는 0.54030230586814<br />
-  Math.tan(1)               //  tan 값.   결과는 1.5574077246549<br />
-  Math.log(2)               //  log 값.   결과는 0.693147180559945<br />
-  Math.exp(1)               //  지수 값.    결과는 2.71828182845905<br />
-  Math.sqrt(9)              //  제곱근 값.    결과는 3<br />
-  Math.pow(2 , 4)           //  거듭제곱 값.    결과는 16<br />
-  Math.ceil(1.1)            //  가까운 정수로 올림 값.    결과는 2<br />
-  Math.ceil(1.5)            //  가까운 정수로 올림 값.    결과는 2<br />
-  Math.floor(1.2)           //  가까운 정수로 내림 값.    결과는 1<br />
-  Math.floor(1.7)           //  가까운 정수로 내림 값.    결과는 1<br />
-  Math.round(1.2)           //  가까운 정수로 반올림 값.    결과는 1<br />
-  Math.round(1.5)           //  가까운 정수로 반올림 값.    결과는 2<br />
+  <tab></tab>gotoAndPlay(3);<br />
+  };</div><br /> - if 조건문<br>
+  <div id="code">num_ch = 3;<br />
+  switch (num_ch) {<br />
+  <tab></tab>case 1: {<br>
+  	<tab></tab><tab></tab>trace ( &quot; case 1 tested true &quot; );
+    <br><tab></tab><tab></tab>break;<br>
+    <tab></tab>} case 2: {<br>
+    <tab></tab><tab></tab>trace ( &quot; case 2 tested true &quot; );<br>
+    <tab></tab><tab></tab>break;<br />
+  <tab></tab>} default: {<br>
+  <tab></tab><tab></tab>trace ( &quot; no case tested true &quot; );<br />
+  <tab></tab>}<br>
+  };</div><br>- switch 조건문<br /></div>
+  <h3>5. 함수 선언</h3>
+  <div id="code">function sumnumber(a,b,c) {<br>
+  <tab></tab>return( aaa = a+b+c );<br>
+  };</div><br />
+  - 함수<br>
+  <div id="code">sumnumber(1,2,3);<br />
+  trace(aaa);</div><br /> - 함수 <code>sumnumber</code>에 <code>1, 2, 3</code>을 대입했을 때의 함숫값 <code>aaa</code>를 출력<br>
+  <h3>6. 수학 함수</h3>
+  <div id="code">Math.abs(-1)</div><br>
+  - 절댓값 (결과 <code>1</code>)<br />
+  <div id="code">Math.sin(1)</div><br>
+  - sin 값 (결과 <code>0.841470984807897</code>)<br />
+  <div id="code">Math.cos(1)</div><br>
+  - cos 값 (결과 <code>0.54030230586814</code>)<br />
+  <div id="code">Math.tan(1)</div><br>
+  - tan 값 (결과 <code>1.5574077246549</code>)<br />
+  <div id="code">Math.log(2)</div><br>
+  - log 값 (결과 <code>0.693147180559945</code>)<br />
+  <div id="code">Math.exp(1)</div><br>
+  - 자연로그의 밑 거듭제곱 함수 (안에 들어가는 숫자는 지수) (결과는 <code>2.71828182845905</code>)<br />
+  <div id="code">Math.sqrt(9)</div><br>
+  - 제곱근 값 (결과 <code>3</code>)<br />
+  <div id="code">Math.pow(2 , 4)</div><br>
+  - 거듭제곱 함수 (결과 <code>16</code>, <code>밑, 지수</code> 순서대로 입력)<br />
+  <div id="code">Math.ceil(1.1)</div><br>
+  - 가까운 정수로 올림 함수 (결과 <code>2</code>)<br />
+  <div id="code">Math.floor(1.2)</div><br>
+  - 가까운 정수로 내림 함수 (결과 <code>1</code>)<br />
+  <div id="code">Math.round(1.2)</div><br>
+  - 가까운 정수로 반올림 함수 (결과 <code>1</code>)<br />
   Math.max(1 , 2)           //  두 정수 중 큰 정수값.    결과는 2<br />
   Math.min(1 , 2)           //  두 정수 중 작은 정수값.    결과는 1<br />
   int(1.12 );               //  수치를 정수화.   결과는 1 <br />
