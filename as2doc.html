@@ -123,14 +123,14 @@ tab {
   <tab></tab><tab></tab>trace ( &quot; no case tested true &quot; );<br />
   <tab></tab>}<br>
   };</div><br>- switch 조건문<br /></div>
-  <h3>5. 함수 선언</h3>
+  <h3>5. 함수 선언</h3><div style="padding-left:20px">
   <div id="code">function sumnumber(a,b,c) {<br>
   <tab></tab>return( aaa = a+b+c );<br>
   };</div><br />
   - 함수<br>
   <div id="code">sumnumber(1,2,3);<br />
-  trace(aaa);</div><br /> - 함수 <code>sumnumber</code>에 <code>1, 2, 3</code>을 대입했을 때의 함숫값 <code>aaa</code>를 출력<br>
-  <h3>6. 수학 함수</h3>
+  trace(aaa);</div><br /> - 함수 <code>sumnumber</code>에 <code>1, 2, 3</code>을 대입했을 때의 함숫값 <code>aaa</code>를 출력<br></div>
+  <h3>6. 수학 함수</h3><div style="padding-left:20px">
   <div id="code">Math.abs(-1)</div><br>
   - 절댓값 (결과 <code>1</code>)<br />
   <div id="code">Math.sin(1)</div><br>
@@ -153,18 +153,26 @@ tab {
   - 가까운 정수로 내림 함수 (결과 <code>1</code>)<br />
   <div id="code">Math.round(1.2)</div><br>
   - 가까운 정수로 반올림 함수 (결과 <code>1</code>)<br />
-  Math.max(1 , 2)           //  두 정수 중 큰 정수값.    결과는 2<br />
-  Math.min(1 , 2)           //  두 정수 중 작은 정수값.    결과는 1<br />
-  int(1.12 );               //  수치를 정수화.   결과는 1 <br />
-  int(1.82 );               //  수치를 정수화.   결과는 1 <br />
-  parseInt(&quot;3.2&quot;);          //  문자열을 정수화.  결과는 3 <br />
-  parseInt(&quot;3.7&quot;);          //  문자열을 정수화.  결과는 3 <br />
-  parseInt(&quot;5abc&quot;);         //  문자열을 정수화.  결과는 5<br />
-  parseInt(&quot;abc5&quot;);         //  문자열을 정수화.  결과는 NaN <br />
-  parseInt(&quot;3E8&quot;, 16);      //  16 진수로 변환.   결과는 1000<br />
-  parseInt(&quot;777&quot;, 8);       //  8 진수로 변환.   결과는 511<br />
-  parseInt(&quot;1010&quot;, 2);      //  2 진수로 변환.   결과는 10<br />
-  parseFloat(&quot;2&quot;)           // 문자열을 부동점 숫자로 변환.  결과는 2<br />
+  <div id="code">Math.max(1 , 2)</div><br>
+  - 두 정수 중 큰 정수값 반환 (결과 <code>2</code>)<br />
+  <div id="code">Math.min(1 , 2)</div><br>
+  - 두 정수 중 작은 정수값 반환 (결과 <code>1</code>)<br />
+  <div id="code">int(1.82);</div><br>
+  - 소수부 제거 함수 (결과 <code>1</code>) <br />
+  <div id="code">parseInt(&quot;3.7&quot;);</div><br>
+  - 문자열 정수화 함수 (결과 <code>3</code>)<br />
+  <div id="code">parseInt(&quot;5abc&quot;);</div><br>
+  - 문자열 정수화 함수 (결과 <code>5</code>)<br />
+  <div id="code">parseInt(&quot;abc5&quot;);</div><br>
+  - 문자열 정수화 함수 (결과 <code>NaN</code>)<br />
+  <div id="code">parseInt(&quot;3E8&quot;, 16);</div><br>
+  - 16진수에서 변환 (결과 <code>1000</code>)<br />
+  <div id="code">parseInt(&quot;777&quot;, 8);</div><br>
+  - 8진수에서 변환 (결과 <code>511</code>)<br />
+  <div id="code">parseInt(&quot;1010&quot;, 2);</div><br>
+  - 2진수에서 변환 (결과 <code>10</code>)<br />
+  <div id="code">parseFloat(&quot;2&quot;)</div><br>
+  - 문자열을 부동소수로 변환 (결과 <code>2</code>)<br />
   parseFloat(&quot;2.4&quot;)         // 문자열을 부동점 숫자로 변환.  결과는 2.4<br />
   parseFloat(&quot;2.6abc&quot;)      // 문자열을 부동점 숫자로 변환.  결과는 2.6<br />
   Number(&quot;11&quot;)              //  문자열을 숫자로 변환.   결과는 11<br />
@@ -177,7 +185,7 @@ tab {
   chr(65);                               //  ASCII 코드를 문자화.  결과는 A<br />
   String.fromCharCode(64,65,66);         //  ASCII 코드를 문자화.  결과는 @AB<br />
   Math.random();                         // 난수 발생.  결과는 0 - 1 사이의 소숫점 포함한 값<br />
-  random(5);                             // 난수 발생.  결과는 0,1,2,3,4 중 하나<br />
+  random(5);                             // 난수 발생.  결과는 0,1,2,3,4 중 하나<br /></div>
   ----------------------------------------------------------------------------<br />
   // delete 변수 또는 객체 ;             // 변수를 삭제  (var 로 선언된 변수는 삭제할 수 없다)<br />
   account = 1;   trace (account) ;                      // 결과는 1 <br />
