@@ -147,29 +147,50 @@
   - 2진수에서 변환 (결과 <code>10</code>)<br />
   <div id="code">parseFloat(&quot;2&quot;)</div><br>
   - 문자열을 부동소수로 변환 (결과 <code>2</code>)<br />
-  parseFloat(&quot;2.4&quot;)         // 문자열을 부동점 숫자로 변환.  결과는 2.4<br />
-  parseFloat(&quot;2.6abc&quot;)      // 문자열을 부동점 숫자로 변환.  결과는 2.6<br />
-  Number(&quot;11&quot;)              //  문자열을 숫자로 변환.   결과는 11<br />
-  Number(&quot;12.34&quot;)           //  문자열을 숫자로 변환.   결과는 12.34<br />
-  Number(&quot;12.34abc&quot;)        //  문자열을 숫자로 변환.   결과는 NaN<br />
-  sss = 123;  uuu = sss.toString();      // 숫자를 문자로변환.  결과는 123<br />
-  ord(&quot;abc&quot;);                            //  ASCII 값.   결과는 97<br />
-  s = &quot;abc&quot;;   sss = s.charCodeAt(0);    //  1번째 ASCII 값 .   결과는 97<br />
-  s = &quot;abc&quot;;   sss = s.charCodeAt(1);    //  2번째 ASCII 값.    결과는 98<br />
-  chr(65);                               //  ASCII 코드를 문자화.  결과는 A<br />
-  String.fromCharCode(64,65,66);         //  ASCII 코드를 문자화.  결과는 @AB<br />
-  Math.random();                         // 난수 발생.  결과는 0 - 1 사이의 소숫점 포함한 값<br />
-  random(5);                             // 난수 발생.  결과는 0,1,2,3,4 중 하나<br /></div>
-  ----------------------------------------------------------------------------<br />
-  // delete 변수 또는 객체 ;             // 변수를 삭제  (var 로 선언된 변수는 삭제할 수 없다)<br />
-  account = 1;   trace (account) ;                      // 결과는 1 <br />
-  account = 1;   delete account;    trace (account);    // 결과는 undefined<br />
-  delete onEnterFrame;                                  // 반복 실행 중지<br />
-  ----------------------------------------------------------------------------<br />
-  typeof( );            // String, Number, MovieClip, Object, Boolean, Function 여부를 지정<br />
+  <div id="code">parseFloat(&quot;2.4&quot;)</div><br>
+  - 문자열을 부동소수로 변환 (결과 <code>2.4</code>)<br />
+  <div id="code">parseFloat(&quot;2.6abc&quot;)</div><br>
+  - 문자열을 부동소수로 변환 (결과 <code>2.6</code>)<br />
+  <div id="code">Number(&quot;11&quot;)</div><br>
+  - 문자열을 숫자로 변환 (결과 <code>11</code>)<br />
+  <div id="code">Number(&quot;12.34abc&quot;)</div><br>
+  - 문자열을 숫자로 변환 (결과 <code>NaN</code>)<br />
+  <div id="code">sss = 123;<br>
+  uuu = sss.toString();</div><br>
+  - 숫자를 문자로 변환 (결과 <code>123</code>)<br />
+  <div id="code">ord(&quot;abc&quot;);</div><br>
+  - 1번째 글자의 ASCII 값 (결과 <code>97</code>)<br />
+  <div id="code">s = &quot;abc&quot;;<br>
+  sss = s.charCodeAt(0);</div><br>
+  - 1번째 글자의 ASCII 값 (결과 <code>97</code>)<br />
+  <div id="code">s = &quot;abc&quot;;<br>sss = s.charCodeAt(1);</div><br>
+  - 2번째 글자의 ASCII 값 (결과 <code>98</code>)<br />
+  <div id="code">chr(65);</div><br>
+  - 해당 수에 대응되는 값의 ASCII 문자 (결과 <code>A</code>)<br />
+  <div id="code">String.fromCharCode(64,65,66);</div><br>
+  - 해당 수에 대응되는 값의 ASCII 문자(복수)  (결과 <code>@AB</code>)<br />
+  <div id="code">Math.random();</div><br>
+  - 난수 발생 (결과는 <code>0</code>과 <code>1</code> 사이의 실수)<br />
+  <div id="code">random(5);</div><br>
+  - 난수 발생 (결과는 <code>0</code>과 <code>4</code> 사이의 정수)<br /></div>
+  <h3>7. 변수 삭제</h3><div style="padding-left:20px">
+  <div id="code">delete 변수_또는_객체;</div><br>
+  - 변수 삭제 (<code>var</code>로 선언된 변수는 삭제할 수 없다)<br />
+  <div id="code">account = 1;<br>
+  trace (account);</div><br>
+  - 결과는 <code>1</code> <br />
+  <div id="code">account = 1;<br>
+  delete account;<br>
+  trace (account);</div><br>
+  - 결과는 <code>undefined</code><br />
+  <div id="code">delete onEnterFrame;</div><br>
+  - 반복 실행 중지<br /></div>
+  <h3>8. 자료형</h3><div style="padding-left:20px">
+  <div id="code">typeof( );</div><br>
+  - 값의 자료형에 따라 <code>String, Number, MovieClip, Object, Boolean, Function</code>을 반환<br />
   trace (typeof(1));    // 결과는 Number<br />
   trace (typeof(&quot;1&quot;));  // 결과는 String<br />
-  trace (typeof(aaa));  // aaa가 무비클립 이라면  결과는 MovieClip<br />
+  trace (typeof(aaa));  // aaa가 무비클립 이라면  결과는 MovieClip<br /></div>
   ----------------------------------------------------------------------------<br />
   isFinite( );            // 숫자가 유한수이면 true 무한수거나 음의 무한대이면 false<br />
   trace (isFinite(aaa));  // aaa 값이 NaN 이라면 결과는 false<br />
