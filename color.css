@@ -3,3 +3,8 @@
 red {
 	color: #900;
 }
+@media (prefers-color-scheme: dark) {
+	red {
+		color: #D66;
+	}
+}

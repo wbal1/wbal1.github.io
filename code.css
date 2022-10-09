@@ -8,6 +8,13 @@ code { /* 인라인 코드 */
     font-size: .8rem;
 	line-height:30px;
 }
+@media (prefers-color-scheme: dark) { /* 다크 모드 */
+	code {
+		border: 1px solid #666;
+		color: #DDD;
+		background-color: #333;
+	}
+}
 #code { /* 코드 블럭 */
 	padding: .3em .3em;
 	margin: .3em 0 -1em;
@@ -18,4 +25,11 @@ code { /* 인라인 코드 */
 	line-height: 20px;
 	padding-left: 8px;
 	font-family: "Cascadia Code", "Consolas", "Sans Mono", "Courier", "monospace", "나눔고딕", "굴림";
+}
+@media (prefers-color-scheme: dark) { /* 다크 모드 */
+	#code {
+		border: 1px solid #666;
+		color: #DDD;
+		background-color: #333;
+	}
 }
