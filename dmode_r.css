@@ -1,5 +1,11 @@
 @charset "utf-8";
 @media (prefers-color-scheme: dark) {
+	a:link {
+		color: #FC0;
+	}
+	a:visited {
+		color: #96F;
+	}
 	body {
 		color: #F0F0F0;
 		background: #282828;
