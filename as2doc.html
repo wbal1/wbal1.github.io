@@ -188,24 +188,57 @@
   - 반복 실행 중지<br /></div>
   <h3>8. 자료형</h3><div style="padding-left:20px">
   <div id="code">typeof( );</div><br>
-  - 값의 자료형에 따라 <code>String, Number, MovieClip, Object, Boolean, Function</code>을 반환<br />
-  trace (typeof(1));    // 결과는 Number<br />
-  trace (typeof(&quot;1&quot;));  // 결과는 String<br />
-  trace (typeof(aaa));  // aaa가 무비클립 이라면  결과는 MovieClip<br /></div>
-  ----------------------------------------------------------------------------<br />
-  isFinite( );            // 숫자가 유한수이면 true 무한수거나 음의 무한대이면 false<br />
-  trace (isFinite(aaa));  // aaa 값이 NaN 이라면 결과는 false<br />
-  ----------------------------------------------------------------------------<br />
-  Mouse.show();           // 마우스 보임<br />
-  Mouse.hide();           // 마우스 감춤<br />
-  myClip.onMouseDown = function () {trace (&quot; depth 무시&quot;); };     // 마우스 누를 때<br />
-  myClip.onMouseUp = function () {trace (&quot;depth 무시&quot;); };        // 마우스 눌렀다 놓을 때<br />
-  myClip.onMouseMove = function () { trace (&quot;depth 무시&quot;); };     // 마우스 이동할 때<br />
-  myClip.onPress = function () { trace (&quot;depth 적용&quot;); };         // 마우스 누를 때<br />
-  myClip.onRelease = function () { trace (&quot;depth 적용 &quot;); };      // 마우스 눌렀다 놓을 때<br />
-  myClip.onReleaseOutside = function () { trace (&quot;Outside&quot;); };   // 마우스 나가서 놓을 때<br />
-  myClip.onRollOver = function () { trace (&quot;Over called&quot;); };     // 마우스 오버 때<br />
-  myClip.onRollOut = function () { trace (&quot;Out called&quot;); };       // 마우스 아웃 때<br />
+  - 값의 자료형에 따라 <code>String</code>, <code>Number</code>, <code>MovieClip</code>, <code>Object</code>, <code>Boolean</code>, <code>Function</code>을 반환<br />
+  <div id="code">trace (typeof(1));</div><br>
+  - 결과는 <code>Number</code><br />
+  <div id="code">trace (typeof(&quot;1&quot;));</div><br>
+  - 결과는 <code>String</code><br />
+  <div id="code">trace (typeof(aaa));</div><br>
+  - <code>aaa</code>가 무비클립이라면 결과는 <code>MovieClip</code><br /></div>
+<h3>9. 수 판별</h3>
+<div style="padding-left:20px">
+  <div id="code">isFinite( );</div><br>
+  - 괄호 안의 값이 수(정수, 실수, <code>true</code>, <code>false</code>)면 <code>true</code>를, 아니면 <code>false</code>를 반환<br />
+  <div id="code">trace (isFinite(aaa));</div><br>
+  - <code>aaa</code>가 <code>NaN</code>이라면 결과는 <code>false</code></div>
+  <h3>10. 마우스</h3><div style="padding-left:20px">
+  <div id="code">Mouse.show();</div><br>
+  - 마우스 보임<br />
+  <div id="code">Mouse.hide();</div><br>
+  - 마우스 감춤<br />
+  ※ 이하 5개 액션이 <code>depth</code>를 무시하면 <code>depth 무시</code>를, 그렇지 않으면 <code>depth 적용</code>을 출력함.<br>
+  <div id="code">myClip.onMouseDown = function () {<br>
+  <tab></tab>trace (&quot; depth 무시&quot;);<br>
+  };</div><br>
+  - 마우스를 <code>myClip</code> 무비클립에 누를 때<br />
+  <div id="code">myClip.onMouseUp = function () {<br>
+  <tab></tab>trace (&quot;depth 무시&quot;);<br>
+  };</div><br>
+  - 마우스를 <code>myClip</code> 무비클립에 눌렀다 놓을 때<br />
+  <div id="code">myClip.onMouseMove = function () {<br>
+  <tab></tab>trace (&quot;depth 무시&quot;);<br>
+  };</div><br>
+  - 마우스를 <code>myClip</code> 위에서 이동할 때<br />
+  <div id="code">myClip.onPress = function () {<br>
+  <tab></tab> trace (&quot;depth 적용&quot;);<br>
+  };</div><br>
+  - <code>myClip</code>을 누를 때<br />
+  <div id="code">myClip.onRelease = function () {<br>
+  <tab></tab>trace (&quot;depth 적용 &quot;);<br>
+  };</div><br>
+  - <code>myClip</code>을 눌렀다 놓을 때<br />
+  <div id="code">myClip.onReleaseOutside = function () {<br>
+  <tab></tab>trace (&quot;Outside&quot;);<br>
+  };</div><br>
+  - <code>myClip</code>에서 나가서 놓을 때 <code>Outside</code>를 출력<br />
+  <div id="code">myClip.onRollOver = function () {<br>
+  <tab></tab>trace (&quot;Over called&quot;);<br>
+  };</div><br>
+  - 마우스가 <code>myClip</code> 위에 있을 때 계속 <code>Over called</code>를 출력<br />
+  <div id="code">myClip.onRollOut = function () {<br>
+  <tab></tab>trace (&quot;Out called&quot;);<br>
+  };</div><br>
+  - 마우스가 <code>myClip</code> 밖에 있을 때 계속 <code>Out called</code>를 출력</div>
   ----------------------------------------------------------------------------<br />
   // 단추무비클립 클릭후 액션 스크립트를 넣는다<br />
   on (press){           }  // 마우스 버튼을 누를 때   };  x  }  o<br />
@@ -993,7 +1026,6 @@ myformat.url = &quot;&quot;;                           // (텍스트가 링크�
   58 :    59 ;    60 &lt;    61 =    62 &gt;    63 ?    64 @<br />
   91 [    92     93 ]    94 ^    95 _    96 `<br />
   123 {   124 |   125 }   126  ~<br />
-  ----------------------------------------------------------------------------<br />
   ----------------------------------------------------------------------------</p>
 <p> <br />
   출처: http://wwwmoa.com.ne.kr/zflashact/actionscript.txt</p>
