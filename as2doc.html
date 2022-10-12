@@ -239,27 +239,46 @@
   <tab></tab>trace (&quot;Out called&quot;);<br>
   };</div><br>
   - 마우스가 <code>myClip</code> 밖에 있을 때 계속 <code>Out called</code>를 출력</div>
-  ----------------------------------------------------------------------------<br />
-  // 단추무비클립 클릭후 액션 스크립트를 넣는다<br />
-  on (press){           }  // 마우스 버튼을 누를 때   };  x  }  o<br />
-  on (release){         }  // 마우스 버튼을 눌렀다 뗄 때<br />
-  on (releaseOutside){  }  // 마우스 버튼을 누르고 나가서 뗄 때<br />
-  on (rollOver){        }  // 마우스 포인트가 위로 올라올 때<br />
-  on (rollOut){         }  // 마우스 포인트가 밖으로 나갈 때<br />
-  on (dragOver){        }  // 누른 채로 밖으로 나갔다가 다시 들어올 때<br />
-  on (dragOut){         }  // 마우스버튼을 누르고 바깥으로 드래그할 때<br />
-  on (keyPress){        }  // 지정한 키를 누를 때<br />
-  ----------------------------------------------------------------------------<br />
-  // 무비클립 클릭후 액션 스크립트를 넣는다<br />
-  onClipEvent (load) {            }  // 시작 될때  };  x  }  o <br />
-  onClipEvent (unload) {          }  // 제거 될때<br />
-  onClipEvent (enterFrame) {      }  // 트리거 될때<br />
-  onClipEvent (mouseMove) {       }  // 마우스가 이동할 때<br />
-  onClipEvent (mouseDown) {       }  // 마우스 클릭 시<br />
-  onClipEvent (mouseUp) {         }  // 마우스 클릭 후<br />
-  onClipEvent (keyDown) {         }  // 키를 누를 때<br />
-  onClipEvent (keyUp) {           }  // 키를 눌렀다 놓을 때<br />
-  onClipEvent (data) {            }  // loadVariables 또는 loadMovie 액션에서 데이터가 수신될 때<br />
+  <h3>11. 버튼 액션</h3>
+<div style="padding-left:20px">
+  버튼을 한 번 클릭 후 액션을 넣는다.<br>
+  맨 마지막 <code>}</code>에는 <code>;</code>를 붙이지 않는다.<br />
+  <div id="code">on (&lt;조건&gt;) {<br>
+  <tab></tab>&lt;실행할 액션&gt;<br>
+  }</div><br>
+  <strong>조건:</strong><br>
+  <code>press</code>: 클릭할 때<br />
+  <code>release</code>: 클릭하고 뗄 때<br />
+  <code>releaseOutside</code>: 마우스 버튼을 누르고 나가서 뗄 때<br />
+  <code>rollOver</code>: 마우스 포인트가 위로 올라올 때<br />
+  <code>rollOut</code>: 마우스 포인트가 밖에 있을 때<br />
+  <code>dragOver</code>: 누른 채로 밖으로 나갔다가 다시 들어올 때<br />
+  <code>dragOut</code>: 마우스 버튼을 누르고 바깥으로 드래그할 때<br />
+  <code>keyPress &quot;&lt;키&gt;&quot;</code>: 지정한 키를 누를 때 <br>
+  키:<br>
+  <div style="padding-left:20px">
+  A 키를 누르려면 <code>a</code>, Z 키를 누르려면 <code>z</code>, 1 키를 누르려면 <code>1</code>, ; 키를 누르려면 <code>;</code>, ...<br>
+  <code>&lt;Up&gt;, &lt;Down&gt;, &lt;Left&gt;, &lt;Right&gt;</code>: 상하좌우 방향키<br>
+  <code>&lt;PageUp&gt;, &lt;PageDown&gt;</code>: Page Up(PgUp), Page Down(PgDn) 키<br>
+  <code>&lt;Escape&gt;, &lt;Space&gt;</code>: Esc 키, 스페이스 바<br>
+  <code>&lt;Home&gt;, &lt;End&gt;, &lt;Insert&gt;, &lt;Delete&gt;, &lt;Tab&gt;</code>: Home, End, Insert, Delete(Del), Tab 키<br>
+  <code>&lt;Backspace&gt;, &lt;Enter&gt;</code>: Backspace(BkSp), Enter(Return) 키</div></div>
+  <h3>12. 무비 클립 액션</h3><div style="padding-left:20px">
+  무비 클립 클릭 후 액션을 넣는다.<br />
+  맨 마지막 <code>}</code>에는 <code>;</code>를 붙이지 않는다.<br>
+  <div id="code">onClipEvent (&lt;조건&gt;) {<br>
+  <tab></tab>&lt;실행할 액션&gt;<br>
+  }</div><br>
+  <strong>조건:</strong><br>
+  <code>load</code>: 로드될 때 <br />
+  <code>unload</code>: 언로드될 때<br />
+  <code>enterFrame</code>: 무비 클립 프레임 진입 시 (무비 클립 내에서 <code>stop</code> 함수를 실행하지 않는 한)<br />
+  <code>mouseMove</code>: 마우스 이동 시 (실행하는 무비 클립 안에서만이 아님)<br />
+  <code>mouseDown</code>: 마우스 클릭 시<br />
+  <code>mouseUp</code>: 마우스 클릭 후<br />
+  <code>keyDown</code>: 키를 누를 때<br />
+  <code>keyUp</code>: 키를 눌렀다 놓을 때<br />
+  <code>data</code>: <code>loadVariables</code> 또는 <code>loadMovie</code> 함수로 실행하는 무비 클립에 데이터가 수신될 때</div>
   ----------------------------------------------------------------------------<br />
   TextField.onChanged = function () { trace (&quot;onChanged called&quot;); };<br />
   // 텍스트 필드의 내용이 변경될 때<br />
