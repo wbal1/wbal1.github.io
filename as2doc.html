@@ -15,8 +15,10 @@
 </div>
 <hr />
 <h3>1. 주석</h3><div style="padding-left:20px">
-  <p><div id="code">// .....</div><br />주석 기호 <br />
-  <div id="code">/* ..... */</div><br />주석 기호</div>
+  <p><div id="code">// .....</div><br />
+  주석 기호 (한 줄)<br />
+  <div id="code">/* ..... */</div><br />
+  주석 기호 (여러 줄)</div>
 <h3>2. 코드</h3><div style="padding-left:20px">
   <div id="code">\r</div><br />리턴 코드  (ASC 13)<br />
   <div id="code">\n</div><br />줄바꿈 코드 (ASC 10)<br />
@@ -68,24 +70,30 @@
 </div>
   <h3>4. 반복문과 조건문</h3><div style="padding-left:20px">
   <div id="code">for (a=1; a&lt;=10; a++) {<br><tab></tab>trace(&quot;a=&quot;+a);<br>};</div><br>
-  - for  반복문<br />
+  - <code>for</code> 반복문<br />
   <div id="code">for (i=1; i&lt;=120;  i+=12) {<br><tab></tab>continue;<br>};</div>
-  <br>- for step 반복문<br />
-  <div id="code">while (true) {<br><tab></tab>if (a == 0) {
-  <br><tab></tab><tab></tab>break;<br><tab></tab>};<br>};</div><br>- while  반복문<br />
+  <br>- <code>for step</code> 반복문<br />
+  <div id="code">while (true) {<br>
+  <tab></tab>if (a == 0) {<br>
+  <tab></tab><tab></tab>break;<br>
+  <tab></tab>};<br>
+  };</div><br>
+  - <code>while</code>  반복문<br />
   <div id="code">do {<br>
   	<tab></tab>if(a == 0) {<br>
      <tab></tab><tab></tab>  	break;<br>
      <tab></tab>  };<br>
     };<br>
-    while(true);</div><br>- do 반복문<br />
+    while(true);</div><br>
+    - <code>do</code> 반복문<br />
   <div id="code">if ((n == 0) || (n &gt;= 5) &amp;&amp; (n &lt;= 55) !(n=15)) {<br />
   <tab></tab>gotoAndPlay(1);<br />
   } else if (n == 2) {<br />
   <tab></tab>gotoAndPlay(2);<br />
   } else {<br />
   <tab></tab>gotoAndPlay(3);<br />
-  };</div><br /> - if 조건문<br>
+  };</div><br />
+  - <code>if</code> 조건문<br>
   <div id="code">num_ch = 3;<br />
   switch (num_ch) {<br />
   <tab></tab>case 1: {<br>
@@ -97,7 +105,8 @@
   <tab></tab>} default: {<br>
   <tab></tab><tab></tab>trace ( &quot; no case tested true &quot; );<br />
   <tab></tab>}<br>
-  };</div><br>- switch 조건문<br /></div>
+  };</div><br>
+  - <code>switch</code> 조건문<br /></div>
   <h3>5. 함수 선언</h3><div style="padding-left:20px">
   <div id="code">function sumnumber(a,b,c) {<br>
   <tab></tab>return( aaa = a+b+c );<br>
@@ -255,8 +264,7 @@
   <code>dragOver</code>: 누른 채로 밖으로 나갔다가 다시 들어올 때<br />
   <code>dragOut</code>: 마우스 버튼을 누르고 바깥으로 드래그할 때<br />
   <code>keyPress &quot;&lt;키&gt;&quot;</code>: 지정한 키를 누를 때 <br>
-  키:<br>
-  <div style="padding-left:20px">
+  키:<br><div style="padding-left:20px">
   A 키를 누르려면 <code>a</code>, Z 키를 누르려면 <code>z</code>, 1 키를 누르려면 <code>1</code>, ; 키를 누르려면 <code>;</code>, ...<br>
   <code>&lt;Up&gt;, &lt;Down&gt;, &lt;Left&gt;, &lt;Right&gt;</code>: 상하좌우 방향키<br>
   <code>&lt;PageUp&gt;, &lt;PageDown&gt;</code>: Page Up(PgUp), Page Down(PgDn) 키<br>
@@ -279,53 +287,103 @@
   <code>keyDown</code>: 키를 누를 때<br />
   <code>keyUp</code>: 키를 눌렀다 놓을 때<br />
   <code>data</code>: <code>loadVariables</code> 또는 <code>loadMovie</code> 함수로 실행하는 무비 클립에 데이터가 수신될 때</div>
-  ----------------------------------------------------------------------------<br />
-  TextField.onChanged = function () { trace (&quot;onChanged called&quot;); };<br />
-  // 텍스트 필드의 내용이 변경될 때<br />
-  TextField.onSetFocus = function () { trace (&quot;onSetFocus called&quot;); };<br />
-  // 텍스트 필드의 내용 부분에 마우스가 클릭 될 때<br />
-  TextField.onKillFocus = function () { trace (&quot;onKillFocus called&quot;); };<br />
-  // 텍스트 필드의 내용 바깥 부분에 마우스가 클릭 될 때<br />
-  TextField.onScroller = function () { trace (&quot;onScroller called&quot;); };<br />
-  // 텍스트 필드의 내용이 스크롤 될 때<br />
-  ----------------------------------------------------------------------------<br />
-  myMovieClip.onData = function () { trace (&quot;onData called&quot;); }; <br />
-  // 무비 클립이 loadVariables 또는 loadMovie 호출로부터 데이터를 받을 때<br />
-  myMovieClip.onLoad =  function () { trace (&quot;onLoad called&quot;); }; <br />
-  // 무비 클립이 load 호출로부터 데이터를 받을 때<br />
-  myMovieClip.onUnLoad =  function () { trace (&quot;onUnLoad called&quot;); }; <br />
-  // 무비 클립이 Unload 때<br />
-  myMovieClip.stop() <br />
-  // 작업 중지<br />
-  ----------------------------------------------------------------------------<br />
-  myDate = new Date();                               // 날짜 로드<br />
-  myDate = new Date (년,월,일,시,분,초);             // 날짜 지정<br />
-  yyyy = (myDate.getFullYear() + &quot;-&quot; + (myDate.getMonth() + 1) + &quot;-&quot; + myDate.getDate());<br />
-  tttt = (myDate.getHours()+ &quot; :&quot; + myDate.getMinutes() + &quot; :&quot; +myDate.getSeconds());<br />
-  ----------------------------------------------------------------------------<br />
-  _root.onEnterFrame = function() {   };             // 메인화면에서 프레임 반복<br />
-  onEnterFrame = function() {   };                   // 심볼화면에서 프레임 반복<br />
-  ----------------------------------------------------------------------------<br />
-  tmtm = getTimer(); <br />
-  onEnterFrame = function() {<br />
-  if ( (getTimer()-tmtm) &gt;= 500 ) { tmtm=getTimer(); trace (tmtm); };   // 0.5초후 반복실행<br />
-  if ( (getTimer()-tmtm) &gt;= 1000 ) { tmtm=getTimer(); trace (tmtm); };  // 1초후 반복실행<br />
-  if ( (getTimer()-tmtm) &gt;= 2000 ) { tmtm=getTimer(); trace (tmtm); };  // 2초후 반복실행<br />
-  };<br />
-  ----------------------------------------------------------------------------<br />
-  onEnterFrame = function() { <br />
-  nr += 1;  if (nr &gt; 5 )  {  delete  onEnterFrame;  };           // 5번 반복실행후 중지<br />
-  trace (nr);<br />
-  };<br />
-  ----------------------------------------------------------------------------<br />
-  createTextField (&quot;ins&quot;, 1, 100, 100, 50, 50)<br />
-  ins.border = true;<br />
-  function callback() {<br />
-  ins._x += 5;<br />
-  if ( ins._x &gt; 400 ) { clearInterval( intervalID );  };      // 중지 (clearInterval)<br />
-  }<br />
-  var intervalID;<br />
-  intervalID = setInterval( callback, 100 );             //  0.1초후 반복실행 (setInterval)<br />
+  <h3>13. 텍스트 필드</h3><div style="padding-left:20px">
+  <div id="code">TextField.onChanged = function () {<br>
+  <tab></tab>trace (&quot;onChanged called&quot;);<br>
+  };</div><br />
+  - <code>TextField</code> 텍스트 필드의 내용이 변경될 때 <code>onChanged called</code> 출력<br />
+  <div id="code">TextField.onSetFocus = function () {<br>
+  <tab></tab>trace (&quot;onSetFocus called&quot;);<br>
+  };</div><br />
+  - <code>TextField</code> 텍스트 필드의 내용 부분에 마우스가 클릭 될 때 <code>onSetFocus</code> 출력<br />
+  <div id="code">TextField.onKillFocus = function () {<br>
+  <tab></tab>trace (&quot;onKillFocus called&quot;);<br>
+  };</div><br />
+  - <code>TextField</code> 텍스트 필드의 내용 바깥 부분에 마우스가 클릭 될 때 <code>onKillFocus called</code> 출력<br />
+  <div id="code">TextField.onScroller = function () {<br>
+  <tab></tab>trace (&quot;onScroller called&quot;);<br>
+  };</div><br />
+  - <code>TextField</code> 텍스트 필드의 내용이 스크롤 될 때 <code>onScroller called</code> 출력</div>
+<h3>14. 로드/언로드</h3><div style="padding-left:20px">
+  <div id="code">myMovieClip.onData = function () {<br>
+  <tab></tab>trace (&quot;onData called&quot;);<br>
+  };</div><br />
+  - <code>myMovieClip</code> 무비 클립이 <code>loadVariables</code> 또는 <code>loadMovie</code> 함수로부터 데이터를 받을 때 <code>onData called</code> 출력<br />
+  <div id="code">myMovieClip.onLoad =  function () {<br>
+  <tab></tab>trace (&quot;onLoad called&quot;);<br>
+  };</div><br />
+  - <code>myMovieClip</code> 무비 클립이 <code>load</code> 함수로부터 데이터를 받을 때 <code>onLoad called</code> 출력<br />
+  <div id="code">myMovieClip.onUnLoad =  function () {<br>
+  <tab></tab>trace (&quot;onUnLoad called&quot;);<br>
+  };</div><br />
+  - <code>myMovieClip</code> 무비 클립이 언로드될 때 <code>onUnLoad called</code> 출력<br />
+  <div id="code">myMovieClip.stop();</div><br />
+  - <code>myMovieClip</code> 무비 클립의 프레임 정지</div>
+  <h3>15. 날짜 및 시간 변수</h3><div style="padding-left:20px">
+  <div id="code">myDate = new Date();</div><br>
+  - <code>myDate</code>에 기본값 날짜 대입(기본값은 현재 시간)<br />
+  <div id="code">myDate = new Date (&lt;년&gt;,&lt;월&gt;-1,&lt;일&gt;,&lt;시&gt;,&lt;분&gt;,&lt;초&gt;);</div><br>
+  - <code>myDate</code>에 상세한 날짜 대입(단, 년에 <code>0</code>~<code>99</code>를 입력하면 1900~1999년으로 인식)<br />
+  <div id="code">yyyy = (myDate.getFullYear() + &quot;-&quot; + (myDate.getMonth() + 1) + &quot;-&quot; + myDate.getDate());</div><br />
+  - <code>yyyy</code>에 <code>myDate</code>의 년도, <code>-</code>, <code>myDate</code>의 월, <code>-</code>, <code>myDate</code>의 일수를 차례대로 합친 값 대입<br>
+  　(가령 <code>myDate</code>가 2022년 10월 15일이라면 <code>yyyy</code>는 <code>2022-10-15</code>)<br>
+  <div id="code">tttt = (myDate.getHours()+ &quot; :&quot; + myDate.getMinutes() + &quot; :&quot; +myDate.getSeconds());</div><br>
+  - <code>tttt</code>에 <code>myDate</code>의 시, <code>&nbsp;:</code>, <code>myDate</code>의 분, <code>&nbsp;:</code>, <code>myDate</code>의 촛값을 차례대로 합친 값 대입<br>
+  　(가령 <code>myDate</code>가 16시 44분 44초라면 <code>tttt</code>는 <code>16 :44 :44</code>)</div>
+  <h3>16. 프레임 진입 시 액션 실행</h3><div style="padding-left:20px">
+  <div id="code">_root.onEnterFrame = function() {<br>
+  <tab></tab>&lt;실행할 액션&gt;<br>
+  };</div><br>
+  - <code>_root</code>에서 프레임 진입 시 액션 실행<br />
+  <div id="code">onEnterFrame = function() {<br>
+  <tab></tab>&lt;실행할 액션&gt;<br>
+  };</div><br>
+  - 이 심볼(<code>_root</code> 포함)에서 프레임 진입 시 액션 실행</div>
+  <h3>17. 타이머</h3><div style="padding-left:20px">
+  <div id="code">tmtm = getTimer();</div><br />
+  - <code>tmtm</code>에 현재 타이머 값 할당(밀리초 단위)<br>
+  <div id="code">onEnterFrame = function() {<br />
+  <tab></tab>if ( (getTimer()-tmtm) &gt;= 500 ) {<br>
+  <tab></tab><tab></tab>tmtm=getTimer();<br>
+  <tab></tab><tab></tab>trace (tmtm);<br>
+  <tab></tab>};<br />
+  <tab></tab>if ( (getTimer()-tmtm) &gt;= 1000 ) {<br>
+  <tab></tab><tab></tab>tmtm=getTimer();<br>
+  <tab></tab><tab></tab>trace (tmtm);<br>
+  <tab></tab>};<br />
+  <tab></tab>if ( (getTimer()-tmtm) &gt;= 2000 ) {<br>
+  <tab></tab><tab></tab>tmtm=getTimer();<br>
+  <tab></tab><tab></tab>trace (tmtm);<br>
+  <tab></tab>};<br />
+  };</div><br>
+  - 첫 번째 <code>if</code>문: <code>tmtm</code>과 현재 타이머 값이 <code>500</code>만큼 차이가 나면 (0.5초마다) <code>tmtm</code>에 새롭게 현재 타이머 값을 할당하고 <code>tmtm</code> 값을 출력 <br>
+  두 번째 <code>if</code>문: <code>tmtm</code>과 현재 타이머 값이 <code>1000</code>만큼 차이가 나면 (1초마다) 첫 번째 <code>if</code>문과 동일한 기능 수행<br>
+  세 번째 <code>if</code>문: <code>tmtm</code>과 현재 타이머 값이 <code>2000</code>만큼 차이가 나면 (2초마다) 첫 번째 <code>if</code>문과 동일한 기능 수행</div>
+  <h3>18. 반복문 (2)</h3>
+  <div style="padding-left:20px">
+  <div id="code">onEnterFrame = function() { <br />
+  <tab></tab>nr += 1;<br>
+  <tab></tab>if (nr &gt; 5) {<br>
+  <tab></tab><tab></tab>delete  onEnterFrame;<br>
+  <tab></tab>};<br />
+  <tab></tab>trace (nr);<br />
+  };</div><br>
+  - <code>nr</code>에 계속 1씩 추가, <code>nr</code>이 <code>5</code>보다 크면 반복 실행 중지 후 <code>nr</code> 출력 (5번 반복)</div>
+  <h3>19. 텍스트 필드 (2)</h3><div style="padding-left:20px">
+  <div id="code">createTextField (&quot;ins&quot;, 1, 100, 100, 50, 50)</div><br />
+  - 텍스트 필드 <code>ins</code>를 깊이 <code>1</code>에, (<code>100</code>,<code>100</code>)에 <code>50</code>x<code>50</code> 크기로 만들기<br>
+  <div id="code">ins.border = true;</div><br />
+  - <code>ins</code>의 경계선을 활성화<br>
+  <div id="code">function callback() {<br />
+  <tab></tab>ins._x += 5;<br />
+  <tab></tab>if ( ins._x &gt; 400 ) {<br>
+  <tab></tab><tab></tab>clearInterval( intervalID );<br>
+  <tab></tab>};<br />
+  }</div><br />
+  - <code>ins</code>의 x값을 <code>5</code>씩 증가, <code>400</code>을 넘고 <code>clearInterval</code> 함수를 사용해 반복 중단<br>
+  <div id="code">var intervalID;<br />
+  intervalID = setInterval( callback, 100 );</div><br>
+  - 0.1초후 반복실행 (setInterval)</div>
   ----------------------------------------------------------------------------<br />
   #include &quot;script.as&quot;         // script.as 파일 넣기 (액션 스크립트 txt 파일)<br />
   ----------------------------------------------------------------------------<br />
