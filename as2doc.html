@@ -380,40 +380,60 @@
   <tab></tab><tab></tab>clearInterval( intervalID );<br>
   <tab></tab>};<br />
   }</div><br />
-  - <code>ins</code>의 x값을 <code>5</code>씩 증가, <code>400</code>을 넘고 <code>clearInterval</code> 함수를 사용해 반복 중단<br>
+  - <code>callback</code>을 "<code>ins</code>의 x값을 <code>5</code>씩 증가, <code>400</code>을 넘고 <code>clearInterval</code> 함수를 사용해 반복 중단"으로 정의<br>
   <div id="code">var intervalID;<br />
   intervalID = setInterval( callback, 100 );</div><br>
-  - 0.1초후 반복실행 (setInterval)</div>
-  ----------------------------------------------------------------------------<br />
-  #include &quot;script.as&quot;         // script.as 파일 넣기 (액션 스크립트 txt 파일)<br />
-  ----------------------------------------------------------------------------<br />
-  System.useCodepage = true;   // 한글 깨짐 방지<br />
-  trace(System.capabilities.language)          // Flash Player가 지원하는 언어. 결과는 ko<br />
-  trace(System.capabilities.hasVideoEncoder)   // 지원되는 비디오 인코더. 결과는 true, false.<br />
-  trace(System.capabilities.hasAudioEncoder )  // 지원되는 오디오 인코더. 결과는 true, false.<br />
-  trace(System.capabilities.hasAudio)          // 오디오 성능이 있는지 여부. 결과는 true, false.<br />
-  trace(System.capabilities.hasMP3)            // MP3 디코더가 있는지 여부. 결과는 true, false.<br />
-  ----------------------------------------------------------------------------<br />
-  escape(&quot;abc가나다&quot;);         // URL에 사용하기 위해 인코딩.<br />
-  // System.useCodePage= true; 일때 결과는 abc%B0%A1%B3%AA%B4%D9<br />
-  // System.useCodePage= false; 일때 결과는 abc%EA%B0%80%EB%82%98%EB%8B%A4<br />
-  ----------------------------------------------------------------------------<br />
-  trace(targetPath(this));     // 대상 패스를 반환.  결과는 _level0.instance1 로 표시<br />
-  trace(this.valueOf());       // 결과는 _level0 로 표시<br />
-  ----------------------------------------------------------------------------<br />
-  trace(this.getBytesLoaded());  // 무비클립의 로드된 바이트 수를 알려준다.<br />
-  trace(this.getBytesTotal());   // 무비클립의 전체용량 바이트 수를 알려준다.<br />
-  ----------------------------------------------------------------------------<br />
-  getURL(&quot;C:/&quot;)                                          // 탐색기 열기<br />
-  getURL(&quot;C:/Windows/NOTEPAD.EXE&quot;);   };                 // 메모장 열기<br />
-  getURL(&quot;C:/Program Files/Accessories/WORDPAD.EXE&quot;);    // 워드패드 열기<br />
-  getURL(&quot;C:/Program Files/Accessories/MSPAINT.EXE&quot;);    // 그림판 열기<br />
-  getURL(&quot;C:/Windows/CALC.EXE&quot;);                         // 계산기 열기<br />
-  getURL (&quot;aaa.exe&quot;);                                    // aaa.exe 파일 열기 (message)<br />
-  getURL (&quot;aaa.txt&quot;, &quot;_self&quot;);                           // aaa.txt 파일 열기<br />
-  getURL (&quot;movie.html&quot;, &quot;_self&quot;);                        // movie.html 파일 열기<br />
-  getURL (&quot;http://www&quot;, &quot;_blank&quot;);                       // http://www 를 새로운 창으로 열기<br />
-  ----------------------------------------------------------------------------<br />
+  - <code>intervalID</code> 선언 후 "<code>callback</code>을 0.1초후 반복 실행"을 대입</div>
+  <h3>20. 외부 스크립트 파일 읽기</h3><div style="padding-left:20px">
+  <div id="code">#include &quot;script.as&quot;</div><br>
+  - <code>script.as</code> 파일 불러오기 (AS(액션스크립트) 파일)</div>
+  <h3>21. 시스템</h3><div style="padding-left:20px">
+  <div id="code">System.useCodepage = true;</div><br>
+  - 시스템 코드페이지 사용(한국어 시스템이면 한국어 코드페이지, 영어 시스템이면 영어 코드페이지, 일본어면 일본어..., 주로 한글 깨짐 방지에 이용)<br />
+  <div id="code">trace(System.capabilities.language)</div><br>
+  - 현재 시스템의 언어를 출력. 한국어 시스템을 사용하면 결과는 <code>ko</code>.<br />
+  <div id="code">trace(System.capabilities.hasVideoEncoder)</div><br>
+  - 시스템의 비디오 인코더 지원 여부를 출력. 결과는 여부에 따라서 <code>true</code>거나 <code>false</code>.<br />
+  <div id="code">trace(System.capabilities.hasAudioEncoder)</div><br>
+  - 시스템의 오디오 인코더 지원 여부를 출력. 결과는 여부에 따라서 <code>true</code>거나 <code>false</code>.<br />
+  <div id="code">trace(System.capabilities.hasAudio)</div><br>
+  - 오디오 출력이 있는지 여부를 출력. 결과는 여부에 따라서 <code>true</code>거나 <code>false</code>.<br />
+  <div id="code">trace(System.capabilities.hasMP3)</div><br>
+  - MP3 디코더가 있는지 여부룰 출력. 결과는 여부에 따라서 <code>true</code>거나 <code>false</code>.</div>
+  <h3>22. 퍼센트 인코딩 (URL 인코딩)</h3><div style="padding-left:20px">
+  <div id="code">escape(&quot;abc가나다&quot;);</div><br>
+  - URL에 사용하기 위해 인코딩.<br />
+   한국어 시스템 코드페이지를 사용하면 결과는 <code>abc%B0%A1%B3%AA%B4%D9</code>, 그렇지 않으면 결과는 <code>abc%EA%B0%80%EB%82%98%EB%8B%A4</code>.</div>
+  <h3>23. 경로</h3><div style="padding-left:20px">
+  <div id="code">trace(targetPath(this));</div><br>
+  - 이 개체의 경로 출력. 결과는 <code>_level0.&lt;인스턴스 이름&gt;</code> (인스턴스 이름을 정해두지 않았다면 <code>instance1</code>부터 시작해서 먼저 추가된 순서대로 <code>instance2</code>, <code>instance3</code>, ...으로 인스턴스 이름이 명명됨)<br />
+  <div id="code">trace(this.valueOf());</div><br>
+  - <code>targetPath(this)</code>와 동일한 결과 출력</div>
+  <h3>24. 로드</h3><div style="padding-left:20px">
+  <div id="code">trace(this.getBytesLoaded());</div><br>
+  - 이 객체의 로드된 바이트 수를 출력한다.<br />
+  <div id="code">trace(this.getBytesTotal());</div><br>
+  - 이 객체의 전체 용량을 알려준다.</div>
+  <h3>25. 파일 열기</h3><div style="padding-left:20px">
+  <div id="code">getURL(&quot;C:/&quot;)</div><br>
+  - <code>C:\</code> 열기<br />
+  <div id="code">getURL(&quot;C:/Windows/NOTEPAD.EXE&quot;);</div><br>
+  - <code>C:\Windows\NOTEPAD.EXE</code> 열기<br />
+  <div id="code">getURL(&quot;C:/Program Files/Accessories/WORDPAD.EXE&quot;);</div><br>
+  - <code>C:\Program Files\Accessories\WORDPAD.EXE</code> 열기<br />
+  <div id="code">getURL(&quot;C:/Program Files/Accessories/MSPAINT.EXE&quot;);</div><br>
+  - <code>C:\Program Files\Accessories\MSPAINT>EXE</code> 열기<br />
+  <div id="code">getURL(&quot;C:/Windows/CALC.EXE&quot;);</div><br>
+  - <code>C:\Windows\CALC.EXE</code> 열기<br />
+  <div id="code">getURL (&quot;aaa.exe&quot;);</div><br>
+  - <code>aaa.exe</code> 열기<br />
+  <div id="code">getURL (&quot;aaa.txt&quot;, &quot;_self&quot;);</div><br>
+  - <code>aaa.txt</code> 파일 열기<br />
+  <div id="code">getURL (&quot;movie.html&quot;, &quot;_self&quot;);</div><br>
+  - <code>movie.html</code> 파일 열기<br />
+  <div id="code">getURL (&quot;http://www&quot;, &quot;_blank&quot;);</div><br>
+  - <code>http://www</code>를 새로운 창으로 열기</div>
+  <h3>26. 화면</h3><div style="padding-left:20px">
   Stage.showMenu = &quot;true&quot;;        // 스크린 메뉴 보임<br />
   Stage.showMenu = &quot;false&quot;;       // 스크린 메뉴 감춤 <br />
   Stage.scaleMode = &quot;noScale&quot;;    // 화면의 사이즈를 고정<br />
@@ -421,7 +441,7 @@
   //  &quot;T&quot; 위 가운데    &quot;B&quot; 아래 가운데    &quot;L&quot; 가운데 왼쪽    &quot;R&quot; 가운데 오른쪽<br />
   //  &quot;TL&quot; 위쪽 왼쪽   &quot;TR&quot; 위쪽 오른쪽   &quot;BL&quot; 아래쪽 왼쪽   &quot;BR&quot; 아래쪽 오른쪽<br />
   Stage.height      // 픽셀로 표시된 스테이지의 높이<br />
-  Stage.width       // 픽셀로 표시된 스테이지의 넓이<br />
+  Stage.width       // 픽셀로 표시된 스테이지의 넓이</div>
   ----------------------------------------------------------------------------<br />
   _root.createEmptyMovieClip(&quot;box&quot;,1);      // 스테이지 테두리 주기<br />
   with (_root.box) {  moveto(1, 1);   linestyle(10, 0x00cc00, 100);<br />
