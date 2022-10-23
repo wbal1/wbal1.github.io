@@ -1,11 +1,15 @@
 @charset "utf-8";
+:root {
+	--cfs: .8rem;
+	--cff: "Cascadia Code", "Consolas", "Sans Mono", "Courier", "monospace", "나눔바른고딕", "굴림";
+}
 code { /* 인라인 코드 */
     padding: 0.25rem;
     background-color: #F1F1F1;
 	border: 1px solid #CCC;
     border-radius: 5px;
-    font-family: "Cascadia Code", "Consolas", "Sans Mono", "Courier", "monospace", "나눔고딕", "굴림";
-    font-size: .8rem;
+    font-family: var(--cff);
+    font-size: var(--cfs);
 	line-height:30px;
 }
 @media (prefers-color-scheme: dark) { /* 다크 모드 */
@@ -21,10 +25,10 @@ code { /* 인라인 코드 */
 	background-color: #F1F1F1;
 	border: 1px solid #CCC;
 	border-radius: 5px;
-	font-size: .8rem;
+	font-size: var(--cfs);
 	line-height: 20px;
 	padding-left: 8px;
-	font-family: "Cascadia Code", "Consolas", "Sans Mono", "Courier", "monospace", "나눔고딕", "굴림";
+	font-family: var(--cff);
 }
 @media (prefers-color-scheme: dark) { /* 다크 모드 */
 	#code {
