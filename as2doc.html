@@ -488,20 +488,23 @@
   - <code>a.exe</code> 실행 (no message)<br />
   플래시 무비(<code>.exe</code>, <code>.swf</code>)가 위치하는 폴더 안에 <code>fscommand</code>라는 하위 폴더를 만들고<br />
   <code>fscommand</code> 폴더에 <code>a.exe</code>가 있을 때 플래시 무비를 실행하면 <code>a.exe</code> 실행<br /></div>
-  ----------------------------------------------------------------------------<br />
-  // getURL 로 javascript 사용하기<br />
-  var hello = &quot;Hello, World&quot;;<br />
-  getURL(&quot;javascript:alert(\&quot; &quot;+ hello + &quot;  \&quot;)&quot;);   // 메세지 띄우기<br />
-  getURL(&quot;javascript:window.self.close()&quot;);          // 윈도우창 닫기<br />
-  getURL(&quot;javascript:window.external.AddFavorite('http://','가')&quot; );    //즐겨찾기 추가<br />
-  ----------------------------------------------------------------------------<br />
-  // fscommand 로 javascript 사용하기<br />
+  <h3>29. JavaScript 실행 (1)</h3><div style="padding-left:20px">
+  <code>getURL</code> 함수를 사용<br>
+  <div id="code">var hello = &quot;Hello, World&quot;;<br />
+  getURL(&quot;javascript:alert(\&quot; &quot;+ hello + &quot;  \&quot;)&quot;);</div><br>
+  - <code>hello</code>에 <code>Hello, World</code>를 넣고 새 창에 <code>&nbsp;&lt;hello&gt; </code>&nbsp;띄우기<br />
+  <div id="code">getURL(&quot;javascript:window.self.close()&quot;);</div><br>
+  - 브라우저 창 닫기<br />
+  <div id="code">getURL(&quot;javascript:window.external.AddFavorite('http://','가')&quot; );</div><br>
+  - <code>http://</code>로 연결되는 <code>가</code> 즐겨찾기 추가</div>
+  <h3>30. JavaScript 실행 (2)</h3><div style="padding-left:20px">
+  <code>fscommand</code> 함수를 사용<br />
   1.  fscommand (&quot;messagebox&quot;, &quot;This is a Flash.&quot;);   // aaa.swf flash script<br />
   2.  파일메뉴 - 제작설정 - 포맷 (HTML체크) - HTML (템플릿: with FSCommand 체크)<br />
   3.  파일메뉴 - 제작 (파일명은 aaa.swf) -  aaa.html 파일이 디렉토리에 만들어 진다<br />
   4.  aaa.html 파일을 열고  function aaa_DoFSCommand(command, args) {  아래에<br />
   if (command == &quot;messagebox&quot;) {  alert(args);  };   을 적고 저장 한다<br />
-  5.  aaa.html 실행 (실행후 제작설정 해제)<br />
+  5.  aaa.html 실행 (실행후 제작설정 해제)</div>
   ----------------------------------------------------------------------------<br />
   // fscommand 로 javascript 의 변수값 불러오기<br />
   1. fscommand (&quot;search&quot;, TextFieldvar);     // aaa.swf flash script<br />
