@@ -465,19 +465,29 @@
   (1, 1)로 움직이고<br>
   10픽셀 굵기, <span style="color: #0c0;"><code>#00CC00</code></span> 색으로 지정함<br>
   <code>_root.box</code>를 (<code>Stade.width</code>, 1), (<code>Stade.width</code>, <code>Stage.height</code>),(1, <code>Stage.height</code>), (1, 1) 순서대로 이동하면서 선 그리기</div>
-  ----------------------------------------------------------------------------<br />
-  fscommand(&quot;showmenu&quot;, true);      // 스크린 메뉴 보임<br />
-  fscommand(&quot;showmenu&quot;, false);     // 스크린 메뉴 감춤<br />
-  fscommand(&quot;allowscale&quot;, true);    // 스크린 크기에 따라 무비의 크기도 변함<br />
-  fscommand(&quot;allowscale&quot;, false);   // 스크린 크기에 따라 무비의 크기도 안변함<br />
-  fscommand(&quot;fullscreen&quot;, true);    // 풀 스크린 (esc키 누르면 해제)<br />
-  fscommand(&quot;fullscreen&quot;, false);   // 풀 스크린을 원래의 크기로 만든다<br />
-  fscommand(&quot;trapallkeys&quot;, true);   // 키보드 키 사용할 수 없음 (풀 스크린 일때 esc키 먹통)<br />
-  fscommand(&quot;trapallkeys&quot;, false);  // 키보드 키 사용할 수 있음<br />
-  fscommand(&quot;quit&quot;);                // 스크린 닫기<br />
-  fscommand (&quot;exec&quot;, &quot;a.exe&quot;);      // a.exe 파일 실행 (no message)<br />
-  플래시 무비(exe) 가 위치하는 폴더안에 fscommand 라는 하위 폴더를 만들고<br />
-  fscommand 디렉토리에  a.exe 가 있을때 플래시 무비(exe)를 실행하면 a.exe파일 실행<br />
+  <h3>28. 화면</h3><div style="padding-left:20px">
+  <div id="code">fscommand(&quot;showmenu&quot;, true);</div><br>
+  - 상단 메뉴 보임<br />
+  <div id="code">fscommand(&quot;showmenu&quot;, false);</div><br>
+  - 상단 메뉴 감춤<br />
+  <div id="code">fscommand(&quot;allowscale&quot;, true);</div><br>
+  - 화면 크기에 따라 무비의 크기도 변함<br />
+  <div id="code">fscommand(&quot;allowscale&quot;, false);</div><br>
+  - 화면 크기와 무비의 크기는 독립적임<br />
+  <div id="code">fscommand(&quot;fullscreen&quot;, true);</div><br>
+  - 풀스크린 (esc키 누르면 해제)<br />
+  <div id="code">fscommand(&quot;fullscreen&quot;, false);</div><br>
+  - 풀스크린 해제<br />
+  <div id="code">fscommand(&quot;trapallkeys&quot;, true);</div><br>
+  - 키보드 키 사용할 수 없음 (풀스크린일 때 esc키 먹통)<br />
+  <div id="code">fscommand(&quot;trapallkeys&quot;, false);</div><br>
+  - 키보드 키 사용할 수 있음<br />
+  <div id="code">fscommand(&quot;quit&quot;);</div><br>
+  - 창 닫기<br />
+  <div id="code">fscommand (&quot;exec&quot;, &quot;a.exe&quot;);</div><br>
+  - <code>a.exe</code> 실행 (no message)<br />
+  플래시 무비(<code>.exe</code>, <code>.swf</code>)가 위치하는 폴더 안에 <code>fscommand</code>라는 하위 폴더를 만들고<br />
+  <code>fscommand</code> 폴더에 <code>a.exe</code>가 있을 때 플래시 무비를 실행하면 <code>a.exe</code> 실행<br /></div>
   ----------------------------------------------------------------------------<br />
   // getURL 로 javascript 사용하기<br />
   var hello = &quot;Hello, World&quot;;<br />
