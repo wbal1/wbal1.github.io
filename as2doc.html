@@ -497,14 +497,20 @@
   - 브라우저 창 닫기<br />
   <div id="code">getURL(&quot;javascript:window.external.AddFavorite('http://','가')&quot; );</div><br>
   - <code>http://</code>로 연결되는 <code>가</code> 즐겨찾기 추가</div>
-  <h3>30. JavaScript 실행 (2)</h3><div style="padding-left:20px">
-  <code>fscommand</code> 함수를 사용<br />
-  1.  fscommand (&quot;messagebox&quot;, &quot;This is a Flash.&quot;);   // aaa.swf flash script<br />
-  2.  파일메뉴 - 제작설정 - 포맷 (HTML체크) - HTML (템플릿: with FSCommand 체크)<br />
-  3.  파일메뉴 - 제작 (파일명은 aaa.swf) -  aaa.html 파일이 디렉토리에 만들어 진다<br />
-  4.  aaa.html 파일을 열고  function aaa_DoFSCommand(command, args) {  아래에<br />
-  if (command == &quot;messagebox&quot;) {  alert(args);  };   을 적고 저장 한다<br />
-  5.  aaa.html 실행 (실행후 제작설정 해제)</div>
+  <h3>30. JavaScript 실행 (2)</h3>
+<div style="padding-left:20px">
+  <code>fscommand</code> 함수를 사용하여 <code>aaa.swf</code>의 Javascript 실행하기<br />
+  1. <code>aaa.swf</code>의 프레임에<br>
+  <div id="code">fscommand (&quot;messagebox&quot;, &quot;This is a Flash.&quot;);</div><br />
+  삽입<br>
+  2. 파일 - 제작 설정 - 기타 형식 - HTML(체크 필요) - 템플릿에서 'Flash에서 FSCommand 사용' 선택<br />
+  3.  파일 - 제작 - <code>aaa.html</code> 파일이 <code>aaa.swf</code>와 같은 폴더에 만들어진다<br />
+  4.  <code>aaa.html</code> 파일을 편집기로 열고<div id="code">
+  function aaa_DoFSCommand(command, args) {</div><br>아래에<br />
+  <div id="code">if (command == &quot;messagebox&quot;) {<br>
+  <tab></tab>alert(args);<br>};</div><br>
+  을 추가하고 저장한다<br />
+  5.  <code>aaa.html</code> 실행</div>
   ----------------------------------------------------------------------------<br />
   // fscommand 로 javascript 의 변수값 불러오기<br />
   1. fscommand (&quot;search&quot;, TextFieldvar);     // aaa.swf flash script<br />
