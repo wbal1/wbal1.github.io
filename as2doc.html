@@ -499,40 +499,62 @@
   - <code>http://</code>로 연결되는 <code>가</code> 즐겨찾기 추가</div>
   <h3>30. JavaScript 실행 (2)</h3>
 <div style="padding-left:20px">
-  <code>fscommand</code> 함수를 사용하여 <code>aaa.swf</code>의 Javascript 실행하기<br />
-  1. <code>aaa.swf</code>의 프레임에<br>
+  <code>fscommand</code> 함수를 사용하여 <code>aaa.swf</code>의 Javascript 실행하기 (메시지 출력)<br />
+  1. <code>aaa.swf</code>에<br>
   <div id="code">fscommand (&quot;messagebox&quot;, &quot;This is a Flash.&quot;);</div><br />
   삽입<br>
   2. 파일 - 제작 설정 - 기타 형식 - HTML(체크 필요) - 템플릿에서 'Flash에서 FSCommand 사용' 선택<br />
   3.  파일 - 제작 - <code>aaa.html</code> 파일이 <code>aaa.swf</code>와 같은 폴더에 만들어진다<br />
   4.  <code>aaa.html</code> 파일을 편집기로 열고<div id="code">
-  function aaa_DoFSCommand(command, args) {</div><br>아래에<br />
+  function aaa_DoFSCommand(command, args) { ... }</div><br>
+  속에<br />
   <div id="code">if (command == &quot;messagebox&quot;) {<br>
   <tab></tab>alert(args);<br>};</div><br>
   을 추가하고 저장한다<br />
   5.  <code>aaa.html</code> 실행</div>
-  ----------------------------------------------------------------------------<br />
-  // fscommand 로 javascript 의 변수값 불러오기<br />
-  1. fscommand (&quot;search&quot;, TextFieldvar);     // aaa.swf flash script<br />
-  2. if (command == &quot;search&quot;) {              // aaa.html script<br />
-  EEEfind = &quot;FFFFFFFF&quot;;<br />
-  window.document.aaa.SetVariable(&quot;TextFieldvar&quot;, EEEfind) ;<br />
-  return TextFieldvar;<br />
-  };<br />
-  3. aaa.html 실행<br />
-  ----------------------------------------------------------------------------<br />
-  _root.loadMovie(&quot;a.swf&quot;);            // swf 파일 불러오기<br />
-  _root.bbb.loadMovie(&quot;a.swf&quot;)         // swf 를 메인에 있는 bbb무비클립인스턴스에 불러오기<br />
-  _root.loadMovie(&quot;a.swf&quot;, 1);         // swf 를 레벨1로 불러오기 (2 는 1를  screen over)<br />
-  _root.loadMovie(&quot;aaa.jpg&quot;);          // jpg 파일 불러오기<br />
-  _root.bbb.loadMovie(&quot;aaa.jpg&quot;);      // jpg 파일을 메인에 있는 bbb무비클립인스턴스에 불러오기<br />
-  unloadMovie (1);                     // 레벨 1에 로드된 무비를 언로드<br />
-  unloadMovie (&quot;a.swf&quot;);               // 현재 무비에 로드된 a.swf 무비를 언로드<br />
-  _root.bbb.unloadMovie();             // 메인 타임라인의 bbb 무비클립에 로드된 무비를 언로드<br />
-  this[&quot;bbb&quot;].unloadMovie();           // 현재 타임라인의 bbb 무비클립에 로드된 무비를 언로드<br />
-  sss.bbb.unloadMovie();               // sss 심볼 타임라인의 bbb 무비클립에 로드된 무비를 언로드<br />
-  ----------------------------------------------------------------------------<br />
-  button.onPress = function() { _root.loadMovie(&quot;aaa.swf&quot;); }     // aaa.swf 실행중 초기화 하기<br />
+<h3>31. JavaScript 실행 (3)</h3><div style="padding-left:20px">
+  <code>fscommand</code> 함수를 사용하여 <code>aaa.swf</code>의 javascript 실행하기 (변수 불러옴)<br />
+  1. <code>aaa.swf</code>에 <br>
+  <div id="code">fscommand (&quot;search&quot;, TextFieldvar);</div><br>
+  삽입<br />
+  2. 30번에서 한 대로 제작된 <code>aaa.html</code> 파일을 똑같이 편집기로 열고<br>
+  <div id="code">function aaa_DoFSCommand(command, args) { ... }</div><br>
+  속에<br>
+  <div id="code">if (command == &quot;search&quot;) {              // aaa.html script<br />
+  <tab></tab>EEEfind = &quot;FFFFFFFF&quot;;<br />
+  <tab></tab>window.document.aaa.SetVariable(&quot;TextFieldvar&quot;, EEEfind) ;<br />
+  <tab></tab>return TextFieldvar;<br />
+  };</div><br />
+  삽입 <br>
+  3. <code>aaa.html</code> 실행<br>
+  추가. 현 시점(2022.11.)에서 제작된 사이트를 여는 법:<br>
+  Edge로 열기 - 맨 오른쪽의 … - 'Internet Explorer 모드에서 다시 열기' 클릭 - 밑의 '차단된 콘텐츠 허용' 클릭</div>
+  <h3>32. SWF 파일 로드 / 언로드하기</h3><div style="padding-left:20px">
+  <div id="code">_root.loadMovie(&quot;a.swf&quot;);</div><br>
+  - <code>a.swf</code>를 <code>_root</code>에 불러오기<br />
+  <div id="code">_root.bbb.loadMovie(&quot;a.swf&quot;)</div><br>
+  - <code>a.swf</code>를 <code>_root.bbb</code>에 불러오기<br />
+  <div id="code">_root.loadMovie(&quot;a.swf&quot;, 1);</div><br>
+  - <code>a.swf</code>를 <code>1</code>로써 불러오기 (<code>2</code>는 <code>1</code>를 덮음)<br />
+  <div id="code">_root.loadMovie(&quot;aaa.jpg&quot;);</div><br>
+  - <code>aaa.jpg</code>를 <code>_root.</code>에 불러오기<br />
+  <div id="code">_root.bbb.loadMovie(&quot;aaa.jpg&quot;);</div><br>
+  - <code>aaa.jpg</code>를 <code>_root.bbb</code>에 불러오기<br />
+  <div id="code">unloadMovie (1);</div><br>
+  - <code>1</code> 무비(상단 참조)를 언로드<br />
+  <div id="code">unloadMovie (&quot;a.swf&quot;);</div><br>
+  - 현재 로드된 <code>a.swf</code>를 언로드<br />
+  <div id="code">_root.bbb.unloadMovie();</div><br>
+  - <code>_root.bbb</code>에 로드된 무비를 언로드<br />
+  <div id="code">this[&quot;bbb&quot;].unloadMovie();</div><br>
+  - <code>this["bbb"]</code>(현재 타임라인의 <code>bbb</code> 무비클립)에 로드된 무비를 언로드<br />
+  <div id="code">sss.bbb.unloadMovie();</div><br>
+  - <code>sss.bbb</code>에 로드된 무비를 언로드</div>
+  <h3>33. SWF 파일 로드하기 (2)</h3><div style="padding-left:20px">
+  <div id="code">button.onPress = function() {<br>
+  <tab></tab>_root.loadMovie(&quot;aaa.swf&quot;);<br>
+  }</div><br>
+  - <code>button</code>을 누를 시<code>_root</code>에 <code>aaa.swf</code>를 로드</div>
   ----------------------------------------------------------------------------<br />
   _root[&quot;ball_&quot;+counter]._x = 11;       //  메인 화면의 클립 좌표<br />
   this[&quot;ball_&quot;+counter]._x = 11;        //  현재 화면의 클립 좌표<br />
