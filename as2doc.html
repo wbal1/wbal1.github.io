@@ -555,78 +555,118 @@
   <tab></tab>_root.loadMovie(&quot;aaa.swf&quot;);<br>
   }</div><br>
   - <code>button</code>을 누를 시<code>_root</code>에 <code>aaa.swf</code>를 로드</div>
-  ----------------------------------------------------------------------------<br />
-  _root[&quot;ball_&quot;+counter]._x = 11;       //  메인 화면의 클립 좌표<br />
-  this[&quot;ball_&quot;+counter]._x = 11;        //  현재 화면의 클립 좌표<br />
-  aaa[&quot;ball_&quot;+counter]._x = 11;         //  aaa 심볼 화면의 클립 좌표<br />
-  ----------------------------------------------------------------------------<br />
-  this.createEmptyMovieClip(&quot;aaa&quot;, 1);             //  무비클립 생성 (2 는 1를 screen over)<br />
-  this.duplicateMovieClip (aaa, bbb, 1);           //  aaa 무비클립  bbb 로 복사<br />
-  this.bbb.removeMovieClip();                      //  bbb 무비클립 삭제<br />
-  myClip._visible = true;                          //  클립 보임<br />
-  myClip._visible = false;                         //  클립 감춤<br />
-  myClip.swapDepths(100);                          //  클립 깊이 100 으로 지정 (2 는 1를 screen over)<br />
-  myClip.swapDepths(otherClip);                    //  클립 깊이 otherClip 과 바꿈<br />
-  for (i=1; i&lt;=360; i++)  {                        //  클립 복사<br />
-  duplicateMovieClip (ins1, &quot;mc&quot;+i, i);<br />
-  setProperty (&quot;mc&quot;+i, _x, random(300));<br />
-  setProperty (&quot;mc&quot;+i, _y, random(300));<br />
-  setProperty (&quot;mc&quot;+i, _alpha, random(300));<br />
-  setProperty (&quot;mc&quot;+i, _xscale, 150);<br />
-  setProperty (&quot;mc&quot;+i, _yscale, 150);<br />
-  }; <br />
-  for (i=1; i&lt;=360; i++)  {                        //  클립 복사<br />
-  duplicateMovieClip (ins1, &quot;mc&quot;+i, i);<br />
-  this[&quot;mc&quot; + i]._x = i;<br />
-  this[&quot;mc&quot; + i]._y = i;<br />
-  }; <br />
-  for (i=1; i&lt;=50; i++)  {                          // 클립 이동<br />
-  this[&quot;mc_&quot;+i]._x += 10;<br />
-  this[&quot;mc_&quot;+i]._y += 10;<br />
-  }; <br />
-  for (i=1; i&lt;=360; i++)  {                         // 클립 삭제<br />
+  <h3>34. 무비 클립의 위치</h3><div style="padding-left:20px">
+  <code>_root.["ball_"+counter]</code>: <code>_root</code> 휘하의 <code>ball_&lt;counter&gt;</code> 무비 클립 (<code>counter</code>의 값에 따라 지칭하는 무비 클립이 달라짐)<br>
+  <div id="code">_root[&quot;ball_&quot;+counter]._x = 11;</div><br>
+  - <code>_root.[&quot;ball_&quot;+counter]</code>의 x좌표를 <code>11</code>로 설정<br />
+  <div id="code">this[&quot;ball_&quot;+counter]._x = 11;</div><br>
+  - <code>this.[&quot;ball_&quot;+counter]</code>의 x좌표를 <code>11</code>로 설정<br />
+  <div id="code">aaa[&quot;ball_&quot;+counter]._x = 11;</div><br>
+  - <code>aaa["ball_"+counter]</code>의 x좌표를 <code>11</code>로 설정</div>
+  <h3>35. 무비 클립의 복제 및 삭제</h3><div style="padding-left:20px">
+  <div id="code">this.createEmptyMovieClip(&quot;aaa&quot;, 1);</div><br>
+  - 빈 <code>aaa</code> 무비 클립을 <code>1</code>에 생성 (<code>2</code>는 <code>1</code>을 덮음)<br />
+  <div id="code">this.duplicateMovieClip (aaa, bbb, 1);</div><br>
+  - <code>aaa</code> 무비 클립을 <code>1</code>에, <code>bbb</code>라는 이름으로 복사<br />
+  <div id="code">this.bbb.removeMovieClip();</div><br>
+  - 이 개체 휘하의 <code>bbb</code> 무비클립 삭제<br />
+  <div id="code">myClip._visible = true;</div><br>
+  - <code>myClip</code> 클립 보임<br />
+  <div id="code">myClip._visible = false;</div><br>
+  - <code>myClip</code>클립 감춤<br />
+  <div id="code">myClip.swapDepths(100);</div><br>
+  - 클립 깊이를 <code>100</code>으로 지정 (<code>2</code>는 <code>1</code>을 덮음)<br />
+  <div id="code">myClip.swapDepths(otherClip);</div><br>
+  - 클립 깊이를 <code>otherClip</code> 클립과 바꿈<br />
+  <div id="code">for (i=1; i&lt;=360; i++)  {<br />
+  <tab></tab>duplicateMovieClip (ins1, &quot;mc&quot;+i, i);<br />
+  <tab></tab>setProperty (&quot;mc&quot;+i, _x, random(300));<br />
+  <tab></tab>setProperty (&quot;mc&quot;+i, _y, random(300));<br />
+  <tab></tab>setProperty (&quot;mc&quot;+i, _alpha, random(300));<br />
+  <tab></tab>setProperty (&quot;mc&quot;+i, _xscale, 150);<br />
+  <tab></tab>setProperty (&quot;mc&quot;+i, _yscale, 150);<br />
+  };</div><br>
+  - <code>ins1</code>을 <code>mc1, mc2, ..., mc360</code>이라는 이름으로 360개 복사,<br>
+  각 클립을 (0~360 중 하나, 0~360 중 하나)으로 이동,<br>
+  각 클립의 알파값을 0~360 중 하나로 지정,<br>
+  각 클립을 가로로 <code>150</code>%, 세로로 <code>150</code>% 확대<br />
+  <div id="code">for (i=1; i&lt;=360; i++)  {<br />
+  <tab></tab>duplicateMovieClip (ins1, &quot;mc&quot;+i, i);<br />
+  <tab></tab>this[&quot;mc&quot; + i]._x = i;<br />
+  <tab></tab>this[&quot;mc&quot; + i]._y = i;<br />
+  };</div><br />
+  - <code>ins1</code>을 <code>mc1, mc2, ..., mc360</code>이라는 이름으로 360개 복사<br>
+  <code>mc1</code>을 (1, 1)로, <code>mc2</code>를 (2,2), ...로 해서 <code>mc360</code>까지 차례대로 (360, 360)까지 이동<br>
+  <div id="code">for (i=1; i&lt;=50; i++)  {<br />
+  <tab></tab>this[&quot;mc_&quot;+i]._x += 10;<br />
+  <tab></tab>this[&quot;mc_&quot;+i]._y += 10;<br />
+  };</div><br />
+  - <code>mc1</code>부터 <code>mc50</code>까지 각각x축, y축 방향으로 10씩 평행이동<br>
+  <div id="code">for (i=1; i&lt;=360; i++)  {<br />
   this[&quot;mc&quot; + i].removeMovieClip ();<br />
-  }; <br />
-  ----------------------------------------------------------------------------<br />
-  setProperty (&quot;mv&quot;, _x, 150);           // mv 무비클립 x좌표 속성 변경<br />
-  myMovieX = getProperty( mv, _x);       // mv 무비클립 x좌표 속성 읽기<br />
-  trace(myMovieX);<br />
-  ----------------------------------------------------------------------------<br />
-  _alpha              알파값(%)<br />
-  _currentframe       현재재생중인 프레임(#)<br />
-  _droptarget         드래그 앤드드롭 할때 놓는 타깃위치(name)<br />
-  _framesloaded       로드된 프레임수(#)<br />
-  _height             높이(#)<br />
-  _name               인스턴스(string)<br />
-  _rotation           회전값(#)<br />
-  _soundbuftime       사운드버퍼링 시간(기본값 5초:#)<br />
-  _totalframes        총프레임수(#)<br />
-  _url                다운로드한 URL(string)<br />
-  _visible            보인다,안보인다 (true,false)<br />
-  _width              가로길이(#)<br />
-  _x                  x좌표(#)<br />
-  _y                  y좌표(#)<br />
-  _xmouse             마우스x좌표(#)<br />
-  _ymouse             마우스y좌표(#)<br />
-  _xscale             x배율(%)<br />
-  _yscale             y배율(%)<br />
-  ----------------------------------------------------------------------------<br />
-  _root.a.play;                    //  메인에 있는 a무비클립  프레임 재생<br />
-  _root.a.stop;                    //  메인에 있는 a무비클립  프레임 중지<br />
-  play();                          //  stop으로 정지된 현재타임라인의 프레임 재생<br />
-  stop();                          //  현재타임라인의 프레임 중지<br />
-  gotoAndPlay(1);                  //  현재 Scene의 1프레임 재생<br />
-  gotoAndPlay(&quot;a&quot;);                //  현재 Scene의 Label명 a 재생<br />
-  gotoAndPlay(&quot;Scene 2&quot;, &quot;c&quot;);     //  Scene 2의 Label명 c 재생<br />
-  a.gotoAndPlay(1);                //  a무비클립의 1프레임 재생<br />
-  gotoAndStop(1);                  //  현재 Scene의 1프레임 중지<br />
-  nextScene();                     //  다음 장면의 프레임 1로 보내고 중지<br />
-  prevSecne();                     //  이전 장면의 프레임 1로 보내고 중지<br />
-  nextFrame();                     //  다음 프레임으로 보내고 중지<br />
-  prevFrame();                     //  이전 프레임으로 보내고 중지<br />
-  toggleHighQuality ();            //  저해상도와 고해상도 간을  전환<br />
-  updateAfterEvent();              //  화면을 갱신 (onClipEvent 핸들러 내에서만 사용)<br />
-  //  (onMouseDown,  onMouseUp,  onMouseMove)<br />
+  };</div><br>
+  - <code>mc1</code>부터 <code>mc360</code>까지 전부 삭제</div>
+  <h3>36. 무비 클립의 속성 변경</h3>
+  <div style="padding-left:20px">
+  <div id="code">setProperty (&quot;mv&quot;, _x, 150);</div><br />
+  - <code>mv</code>의 <code>_x</code> 속성(<code>mv</code>의 x좌표)을 <code>150</code>으로 변경(<code>mv</code>의 좌표를 <code>150</code>으로 이동)<br>
+  <div id="code">myMovieX = getProperty(mv, _x);</div><br>
+  - <code>myMovieX</code>에 <code>mv._x</code>(<code>mv</code>의 <code>_x</code>(x좌표) 속성)값 대입<br />
+  <div id="code">trace(myMovieX);</div><br>
+  - <code>myMovieX</code> 출력(결과는 <code>150</code>)</div>
+<h3>37. 무비 클립의 속성</h3>
+<div style="padding-left:20px">
+  범례: (%) - 0~100 사이의 실수(퍼센트), (#) - 모든 실수, (str) - 문자열, (bool) - <code>true</code> 또는 <code>false</code>, (name) - 이름<br>
+  <code>_alpha</code>: 알파값(%)<br />
+  <code>_currentframe</code>: 현재 프레임(#)<br />
+  <code>_droptarget</code>: 드래그 앤 드롭할 때 놓는 대상의 이름(name)<br />
+  <code>_framesloaded</code>: 로드된 프레임의 수(#)<br />
+  <code>_height</code>: 객체의 높이(#)<br />
+  <code>_name</code>: 객체의 이름(str)<br />
+  <code>_rotation</code>: 회전값(#)<br />
+  <code>_soundbuftime</code>: 사운드 버퍼링 시간(#, 초 단위, 기본값 <code>5</code>)<br />
+  <code>_totalframes</code>: 총 프레임수(#)<br />
+  <code>_url</code>: 이 플래시의 URL(str)<br />
+  <code>_visible</code>: 보이는 지 여부(bool)<br />
+  <code>_width</code>: 객체의 너비(#)<br />
+  <code>_x</code>: x좌표(#)<br />
+  <code>_y</code>: y좌표(#)<br />
+  <code>_xmouse</code>: 마우스의 x좌표(#)<br />
+  <code>_ymouse</code>: 마우스y좌표(#)<br />
+  <code>_xscale</code>: x배율(%)<br />
+  <code>_yscale</code>: y배율(%)<br /></div>
+  <h3>38. 타임라인 컨트롤</h3><div style="padding-left:20px">
+  <div id="code">_root.a.play;</div><br>
+  - <code>_root.a</code> 재생<br />
+  <div id="code">_root.a.stop;</div><br>
+  - <code>_root.a</code> 정지<br />
+  <div id="code">play();</div><br>
+  - 현재 타임라인 재생<br />
+  <div id="code">stop();</div><br>
+  - 현재 타임라인 정지<br />
+  <div id="code">gotoAndPlay(1);</div><br>
+  - 1프레임으로 이동 후 재생<br />
+  <div id="code">gotoAndPlay(&quot;a&quot;);</div><br>
+  - <code>"a"</code>(라벨명) 프레임으로 이동 후 재생<br />
+  <div id="code">gotoAndPlay(&quot;Scene 2&quot;, &quot;c&quot;);</div><br>
+  - <code>Scene 2</code>(장면명)의 <code>"c"</code> 프레임으로 이동 후 재생<br />
+  <div id="code">a.gotoAndPlay(1);</div><br>
+  - <code>a</code> 무비클립의 1프레임으로 이동 후 재생<br />
+  <div id="code">gotoAndStop(1);</div><br>
+  - 1프레임으로 이동 후 정지<br />
+  <div id="code">nextScene();</div><br>
+  - 다음 장면의 프레임 1로 이동하고 정지<br />
+  <div id="code">prevSecne();</div><br>
+  - 이전 장면의 프레임 1로 이동하고 정지<br />
+  <div id="code">nextFrame();</div><br>
+  - 다음 프레임으로 이동하고 정지<br />
+  <div id="code">prevFrame();</div><br>
+  - 이전 프레임으로 이동하고 정지<br />
+  <div id="code">toggleHighQuality();</div><br>
+  - 저해상도와 고해상도 간 토글<br />
+  <div id="code">updateAfterEvent();</div><br>
+  - 무비 클립 갱신 (<code>onClipEvent</code> 핸들러 내에서만 사용)<br />
+  (<code>onMouseDown</code>, <code>onMouseUp</code>, <code>onMouseMove</code>, <code>enterFrame</code> 등)<br /></div>
   ----------------------------------------------------------------------------<br />
   tellTarget (&quot;../a&quot;) { nextFrame(); } //  ../a 무비클립을 호출후 다음 프레임 재생<br />
   if (_framesloaded = 10) {  }         // 만약 무비의 10프레임이 로드되면<br />
