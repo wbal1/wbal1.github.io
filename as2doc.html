@@ -68,7 +68,7 @@
     <code>ppp</code> x 좌표를 <code>ooo</code> 에 지정.<br />
   </p>
 </div>
-  <h3>4. 반복문과 조건문</h3><div style="padding-left:20px">
+  <h3>4. 반복문과 조건문 (1)</h3><div style="padding-left:20px">
   <div id="code">for (a=1; a&lt;=10; a++) {<br><tab></tab>trace(&quot;a=&quot;+a);<br>};</div><br>
   - <code>for</code> 반복문<br />
   <div id="code">for (i=1; i&lt;=120;  i+=12) {<br><tab></tab>continue;<br>};</div>
@@ -667,57 +667,86 @@
   <div id="code">updateAfterEvent();</div><br>
   - 무비 클립 갱신 (<code>onClipEvent</code> 핸들러 내에서만 사용)<br />
   (<code>onMouseDown</code>, <code>onMouseUp</code>, <code>onMouseMove</code>, <code>enterFrame</code> 등)<br /></div>
-  ----------------------------------------------------------------------------<br />
-  tellTarget (&quot;../a&quot;) { nextFrame(); } //  ../a 무비클립을 호출후 다음 프레임 재생<br />
-  if (_framesloaded = 10) {  }         // 만약 무비의 10프레임이 로드되면<br />
-  ----------------------------------------------------------------------------<br />
-  // with 문<br />
-  for (i=0; i&lt;1000; i++) {<br />
-  with (aaa[i]) {<br />
-  _x = Math.floor(Math.random() * 500);<br />
-  _y = random(500);<br />
-  _rotation = random(360);<br />
-  }<br />
-  }<br />
-  // tellTarget 문 (속도빠름)<br />
-  for (i=0; i&lt;1000; i++) {<br />
-  tellTarget (aaa[i]) {<br />
-  _x = Math.floor(Math.random() * 500);<br />
-  _y = random(500);<br />
-  _rotation = random(360);<br />
-  }<br />
-  }<br />
-  ----------------------------------------------------------------------------<br />
-  aaa = new Array();              // 배열 초기화 <br />
-  aaa = new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;);   // 배열값 넣기<br />
-  bbb = [&quot;Sun&quot;,&quot;Mon&quot;,&quot;Tue&quot;];      // 배열값 넣기<br />
-  aaa[1] = &quot;abc&quot;;                 // 배열값 변환  ( &quot;2&quot; 가 &quot;abc&quot; 로 변환)<br />
-  aaa[0] = &quot;Jan&quot; ;  aaa[1] = &quot;Feb&quot; ;  aaa[2] = &quot;Mar&quot; ;         // 배열값 변환<br />
-  aaa[3] = &quot;Apr&quot;                  // 배열 추가 (aaa 값은  &quot;Jan,Feb,Mar,Apr&quot; )<br />
-  ccc = aaa.concat(bbb);          // 배열 합침 (ccc 값은  &quot;Jan,Feb,Mar,Apr,Sun,Mon,Tue&quot; )<br />
-  ddd = ccc.join(&quot;/&quot;);            // ,를  /로 변환  (ddd 값은  &quot;Jan/Feb/Mar/Apr/Sun/Mon/Tue&quot; )<br />
-  ddd = ccc.length;               // 배열값 갯수 (ddd 값은  7 )<br />
-  ddd = ccc.slice(2,4);           // 배열값 읽기 (ddd 값은  &quot;Mar,Apr&quot; )<br />
-  eee = ccc.push(&quot;z&quot;,&quot;zz&quot;);       // 배열추가후  배열값 갯수 (eee 값은  9 )<br />
-  //  (ccc 값은 &quot;Jan,Feb,Mar,Apr,Sun,Mon,Tue,z,zz&quot;   로 변함)<br />
-  eee = ccc.pop();                // 마지막 배열 분리후 값  (eee 값은  &quot;zz&quot; )<br />
-  //  (ccc 값은  &quot;Jan,Feb,Mar,Apr,Sun,Mon,Tue,z&quot;   로 변함)<br />
-  eee = ccc.shift();              // 첫번째 배열 분리후 값 (eee 값은  &quot;Jan&quot; )<br />
-  //  (ccc 값은  &quot;Feb,Mar,Apr,Sun,Mon,Tue,z&quot;   로 변함)<br />
-  eee = ccc.reverse();            // 배열값 순서바꿈 (eee 값은  &quot;z,Tue,Mon,Sun,Apr,Mar,Feb&quot; )<br />
-  //  (ccc 값도  &quot;z,Tue,Mon,Sun,Apr,Mar,Feb&quot;   로 변함)<br />
-  eee = ccc.splice(2,5,&quot;x&quot;,&quot;xx&quot;,&quot;xxx&quot;);  // 배열값 읽기후  변환  (eee 값은  &quot;Mon,Sun,Apr,Mar,Feb&quot; )<br />
-  //  (ccc 값은  &quot;z,Tue,x,xx,xxx&quot;   로 변함)<br />
-  eee = ccc.unshift(&quot;1&quot;,&quot;2&quot;);     // 첫번째 배열추가후  값  (eee 값은  &quot;7&quot; )<br />
-  //  (ccc 값은  &quot;1,2,z,Tue,x,xx,xxx&quot;   로 변함)<br />
-  sss = new Array(1,2,3);         // 숫자 배열값 넣기<br />
-  uuu = sss.toString();           // 문자로변환.  결과는 1,2,3<br />
-  vvv = uuu.toLowerCase();        // 대문자를  소문자로 변환.  원래 값은 변경되지 않음 <br />
-  vvv = uuu.toUpperCase();        // 소문자를  대문자로 변환.  원래 값은 변경되지 않음 <br />
-  xxx = Number(&quot;111&quot;)             //  숫자로 변환.   결과는 111<br />
+  <h3>39. 객체 원격 조정</h3><div style="padding-left:20px">
+  <div id="code">tellTarget (&quot;../a&quot;) { <br>
+    <tab></tab>nextFrame(); <br>
+    }</div><br>
+  - <code>../a</code> 무비클립을 (클립의) 다음 프레임으로 이동<br />
+  <div id="code">if (_framesloaded = 10) {<br>
+	<tab></tab>&lt;실행할 액션&gt;<br>
+	}</div><br>
+  - 만약 10프레임이 로드되면 액션 실행</div>
+  <h3>40. 속성 설정</h3>
+  <div style="padding-left:20px">
+  <code>with</code> 문<br />
+  <div id="code">for (i=0; i&lt;1000; i++) {<br />
+  <tab></tab>with (aaa[i]) {<br />
+  <tab></tab><tab></tab>_x = Math.floor(Math.random() * 500);<br />
+  <tab></tab><tab></tab>_y = random(500);<br />
+  <tab></tab><tab></tab>_rotation = random(360);<br />
+  <tab></tab>}<br />
+  }</div><br />
+  - <code>aaa[0]</code>부터 <code>aaa[999]</code>까지
+  (<code>Math.floor(Math.random() * 500)</code>((0~1 사이 무작위 실수 × 500)의 정수부), 0~500 사이 무작위 값)으로 이동하고 무작위로 각도를 변경<br>
+  <code>tellTarget</code> 문 (무비 클립 한정)<br />
+  <div id="code">for (i=0; i&lt;1000; i++) {<br />
+  <tab></tab>tellTarget (aaa[i]) {<br />
+  <tab></tab><tab></tab>_x = Math.floor(Math.random() * 500);<br />
+  <tab></tab><tab></tab>_y = random(500);<br />
+  <tab></tab><tab></tab>_rotation = random(360);<br />
+  <tab></tab>}<br />
+  }</div><br />
+  - 위의 <code>with</code>문과 같은 기능을 함</div>
+  <h3>41. 배열</h3>
+  <div style="padding-left:20px">
+  <div id="code">aaa = new Array();</div><br>
+  - 새 배열 <code>aaa</code>를 생성<br />
+  <div id="code">aaa = new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;);</div><br>
+  - 새 배열 <code>aaa</code>에 <code>&quot;1&quot;, &quot;2&quot;, &quot;3&quot;</code>을 넣어 생성<br />
+  <div id="code">bbb = [&quot;Sun&quot;,&quot;Mon&quot;,&quot;Tue&quot;];</div><br>
+  - <code>bbb</code>에 <code>[&quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;]</code>를 대입 (배열 생성)<br />
+  <div id="code">aaa[1] = &quot;abc&quot;;</div><br>
+  - <code>aaa[1]</code>에 <code>"abc"</code>를 대입 ( <code>&quot;2&quot;</code>가 <code>&quot;abc&quot;</code>로 바뀜)<br />
+  <div id="code">aaa[0] = &quot;Jan&quot;;  <br>
+    aaa[1] = &quot;Feb&quot;;<br>
+    aaa[2] = &quot;Mar&quot;;</div>
+  <br>
+  - <code>aaa[0~2]</code>를 <code>[&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;]</code>로 변경<br />
+  <div id="code">aaa[3] = &quot;Apr&quot;</div><br>
+  - 배열값 추가 (<code>aaa</code>는 <code>[&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;]</code>)<br />
+  <div id="code">ccc = aaa.concat(bbb);</div><br>
+  - <code>aaa</code> 뒤에 <code>bbb</code>를 합쳐 새로운 배열 <code>ccc</code>를 만듦 (<code>ccc</code>는 <code>[&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;]</code>)<br />
+  <div id="code">ddd = ccc.join(&quot;/&quot;);</div><br>
+  - 배열값들을 다 합쳐서 <code>/</code>로 구분한 값을 <code>ddd</code>에 대입 (<code>ddd</code> 값은 <code>&quot;Jan/Feb/Mar/Apr/Sun/Mon/Tue&quot;</code>)<br />
+  <div id="code">ddd = ccc.length;</div><br>
+  - <code>ddd</code>에 <code>ccc</code>의 원소 갯수를 대입 (<code>ddd</code> 값은 <code>7</code>)<br />
+  <div id="code">ddd = ccc.slice(2,4);</div><br>
+  - <code>ddd</code>에 <code>ccc[2~3]</code>로 이루어진 배열을 대입(<code>ddd</code>는 <code>[&quot;Mar&quot;, &quot;Apr&quot;]</code>)<br />
+  <div id="code">eee = ccc.push(&quot;z&quot;,&quot;zz&quot;);</div><br>
+  - <code>ccc</code>에 <code>[&quot;z&quot;, &quot;zzz&quot;]</code>를 추가 한 후 <code>eee</code>에 <code>ccc</code>의 원소 갯수를 대입 (<code>eee</code>는 <code>9</code>, <code>ccc</code>는 <code>[&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;z&quot;, &quot;zz&quot;]</code>)<br />
+  <div id="code">eee = ccc.pop();</div><br>
+  - <code>ccc</code>에서 마지막 값을 분리하고 그 값을 <code>eee</code>에 대입 (<code>eee</code>는 <code>&quot;zz&quot;</code>, <code>ccc</code>는 <code>[&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;z&quot;]</code>)<br />
+  <div id="code">eee = ccc.shift();</div><br>
+  - <code>ccc</code>에서 첫 번째 값을 분리하고 그 값을 <code>eee</code>에 대입(<code>eee</code>는 <code>&quot;Jan&quot;</code>, <code>ccc</code>는 <code>[&quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;z&quot;]</code>)<br />
+  <div id="code">eee = ccc.reverse();</div><br>
+  - <code>ccc</code>의 앞뒤를 바꿔 <code>eee</code>에 대입 (<code>eee</code> 값은 <code>[&quot;z&quot;, &quot;Tue&quot;, &quot;Mon&quot;, &quot;Sun&quot;, &quot;Apr&quot;, &quot;Mar&quot;, &quot;Feb&quot;]</code>, <code>ccc</code> 역시 똑같이 바뀜)<br />
+  <div id="code">eee = ccc.splice(2,5,&quot;x&quot;,&quot;xx&quot;,&quot;xxx&quot;);</div><br>
+  - <code>ccc[2~4]</code>를 <code>eee[2~4]</code>에, <code>ccc[2~4]</code>에 <code>[&quot;x&quot;, &quot;xx&quot;, &quot;xxx&quot;]</code>를 대입 (<code>eee</code>는 <code>[&quot;Mon&quot;, &quot;Sun&quot;, &quot;Apr&quot;, &quot;Mar&quot;, &quot;Feb&quot;]</code>, <code>ccc</code>는 <code>[&quot;z&quot;, &quot;Tue&quot;, &quot;x&quot;, &quot;xx&quot;, &quot;xxx&quot;]</code>)<br />
+  <div id="code">eee = ccc.unshift(&quot;1&quot;,&quot;2&quot;);</div><br>
+  - <code>ccc</code>에 첫번째부터 <code>[&quot;1&quot;, &quot;2&quot;]</code> 를 추가한 후  그 길이를 <code>eee</code>에 대입 (<code>eee</code>는 <code>7</code>, <code>ccc</code>는 <code>[&quot;1&quot;, &quot;2&quot;, &quot;z&quot;, &quot;Tue&quot;, &quot;x&quot;, &quot;xx, &quot;xxx&quot;]</code>)<br />
+  <div id="code">sss = new Array(1,2,3);</div><br>
+  - 새 배열 <code>sss</code>에 <code>[1, 2, 3]</code>을 넣어 선언<br />
+  <div id="code">uuu = sss.toString();</div><br>
+  - <code>sss</code>를 한 개의 문자열로 변환한 값을 <code>uuu</code>에 대입 (<code>uuu</code>는 <code>&quot;1,2,3&quot;</code>)<br />
+  <div id="code">vvv = uuu.toLowerCase();</div><br>
+  - <code>uuu</code>의 모든 대문자를 소문자로 변환하여 <code>vvv</code>에 대입 (원래 값은 변경되지 않음, <code>vvv</code>와 <code>uuu</code>의 값은 동일)<br />
+  <div id="code">vvv = uuu.toUpperCase();</div><br>
+  - <code>uuu</code>의 모든 소문자를 대문자로 변환하여 <code>vvv</code>에 대입 (원래 값은 변경되지 않음, <code>vvv</code>와 <code>uuu</code>의 값은 동일)<br />
+  <div id="code">xxx = Number(&quot;111&quot;)</div><br>
+  - <code>xxx</code>에 <code>&quot;111&quot;</code>을 숫자로 변환한 값을 대입 (<code>xxx</code>는 111)<br />
   xxx = Number(&quot;aaa&quot;)             //  숫자로 변환.   결과는 NaN<br />
   xxx = Number(true)              //  숫자로 변환.   결과는 1<br />
-  xxx = Number(false)             //  숫자로 변환.   결과는 0<br />
+  xxx = Number(false)             //  숫자로 변환.   결과는 0<br /></div>
   ----------------------------------------------------------------------------<br />
   cliparray = new Array();                     // 무비클립을 배열로 저장하기<br />
   for (a=1; a&lt;=3; a++)  {<br />
