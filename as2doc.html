@@ -463,7 +463,7 @@
   };</div><br>
   - <code>_root.box</code>를<br>
   (1, 1)로 움직이고<br>
-  10픽셀 굵기, <span style="color: #0c0;"><code>#00CC00</code></span> 색으로 지정함<br>
+  10픽셀 굵기, <code><span style="color: #0c0;">#00CC00</span></code> 색으로 지정함<br>
   <code>_root.box</code>를 (<code>Stade.width</code>, 1), (<code>Stade.width</code>, <code>Stage.height</code>),(1, <code>Stage.height</code>), (1, 1) 순서대로 이동하면서 선 그리기</div>
   <h3>28. 화면</h3><div style="padding-left:20px">
   <div id="code">fscommand(&quot;showmenu&quot;, true);</div><br>
@@ -771,45 +771,77 @@
   <div id="code">tet=&quot;가나다&quot;;<br>
   myString = new String(tet);</div><br>
   - <code>tet</code>에 <code>가나다</code>를 넣고, 변수 <code>tet</code>를 <code>myString</code>에 넣기<br />
-  text0=myString.charAt(0);                          // text0 값은 &quot;가&quot;  -  1개 읽기<br />
-  text1=myString.charAt(1);                          // text1 값은 &quot;나&quot;  -  1개 읽기<br />
-  text2=myString.charAt(2);                          // text2 값은 &quot;다&quot;  -  1개 읽기<br />
-  text3=myString.concat(&quot;라마&quot;,&quot;바사&quot;,&quot;다&quot;);         // text3 값은 &quot;가나다라마바사다&quot;  -  추가<br />
-  text4=text3.substr(2,4);                           // text4 값은 &quot;다라마바&quot;  -  여러개 읽기<br />
-  text5=text3.substring(2,4);                        // text5 값은 &quot;다라&quot;  -  여러개 읽기<br />
-  text6=text3.slice(2,4);                            // text6 값은 &quot;다라&quot;  -  여러개 읽기<br />
-  text7=myString.charCodeAt(1);                      // text7 값은  45208  - 문자를 코드화<br />
-  text8=&quot;a&quot; + String.fromCharCode(64) + &quot;m&quot;;         // text8 값은 &quot;a@m&quot;  - 코드를 문자화<br />
-  text9= text3.indexOf(&quot;다&quot;);                        // text9 값은 2  -  문자위치<br />
-  text10= text3.lastIndexOf(&quot;다&quot;);                   // text10 값은 7  -  마지막 문자위치<br />
-  text11= text3.length;                              // text11 값은 8  -  문자길이<br />
-  text12= text3.split(&quot;나&quot;);                         // text12 값은 &quot;가,다라마바사다&quot;  -  문자분리<br />
-  text13= text6.concat(text3);                       // text13 값은 &quot;다라가나다라마바사다&quot;  -  문자합침<br />
-  text14= text13.substr((text13.length-1),1);        // text14 값은 &quot;다&quot;  -  마지막 문자 읽기<br />
-  sss = myDate.toString();  day = sss.substring(0,3);     // 문자로변환 </div>
-  ----------------------------------------------------------------------------<br />
-  // aaa 문장을 bbb 배열로 저장하기                  // 문장을 배열로 저장하기<br />
-  // 결과는 bbb[0]=&quot;a&quot; bbb[1]=&quot;b&quot; bbb[2]=&quot;c&quot; bbb[3]=&quot;d&quot; bbb[4]=&quot;e&quot;<br />
-  aaa = &quot;a b c d e&quot;;<br />
+  <div id="code">text0=myString.charAt(0);</div><br>
+	- <code>text0</code> 값은 <code>&quot;가&quot;</code> - 문자 1개(0번) 읽기<br />
+  <div id="code">text1=myString.charAt(1);</div><br>
+	- <code>text1</code> 값은 <code>&quot;나&quot;</code> - 문자 1개(1번) 읽기<br />
+  <div id="code">text2=myString.charAt(2);</div><br>
+	- <code>text2</code> 값은 <code>&quot;다&quot;</code> - 문자 1개(2번) 읽기<br />
+  <div id="code">text3=myString.concat(&quot;라마&quot;,&quot;바사&quot;,&quot;다&quot;);</div><br>
+	- <code>text3</code> 값은 <code>&quot;가나다라마바사다&quot;</code> - 문자열 3개(<code>라마</code>, <code>바사</code>, <code>다</code> 추가)<br />
+  <div id="code">text4=text3.substr(2,4);</div><br>
+	- <code>text4</code> 값은 <code>&quot;다라마바&quot;</code> - 문자 여러 개(2개, 2번·4번) 읽기<br />
+  <div id="code">text5=text3.substring(2,4);</div><br>
+	- <code>text5</code> 값은 <code>&quot;다라&quot;</code> - 문자 여러(2개, 2·4번)개 읽기<br />
+  <div id="code">text6=text3.slice(2,4);</div><br>
+	- <code>text6</code> 값은 <code>&quot;다라&quot;</code> - 문자 여러(2개, 2·4번)개 읽기<br />
+  <div id="code">text7=myString.charCodeAt(1);</div><br>
+	- <code>text7</code> 값은 <code>45208</code> - 문자를 코드화(<code>System.useCodepage</code>가 꺼져 있는 경우)<br />
+  <div id="code">text8=&quot;a&quot; + String.fromCharCode(64) + &quot;m&quot;;</div><br>
+	- <code>text8</code> 값은 <code>&quot;a@m&quot;</code> - 코드를 문자로 변환<br />
+  <div id="code">text9= text3.indexOf(&quot;다&quot;);</div><br>
+	- <code>text9</code> 값은 <code>2</code> - 문자 <code>다</code>의 첫 위치<br />
+  <div id="code">text10= text3.lastIndexOf(&quot;다&quot;);</div><br>
+	- <code>text10</code> 값은 <code>7</code> - 문자 <code>다</code>의 마지막 위치<br />
+  <div id="code">text11= text3.length;</div><br>
+	- <code>text11</code> 값은 <code>8</code> -  문자의 길이<br />
+  <div id="code">text12= text3.split(&quot;나&quot;);</div><br>
+	- <code>text12</code> 값은 <code>&quot;가,다라마바사다&quot;</code> - 문자 분리(<code>나</code> 분리)<br />
+  <div id="code">text13= text6.concat(text3);</div><br>
+	- <code>text13</code> 값은 <code>&quot;다라가나다라마바사다&quot;</code> - 문자합침 (<code>text6</code>과 <code>text3</code> 결합)<br />
+  <div id="code">text14= text13.substr((text13.length-1),1);</div><br>
+	- <code>text14</code> 값은 <code>&quot;다&quot;</code> - 마지막 문자 읽기<br />
+  <div id="code">sss = myDate.toString();<br>
+	day = sss.substring(0,3);</div><br>
+	- 문자로 변환 </div>
+  <h3>44. 배열 (3)</h3><div style="padding-left:20px">
+  문장을 배열로 저장하기<br />
+  <div id="code">aaa = &quot;a b c d e&quot;;<br />
   aaalen = aaa.length;<br />
   bbb = new Array();<br />
-  for (a=0; a&lt;=aaalen; a++)  { bbb[a] = &quot;&quot;;  };<br />
-  bbbno = 0;   bbbchr = &quot;&quot;;<br />
+  for (a=0; a&lt;=aaalen; a++)  { <br>
+  <tab></tab>bbb[a] = &quot;&quot;;  <br>
+  };<br />
+  bbbno = 0;   <br>
+  bbbchr = &quot;&quot;;<br />
   for (a=0; a&lt;=aaalen; a++)  {<br />
-  if ( aaa.charAt(a) == &quot; &quot; ) {  bbb[bbbno] = bbbchr;   bbbno += 1;   bbbchr = &quot;&quot;; <br />
-  } else { bbbchr += aaa.charAt(a);   };<br />
+  <tab></tab>if (aaa.charAt(a) == &quot; &quot;) { <br>
+  <tab></tab><tab></tab>bbb[bbbno] = bbbchr;   <br>
+  <tab></tab><tab></tab>bbbno += 1;   <br>
+  <tab></tab><tab></tab>bbbchr = &quot;&quot;; <br />
+  <tab></tab>} else { <br>
+  <tab></tab><tab></tab>bbbchr += aaa.charAt(a);   <br>
+  <tab></tab>};<br />
   };<br />
-  for (a=0; a&lt;=bbbno; a++)  {  trace( &quot;*&quot; + bbb[a] + &quot;*&quot; )   }; <br />
-  ----------------------------------------------------------------------------<br />
-  for (a=1; a&lt;=22; a++) {                                       // 텍스트 필드 글자속성<br />
-  this[&quot;k&quot;+(a)].textColor=0xff0000;<br />
-  this[&quot;k&quot;+(a)].border=true;<br />
-  this[&quot;k&quot;+(a)].borderColor=0xff0000;<br />
-  this[&quot;k&quot;+(a)].background=true;<br />
-  this[&quot;k&quot;+(a)].backgroundColor=0xffffff;<br />
-  };<br />
-  ----------------------------------------------------------------------------<br />
-  TextField.removeTextField();                                   // 텍스트 필드 삭제<br />
+  for (a=0; a&lt;=bbbno; a++)  {  <br>
+  <tab></tab>trace( &quot;*&quot; + bbb[a] + &quot;*&quot; )   <br>
+  };</div><br />
+  - <code>aaa</code>를 배열 <code>bbb</code>에 저장(<code>bbb</code>는 <code>{&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;}</code>) 및 <code>*&lt;bbb[0]&gt;*</code>부터 <code>*&lt;bbb[bbbno-1]&gt;*</code>까지 출력</div>
+<h3>45. 텍스트 필드 (3)</h3><div style="padding-left:20px">
+  텍스트 필드 글자속성<br>
+	<div id="code">for (a=1; a&lt;=22; a++) {<br />
+  <tab></tab>this[&quot;k&quot;+(a)].textColor=0xff0000;<br />
+  <tab></tab>this[&quot;k&quot;+(a)].border=true;<br />
+  <tab></tab>this[&quot;k&quot;+(a)].borderColor=0xff0000;<br />
+  <tab></tab>this[&quot;k&quot;+(a)].background=true;<br />
+  <tab></tab>this[&quot;k&quot;+(a)].backgroundColor=0xffffff;<br />
+  };</div><br />- <code>k[1]</code>부터 <code>k[22]</code>까지 다음과 같이 설정:<br />
+  텍스트 색상을 <code><span style="color: #f00;">#FF0000</span></code>으로 설정<br>
+	경계선을 활성화, 색상을 <code><span style="color: #f00;">#FF0000</span></code>으로 설정<br>
+	배경을 활생화, 색상을 <code><span style="color: #fff;">#FFFFFF</span></code>로 설정</div>
+  <h3>46. 텍스트 필드 (4)</h3>
+  <div id="code">TextField.removeTextField();</div><br>
+	- <code>TextField</code> 텍스트 필드 삭제<br />
   ----------------------------------------------------------------------------<br />
   createTextField (&quot;instanceName&quot;, depth, x, y, width, height)   // 텍스트 필드 생성<br />
   instanceName 새 텍스트 필드의 인스턴스 이름<br />
