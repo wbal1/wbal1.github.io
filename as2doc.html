@@ -839,13 +839,14 @@
   텍스트 색상을 <code><span style="color: #f00;">#FF0000</span></code>으로 설정<br>
 	경계선을 활성화, 색상을 <code><span style="color: #f00;">#FF0000</span></code>으로 설정<br>
 	배경을 활생화, 색상을 <code><span style="color: #fff;">#FFFFFF</span></code>로 설정</div>
-  <h3>46. 텍스트 필드 (4)</h3>
+  <h3>46. 텍스트 필드 (4)</h3><div style="padding-left:20px">
   <div id="code">TextField.removeTextField();</div><br>
-	- <code>TextField</code> 텍스트 필드 삭제<br />
-  ----------------------------------------------------------------------------<br />
-  createTextField (&quot;instanceName&quot;, depth, x, y, width, height)   // 텍스트 필드 생성<br />
-  instanceName 새 텍스트 필드의 인스턴스 이름<br />
-  depth 새 텍스트 필드의 깊이를 지정하는 양의 정수 (2 는 1를  screen over)<br />
+	- <code>TextField</code> 텍스트 필드 삭제</div>
+  <h3>47. 텍스트 필드 (5)</h3><div style="padding-left:20px">
+  <div id="code">createTextField (&quot;instanceName&quot;, depth, x, y, width, height)</div><br>
+	- 텍스트 필드 생성<br />
+  <code>instanceName</code>: 새 텍스트 필드의 인스턴스 이름<br />
+  <code>depth</code> 새 텍스트 필드의 깊이를 지정하는 양의 정수 (2 는 1를  screen over)<br />
   x 새 텍스트 필드의 x 좌표를 지정하는 정수<br />
   y 새 텍스트 필드의 y 좌표를 지정하는 정수<br />
   width 새 텍스트 필드의 넓이를 지정하는 양의 정수<br />
@@ -900,7 +901,7 @@
   myformat.underline = false;                  // (텍스트에 밑줄이 그어졌는지 여부)<br />
 myformat.url = &quot;&quot;;                           // (텍스트가 링크되는 URL)</p>
 <p class="font1">instanceName.text = &quot;this is my test field \r aaa&quot; + &quot;bbb&quot;;    // 텍스트에 내용 넣기<br />
-  instanceName.setTextFormat(myformat);        //  텍스트 필드의 TextFormat  변경<br />
+  instanceName.setTextFormat(myformat);        //  텍스트 필드의 TextFormat  변경</div>
   ----------------------------------------------------------------------------<br />
   instanceName.restrict = &quot;A-Z 0-9&quot;;           // 대문자, 공백, 숫자만 입력할 수 있음<br />
   instanceName.restrict = &quot;^a-z&quot;;              // 소문자를 제외한 모든 문자를 입력<br />
