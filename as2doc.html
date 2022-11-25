@@ -846,12 +846,13 @@
   <div id="code">createTextField (&quot;instanceName&quot;, depth, x, y, width, height)</div><br>
 	- 텍스트 필드 생성<br />
   <code>instanceName</code>: 새 텍스트 필드의 인스턴스 이름<br />
-  <code>depth</code> 새 텍스트 필드의 깊이를 지정하는 양의 정수 (2 는 1를  screen over)<br />
-  x 새 텍스트 필드의 x 좌표를 지정하는 정수<br />
-  y 새 텍스트 필드의 y 좌표를 지정하는 정수<br />
-  width 새 텍스트 필드의 넓이를 지정하는 양의 정수<br />
-  height 새 텍스트 필드의 높이를 지정하는 양의 정수<br />
-  instanceName.type = &quot;dynamic&quot;;               // 텍스트 필드의 기본 속성  (dynamic 또는 input)<br />
+  <code>depth</code>: 새 텍스트 필드의 깊이를 지정하는 양의 정수 (<code>2</code>는 <code>1</code>을 덮음)<br />
+  <code>x</code>: 새 텍스트 필드의 x좌표를 지정하는 실수<br />
+  <code>y</code>: 새 텍스트 필드의 y좌표를 지정하는 실수<br />
+  <code>width</code>: 새 텍스트 필드의 넓이를 지정하는 0 이상의 실수<br />
+  <code>height</code>: 새 텍스트 필드의 높이를 지정하는 0 이상의 실수<br />
+  <div id="code">instanceName.type = &quot;dynamic&quot;;</div><br>
+	- 텍스트 필드의 기본 속성  (dynamic 또는 input)<br />
   instanceName.autoSize = &quot;false&quot;;             // (글자수에 맞게 테두리 크기 자동 조절 true false center right)<br />
   instanceName.border = false;                 // (테두리) <br />
   instanceName.borderColor = 0xff0000;         // (테두리 색상) <br />
