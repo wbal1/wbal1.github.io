@@ -868,72 +868,124 @@
     - 글자 색상<br />
     <div id="code">instanceName.multiline = false;</div><br>
     - 한줄(<code>false</code>) 또는 여러줄(<code>true</code>)<br />
-    instanceName.selectable = true;              // (텍스트 필드를 선택할 수 있는지 여부)<br />
-    instanceName.maxChars = null;                // (사용자가 입력할 수 있는 최대 문자 수) (null 이면 무한대)<br />
-    instanceName.length = 0;                     // (글자 수)<br />
-    instanceName._name = &quot;&quot;;                     // (인스턴스 이름)<br />
-    instanceName.variable = &quot;&quot;;                  // (변수 이름)<br />
-    instanceName.html = false;                   // (html 태그 사용 여부)<br />
-    instanceName.htmlText = &quot;&quot;;                  // (html 태그)<br />
-    instanceName.wordWrap = true;                // (자동 줄바꿈 )<br />
-    instanceName._x = 0;                         // (x 좌표)<br />
-    instanceName._y = 0;                         // (y 좌표)<br />
-    instanceName._width  = 0;                    // (넓이)<br />
-    instanceName._height = 0;                    // (높이)<br />
-    instanceName._xscale = 100;                  // (넓이 조절 %)<br />
-    instanceName._yscale = 100;                  // (높이 조절 %)<br />
-    instanceName.restrict = &quot;&quot;;                  // (입력할 수 있는 문자 세트)<br />
-    instanceName.embedFonts = false;             // (장치 글꼴 사용 여부)<br />
-    instanceName.password = false;               // (****표시)<br />
-    instanceName._visible =  true;               // (보임/안보임.  false로 설정된 텍스트 필드는 사용할 수 없음)<br />
-    instanceName.scroll = 0;                     // (현재 스크롤 수직 위치)<br />
-    instanceName.hscroll = 0;                    // (현재 스크롤 수평 위치)<br />
-    instanceName.maxscroll = 0;                  // (TextField.scroll의 최대값)<br />
-    instanceName.maxhscroll = 0;                 // (TextField.hscroll의 최대값)<br />
-    instanceName.text = &quot;&quot;;                      // (글자)</h3>
-    </p>
-  </p>
-  <p class="font1">myformat = new TextFormat();                 // 텍스트 필드의 기본 TextFormat 속성<br />
-  myformat.align = &quot;left&quot;;                     // (단락의 정렬 )<br />
-  myformat.blockIndent  = 0;                   // (왼쪽 여백에서 블록 들여쓰기. 포인트 단위)<br />
-  myformat.indent  = 0;                        // (왼쪽 여백에서 단락 들여쓰기. 각 단락의 첫 줄에만 적용)<br />
-  myformat.bold = false;                       // (텍스트가 굵은체로 표시되는지 여부)<br />
-  myformat.bullet = false;                     // (텍스트가 불릿 목록에 있는지 여부 * 표시)<br />
-  myformat.color  = 0x000000;                  // (텍스트의 색상)<br />
-  myformat.font = &quot;Times New Roman&quot;;           // (텍스트의 글꼴)<br />
-  myformat.italic = false;                     // (텍스트가 기울임체로 표시되는지 여부)<br />
-  myformat.leading  = 0;                       // (줄 사이의 행간 세로 간격)<br />
-  myformat.leftMargin  = 0;                    // (단락의 왼쪽 여백 포인트 단위)<br />
-  myformat.rightMargin  = 0;                   // (단락의 오른쪽 여백 포인트 단위)<br />
-  myformat.tabStops = [];                      // (사용자 정의 탭 중지를 지정 // (empty array))<br />
-  myformat.target = &quot;&quot;;                        // (브라우저에서 하이퍼링크가 표시되는 창)<br />
-  myformat.size = 12;                          // (텍스트의 크기)<br />
-  myformat.underline = false;                  // (텍스트에 밑줄이 그어졌는지 여부)<br />
-myformat.url = &quot;&quot;;                           // (텍스트가 링크되는 URL)</p>
-<p class="font1">instanceName.text = &quot;this is my test field \r aaa&quot; + &quot;bbb&quot;;    // 텍스트에 내용 넣기<br />
-  instanceName.setTextFormat(myformat);        //  텍스트 필드의 TextFormat  변경</div>
-  ----------------------------------------------------------------------------<br />
-  instanceName.restrict = &quot;A-Z 0-9&quot;;           // 대문자, 공백, 숫자만 입력할 수 있음<br />
-  instanceName.restrict = &quot;^a-z&quot;;              // 소문자를 제외한 모든 문자를 입력<br />
-  instanceName.restrict = &quot;A-Z^Q&quot;;             // 대문자 Q를 제외한 대문자만 입력<br />
-  instanceName.restrict = &quot;\\-&quot;                // 마이너스 부호 (-) 만 입력<br />
-  ----------------------------------------------------------------------------<br />
-  aa.html = true;                              // html 태그 사용 (b)<br />
-  aa.htmlText = &quot;&lt;b&gt; this is bold text &lt;/b&gt;&quot;;<br />
-  ----------------------------------------------------------------------------<br />
-  aa.html = true;                              // html 태그 사용 (table)<br />
-  aa.htmlText = &quot;&quot;;<br />
+    <div id="code">instanceName.selectable = true;</div><br>
+	- 텍스트 필드를 선택할 수 있는지 여부<br />
+    <div id="code">instanceName.maxChars = null;</div><br>
+	- 사용자가 입력할 수 있는 최대 문자 수(<code>null</code>이면 무한대)<br />
+    <div id="code">instanceName.length = 0;</div><br>
+	- 글자 수를 <code>0</code>으로<br />
+    <div id="code">instanceName._name = &quot;&quot;;</div><br>
+	- 인스턴스 이름(값 대입)<br />
+    <div id="code">instanceName.variable = &quot;&quot;;</div><br>
+	- 변수 이름(값 대입)<br />
+    <div id="code">instanceName.html = false;</div><br>
+	- HTML 태그 사용 여부<br />
+    <div id="code">instanceName.htmlText = &quot;&quot;;</div><br>
+    - HTML 텍스트<br />
+    <div id="code">instanceName.wordWrap = true;</div><br>
+    - 자동 줄바꿈 여부<br />
+    <div id="code">instanceName._x = 0;<br>
+	instanceName._y = 0;</div><br>
+	- x값과 y값<br />
+    <div id="code">instanceName._width  = 0;<br />
+    instanceName._height = 0;</div><br>
+	- 너비와 높이<br />
+    <div id="code">instanceName._xscale = 100;<br />
+    instanceName._yscale = 100;</div><br>
+	- 너비와 높이 조절 (백분율)<br />
+    <div id="code">instanceName.restrict = &quot;&quot;;</div><br>
+	- 입력할 수 있는 문자 세트 (후술)<br />
+    <div id="code">instanceName.embedFonts = false;</div><br>
+	- 장치 글꼴 사용 여부(<code>true</code>가 미사용, <code>false</code>가 사용)<br />
+    <div id="code">instanceName.password = false;</div><br>
+	- <code>****</code> 표시<br />
+    <div id="code">instanceName._visible = true;</div><br>
+    - 가시성 (<code>false</code>로 설정된 텍스트 필드는 사용할 수 없음)<br />
+    <div id="code">instanceName.scroll = 0;</div><br>
+	- 현재 스크롤 수직 위치<br />
+    <div id="code">instanceName.hscroll = 0;</div><br>
+    - 현재 스크롤 수평 위치<br />
+    <div id="code">instanceName.maxscroll = 0;</div><br>
+	- <code>TextField.scroll</code>의 최댓값<br />
+    <div id="code">instanceName.maxhscroll = 0;</div><br>
+    - <code>TextField.hscroll</code>의 최댓값<br />
+    <div id="code">instanceName.text = &quot;&quot;;</div><br>
+    - 필드에 들어갈 글자<br>
+    <div id="code">instanceName.text = &quot;this is my test field \r aaa&quot; + &quot;bbb&quot;;</div><br>
+	- 텍스트에 내용(<code>this is my test field \r aaabbb</code>) 넣기<br />
+  <div id="code">instanceName.setTextFormat(myformat);</div><br>
+	- 텍스트 필드의 속성을 <code>myFormat</code>으로 변경<br>
+  <div id="code">myformat = new TextFormat();</div><br>
+  	- 새 <code>TextFormat</code>(텍스트 필드의 속성) 생성<br />
+  <div id="code">myformat.align = &quot;left&quot;;</div><br>
+	- 단락의 정렬<br />
+  <div id="code">myformat.blockIndent = 0;</div><br>
+  - 왼쪽 여백에서 블록 들여쓰기 (포인트)<br />
+  <div id="code">myformat.indent = 0;</div><br>
+	- 왼쪽 여백에서 단락 들여쓰기 (각 단락의 첫 줄에만 적용)<br />
+  <div id="code">myformat.bold = false;</div><br>
+	- 텍스트가 볼드체로 표시되는지 여부<br />
+  <div id="code">myformat.bullet = false;</div><br>
+	- 텍스트가 불릿(*표시) 목록에 있는지 여부<br />
+  <div id="code">myformat.color  = 0x000000;</div><br>
+	- 텍스트의 색상<br />
+  <div id="code">myformat.font = &quot;Times New Roman&quot;;</div><br>
+  	- 텍스트의 글꼴<br />
+  <div id="code">myformat.italic = false;</div><br>
+  	- 텍스트가 이탤릭체로 표시되는지 여부<br />
+  <div id="code">myformat.leading = 0;</div><br>
+	- 줄 사이의 행간 세로 간격<br />
+  <div id="code">myformat.leftMargin = 0;<br>
+	myformat.rightMargin = 0;</div><br>
+	- 단락의 왼쪽, 오른쪽 여백 (포인트)<br />
+  <div id="code">myformat.tabStops = [];</div><br>
+	- 사용자 정의 탭 중지를 지정 (empty array)<br />
+  <div id="code">myformat.target = &quot;&quot;;</div><br>
+	- 브라우저에서 하이퍼링크가 표시되는 창<br />
+  <div id="code">myformat.size = 12;</div><br>
+	- 텍스트의 크기<br />
+  <div id="code">myformat.underline = false;</div><br>
+	- 텍스트에 밑줄이 그어졌는지 여부<br />
+<div id="code">myformat.url = &quot;&quot;;</div><br>
+	- 텍스트가 링크되는 URL<br></div>
+  <h3><li>텍스트 필드에 입력할 수 있는 문자 세트</li></h3><div style="padding-left:20px">
+  <div id="code">instanceName.restrict = &quot;A-Z 0-9&quot;;</div><br>
+	- 대문자, 공백(<code> </code>), 숫자만 입력할 수 있음<br />
+  <div id="code">instanceName.restrict = &quot;^a-z&quot;;</div><br>
+	- 소문자를 제외한 모든 문자를 입력<br />
+  <div id="code">instanceName.restrict = &quot;A-Z^Q&quot;;</div><br>
+  	- <code>Q</code>를 제외한 대문자만 입력<br />
+  <div id="code">instanceName.restrict = &quot;\\-&quot;</div><br>
+	- <code>-</code> 만 입력</div>
+  <h3><li>텍스트 필드에서 HTML 사용 (1)</li></h3><div style="padding-left:20px">
+  <div id="code">aa.html = true;</div><br>
+	- HTML 태그 사용 - 볼드체 텍스트<br />
+  <div id="code">aa.htmlText = &quot;&lt;b&gt; this is bold text &lt;/b&gt;&quot;;</div><br></div>
+  <h3><li>텍스트 필드에서 HTML 사용 (2)</li></h3><div style="padding-left:20px">
+  <div id="code">aa.html = true;</div><br>
+  - HTML 태그 사용 - 표 사용<br />
+  <div id="code">aa.htmlText = &quot;&quot;;<br />
   aa.htmlText += &quot; &lt;table id='ttt' border='1'&gt; &lt;tr&gt; &lt;td&gt; 테이블의 텍스트1 &lt;/td&gt; &quot;;<br />
   aa.htmlText += &quot; &lt;td&gt; 테이블의 텍스트2 &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &quot;;<br />
-  aa.htmlText += &quot; &lt;a href=' ' &gt; 이동 하기 &lt;/a&gt; &quot;;<br />
-  ----------------------------------------------------------------------------<br />
-  function Func(arg){  trace (&quot;You clicked me!  Argument was &quot;+arg);   }; <br />
-  aa.html = true;                              // html 태그 사용 (asfunction)<br />
-  aa.htmlText = &quot;&lt;A HREF=\&quot;asfunction:Func,Foo \&quot;&gt; Click &lt;/A&gt;&quot;; <br />
-  ----------------------------------------------------------------------------<br />
-  on (release) {TextField.hscroll += 1; }      // 텍스트를 수평으로 스크롤<br />
-  on (release) {TextField.scroll += 1;  }      // 텍스트를 수직으로 스크롤<br />
-  x = TextField.maxscroll;                     // 총 줄수를 표시<br />
+  aa.htmlText += &quot; &lt;a href=' ' &gt; 이동 하기 &lt;/a&gt; &quot;;</div><br></div>
+  <h3><li>HTML에서 ActionScript 함수 사용</li></h3><div style="padding-left:20px">
+  <div id="code">function Func(arg) {<br>
+  <tab></tab>trace (&quot;You clicked me! Argument was &quot; + arg);<br>
+  };<br>
+  aa.html = true;<br />
+  aa.htmlText = &quot;&lt;a href=&quot;asfunction:Func, Foo&quot;&gt; Click &lt;/a&gt;&quot;; </div><br />
+  - <code>Func</code> 함수를 통해 <code>You clicked me! Argument was Foo</code>를 출력하는 링크 <code>Click</code></div>
+  <h3><li>텍스트 필드 조정</li></h3><div style="padding-left:20px">
+  <div id="code">on (release) {<br>
+	<tab></tab>TextField.hscroll++;<br>
+	}</div><br>
+	- 텍스트를 수평으로 스크롤<br />
+  <div id="code">on (release) {<br>
+	<tab></tab>TextField.scroll++;<br>
+    }</div><br>
+	- 텍스트를 수직으로 스크롤<br />
+  <div id="code">x = TextField.maxscroll;</div><br>
+  - 총 줄 수를 표시</div>
   ----------------------------------------------------------------------------<br />
   TextField.onSetFocus = function(){           // 텍스트 입력 (텍스트필드 속성이 입력일때)<br />
   this.text=&quot; input data &quot;;                 // 마우스 클릭시 내용 자동 입력<br />
