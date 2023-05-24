@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* AS2 (빨간색) */
+.as2box {
+	width: 400px;
+	height: 300px;
+	margin: 0 auto;
+	border: 1px solid;
+	border-radius: 20px;
+	border-color: #800;
+	background-color: #FFB0B0;
+	float: left;
+	margin-right: 20px;
+	/* 가운데 정렬 */
+	position: relative;
+	left: 50%;
+}
+.as2title {
+	height: 40px;
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+	background-color: #A00;
+	border-radius: 20px 20px 0 0;
+	/* 가운데 정렬 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* JS (초록색) */
+.jsbox {
+	width: 400px;
+	height: 300px;
+	margin: 0 auto;
+	border: 1px solid;
+	border-radius: 20px;
+	border-color: #080;
+	background-color: #B0FFB0;
+	float: left;
+	margin-right: 20px;
+	/* 가운데 정렬 */
+	position: relative;
+	left: 50%;
+}
+.jstitle {
+	height: 40px;
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+	background-color: #0A0;
+	border-radius: 20px 20px 0 0;
+	/* 가운데 정렬 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* C (파란색) */
+.cbox {
+	width: 400px;
+	height: 300px;
+	margin: 0 auto;
+	border: 1px solid;
+	border-radius: 20px;
+	border-color: #008;
+	background-color: #B0B0FF;
+	float: left;
+	margin-right: 20px;
+	/* 가운데 정렬 */
+	position: relative;
+	left: 50%;
+}
+.ctitle {
+	height: 40px;
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+	background-color: #00A;
+	border-radius: 20px 20px 0 0;
+	/* 가운데 정렬 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* 가운데 정렬 */
+.center {
+	float: right;
+	position: relative;
+	left: -50%;
+}
+@media (prefers-color-scheme: dark) {
+	.as2box {
+		border-color: #FFD0D0;
+		color: black;
+	}
+	.jsbox {
+		border-color: #D0FFD0;
+		color: black;
+	}
+	.cbox {
+		border-color: #D0D0FF;
+		color: black;
+	}
+}
