@@ -14,19 +14,19 @@
   <p><a href="https://blog.naver.com/0223storm/90065932584">원글 출처</a>&nbsp;&nbsp;&nbsp;<a href="https://wbal1.github.io/index">홈으로</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;본 페이지는 1920px 너비의 브라우저 환경에 최적화되어 있습니다.</p>
 </div>
 <hr />
-<h3>1. 주석</h3><div style="padding-left:20px">
-  <p><div id="code">// .....</div><br />
+<ol><h3><li>주석</li></h3><div style="padding-left:20px">
+  <div id="code">// .....</div><br />
   주석 기호 (한 줄)<br />
   <div id="code">/* ..... */</div><br />
   주석 기호 (여러 줄)</div>
-<h3>2. 코드</h3><div style="padding-left:20px">
+<h3><li>코드</li></h3><div style="padding-left:20px">
   <div id="code">\r</div><br />리턴 코드  (ASC 13)<br />
   <div id="code">\n</div><br />줄바꿈 코드 (ASC 10)<br />
   <div id="code">\r\n</div><br />줄바꿈 코드  (2줄)<br />
   <div id="code">\t</div><br />Tab 코드 (ASC 9)<br />
   <div id="code">\b</div><br />Backspace 코드 (ASC 8)<br />
   <div id="code">&amp;</div><br />텍스트 파일 데이터 구분 코드</div>
-<h3>3. 연산자</h3><div style="padding-left:20px">
+<h3><li>연산자</li></h3><div style="padding-left:20px">
   <p>산술연산자 <code>+, -, *, /, %</code>
     <br />- <code>%</code> : 나머지를 구한다<br />
     대입연산자 <code>=, +=, -=, *=, /=, %=</code>
@@ -68,7 +68,7 @@
     <code>ppp</code> x 좌표를 <code>ooo</code> 에 지정.<br />
   </p>
 </div>
-  <h3>4. 반복문과 조건문 (1)</h3><div style="padding-left:20px">
+  <h3><li>반복문과 조건문 (1)</li></h3><div style="padding-left:20px">
   <div id="code">for (a=1; a&lt;=10; a++) {<br><tab></tab>trace(&quot;a=&quot;+a);<br>};</div><br>
   - <code>for</code> 반복문<br />
   <div id="code">for (i=1; i&lt;=120;  i+=12) {<br><tab></tab>continue;<br>};</div>
@@ -107,14 +107,14 @@
   <tab></tab>}<br>
   };</div><br>
   - <code>switch</code> 조건문<br /></div>
-  <h3>5. 함수 선언</h3><div style="padding-left:20px">
+  <h3><li>함수 선언</li></h3><div style="padding-left:20px">
   <div id="code">function sumnumber(a,b,c) {<br>
   <tab></tab>return( aaa = a+b+c );<br>
   };</div><br />
   - 함수<br>
   <div id="code">sumnumber(1,2,3);<br />
   trace(aaa);</div><br /> - 함수 <code>sumnumber</code>에 <code>1, 2, 3</code>을 대입했을 때의 함숫값 <code>aaa</code>를 출력<br></div>
-  <h3>6. 수학 함수</h3><div style="padding-left:20px">
+  <h3><li>수학 함수</li></h3><div style="padding-left:20px">
   <div id="code">Math.abs(-1)</div><br>
   - 절댓값 (결과 <code>1</code>)<br />
   <div id="code">Math.sin(1)</div><br>
@@ -183,7 +183,7 @@
   - 난수 발생 (결과는 <code>0</code>과 <code>1</code> 사이의 실수)<br />
   <div id="code">random(5);</div><br>
   - 난수 발생 (결과는 <code>0</code>과 <code>4</code> 사이의 정수)<br /></div>
-  <h3>7. 변수 삭제</h3><div style="padding-left:20px">
+  <h3><li>변수 삭제</li></h3><div style="padding-left:20px">
   <div id="code">delete 변수_또는_객체;</div><br>
   - 변수 삭제 (<code>var</code>로 선언된 변수는 삭제할 수 없다)<br />
   <div id="code">account = 1;<br>
@@ -195,7 +195,7 @@
   - 결과는 <code>undefined</code><br />
   <div id="code">delete onEnterFrame;</div><br>
   - 반복 실행 중지<br /></div>
-  <h3>8. 자료형</h3><div style="padding-left:20px">
+  <h3><li>자료형</li></h3><div style="padding-left:20px">
   <div id="code">typeof( );</div><br>
   - 값의 자료형에 따라 <code>String</code>, <code>Number</code>, <code>MovieClip</code>, <code>Object</code>, <code>Boolean</code>, <code>Function</code>을 반환<br />
   <div id="code">trace (typeof(1));</div><br>
@@ -204,13 +204,13 @@
   - 결과는 <code>String</code><br />
   <div id="code">trace (typeof(aaa));</div><br>
   - <code>aaa</code>가 무비클립이라면 결과는 <code>MovieClip</code><br /></div>
-<h3>9. 수 판별</h3>
+<h3><li>수 판별</li></h3>
 <div style="padding-left:20px">
   <div id="code">isFinite( );</div><br>
   - 괄호 안의 값이 수(정수, 실수, <code>true</code>, <code>false</code>)면 <code>true</code>를, 아니면 <code>false</code>를 반환<br />
   <div id="code">trace (isFinite(aaa));</div><br>
   - <code>aaa</code>가 <code>NaN</code>이라면 결과는 <code>false</code></div>
-  <h3>10. 마우스</h3><div style="padding-left:20px">
+  <h3><li>마우스</li></h3><div style="padding-left:20px">
   <div id="code">Mouse.show();</div><br>
   - 마우스 보임<br />
   <div id="code">Mouse.hide();</div><br>
@@ -248,7 +248,7 @@
   <tab></tab>trace (&quot;Out called&quot;);<br>
   };</div><br>
   - 마우스가 <code>myClip</code> 밖에 있을 때 계속 <code>Out called</code>를 출력</div>
-  <h3>11. 버튼 액션</h3>
+  <h3><li>버튼 액션</li></h3>
 <div style="padding-left:20px">
   버튼을 한 번 클릭 후 액션을 넣는다.<br>
   맨 마지막 <code>}</code>에는 <code>;</code>를 붙이지 않는다.<br />
@@ -271,7 +271,7 @@
   <code>&lt;Escape&gt;, &lt;Space&gt;</code>: Esc 키, 스페이스 바<br>
   <code>&lt;Home&gt;, &lt;End&gt;, &lt;Insert&gt;, &lt;Delete&gt;, &lt;Tab&gt;</code>: Home, End, Insert, Delete(Del), Tab 키<br>
   <code>&lt;Backspace&gt;, &lt;Enter&gt;</code>: Backspace(BkSp), Enter(Return) 키</div></div>
-  <h3>12. 무비 클립 액션</h3><div style="padding-left:20px">
+  <h3><li>무비 클립 액션</li></h3><div style="padding-left:20px">
   무비 클립 클릭 후 액션을 넣는다.<br />
   맨 마지막 <code>}</code>에는 <code>;</code>를 붙이지 않는다.<br>
   <div id="code">onClipEvent (&lt;조건&gt;) {<br>
@@ -287,7 +287,7 @@
   <code>keyDown</code>: 키를 누를 때<br />
   <code>keyUp</code>: 키를 눌렀다 놓을 때<br />
   <code>data</code>: <code>loadVariables</code> 또는 <code>loadMovie</code> 함수로 실행하는 무비 클립에 데이터가 수신될 때</div>
-  <h3>13. 텍스트 필드</h3><div style="padding-left:20px">
+  <h3><li>텍스트 필드</li></h3><div style="padding-left:20px">
   <div id="code">TextField.onChanged = function () {<br>
   <tab></tab>trace (&quot;onChanged called&quot;);<br>
   };</div><br />
@@ -304,7 +304,7 @@
   <tab></tab>trace (&quot;onScroller called&quot;);<br>
   };</div><br />
   - <code>TextField</code> 텍스트 필드의 내용이 스크롤 될 때 <code>onScroller called</code> 출력</div>
-<h3>14. 로드/언로드</h3><div style="padding-left:20px">
+<h3><li>로드/언로드</li></h3><div style="padding-left:20px">
   <div id="code">myMovieClip.onData = function () {<br>
   <tab></tab>trace (&quot;onData called&quot;);<br>
   };</div><br />
@@ -319,7 +319,7 @@
   - <code>myMovieClip</code> 무비 클립이 언로드될 때 <code>onUnLoad called</code> 출력<br />
   <div id="code">myMovieClip.stop();</div><br />
   - <code>myMovieClip</code> 무비 클립의 프레임 정지</div>
-  <h3>15. 날짜 및 시간 변수</h3><div style="padding-left:20px">
+  <h3><li>날짜 및 시간 변수</li></h3><div style="padding-left:20px">
   <div id="code">myDate = new Date();</div><br>
   - <code>myDate</code>에 기본값 날짜 대입(기본값은 현재 시간)<br />
   <div id="code">myDate = new Date (&lt;년&gt;,&lt;월&gt;-1,&lt;일&gt;,&lt;시&gt;,&lt;분&gt;,&lt;초&gt;);</div><br>
@@ -330,7 +330,7 @@
   <div id="code">tttt = (myDate.getHours()+ &quot; :&quot; + myDate.getMinutes() + &quot; :&quot; +myDate.getSeconds());</div><br>
   - <code>tttt</code>에 <code>myDate</code>의 시, <code>&nbsp;:</code>, <code>myDate</code>의 분, <code>&nbsp;:</code>, <code>myDate</code>의 촛값을 차례대로 합친 값 대입<br>
   　(가령 <code>myDate</code>가 16시 44분 44초라면 <code>tttt</code>는 <code>16 :44 :44</code>)</div>
-  <h3>16. 프레임 진입 시 액션 실행</h3><div style="padding-left:20px">
+  <h3><li>프레임 진입 시 액션 실행</li></h3><div style="padding-left:20px">
   <div id="code">_root.onEnterFrame = function() {<br>
   <tab></tab>&lt;실행할 액션&gt;<br>
   };</div><br>
@@ -339,7 +339,7 @@
   <tab></tab>&lt;실행할 액션&gt;<br>
   };</div><br>
   - 이 심볼(<code>_root</code> 포함)에서 프레임 진입 시 액션 실행</div>
-  <h3>17. 타이머</h3><div style="padding-left:20px">
+  <h3><li>타이머</li></h3><div style="padding-left:20px">
   <div id="code">tmtm = getTimer();</div><br />
   - <code>tmtm</code>에 현재 타이머 값 할당(밀리초 단위)<br>
   <div id="code">onEnterFrame = function() {<br />
@@ -359,7 +359,7 @@
   - 첫 번째 <code>if</code>문: <code>tmtm</code>과 현재 타이머 값이 <code>500</code>만큼 차이가 나면 (0.5초마다) <code>tmtm</code>에 새롭게 현재 타이머 값을 할당하고 <code>tmtm</code> 값을 출력 <br>
   두 번째 <code>if</code>문: <code>tmtm</code>과 현재 타이머 값이 <code>1000</code>만큼 차이가 나면 (1초마다) 첫 번째 <code>if</code>문과 동일한 기능 수행<br>
   세 번째 <code>if</code>문: <code>tmtm</code>과 현재 타이머 값이 <code>2000</code>만큼 차이가 나면 (2초마다) 첫 번째 <code>if</code>문과 동일한 기능 수행</div>
-  <h3>18. 반복문 (2)</h3>
+  <h3><li>반복문 (2)</li></h3>
   <div style="padding-left:20px">
   <div id="code">onEnterFrame = function() { <br />
   <tab></tab>nr += 1;<br>
@@ -369,7 +369,7 @@
   <tab></tab>trace (nr);<br />
   };</div><br>
   - <code>nr</code>에 계속 1씩 추가, <code>nr</code>이 <code>5</code>보다 크면 반복 실행 중지 후 <code>nr</code> 출력 (5번 반복)</div>
-  <h3>19. 텍스트 필드 (2)</h3><div style="padding-left:20px">
+  <h3><li>텍스트 필드 (2)</li></h3><div style="padding-left:20px">
   <div id="code">createTextField (&quot;ins&quot;, 1, 100, 100, 50, 50)</div><br />
   - 텍스트 필드 <code>ins</code>를 깊이 <code>1</code>에, (<code>100</code>,<code>100</code>)에 <code>50</code>x<code>50</code> 크기로 만들기<br>
   <div id="code">ins.border = true;</div><br />
@@ -384,10 +384,10 @@
   <div id="code">var intervalID;<br />
   intervalID = setInterval( callback, 100 );</div><br>
   - <code>intervalID</code> 선언 후 "<code>callback</code>을 0.1초후 반복 실행"을 대입</div>
-  <h3>20. 외부 스크립트 파일 읽기</h3><div style="padding-left:20px">
+  <h3><li>외부 스크립트 파일 읽기</li></h3><div style="padding-left:20px">
   <div id="code">#include &quot;script.as&quot;</div><br>
   - <code>script.as</code> 파일 불러오기 (AS(액션스크립트) 파일)</div>
-  <h3>21. 시스템</h3><div style="padding-left:20px">
+  <h3><li>시스템</li></h3><div style="padding-left:20px">
   <div id="code">System.useCodepage = true;</div><br>
   - 시스템 코드페이지 사용(한국어 시스템이면 한국어 코드페이지, 영어 시스템이면 영어 코드페이지, 일본어면 일본어..., 주로 한글 깨짐 방지에 이용)<br />
   <div id="code">trace(System.capabilities.language)</div><br>
@@ -400,21 +400,21 @@
   - 오디오 출력이 있는지 여부를 출력. 결과는 여부에 따라서 <code>true</code>거나 <code>false</code>.<br />
   <div id="code">trace(System.capabilities.hasMP3)</div><br>
   - MP3 디코더가 있는지 여부룰 출력. 결과는 여부에 따라서 <code>true</code>거나 <code>false</code>.</div>
-  <h3>22. 퍼센트 인코딩 (URL 인코딩)</h3><div style="padding-left:20px">
+  <h3><li>퍼센트 인코딩 (URL 인코딩)</li></h3><div style="padding-left:20px">
   <div id="code">escape(&quot;abc가나다&quot;);</div><br>
   - URL에 사용하기 위해 인코딩.<br />
    한국어 시스템 코드페이지를 사용하면 결과는 <code>abc%B0%A1%B3%AA%B4%D9</code>, 그렇지 않으면 결과는 <code>abc%EA%B0%80%EB%82%98%EB%8B%A4</code>.</div>
-  <h3>23. 경로</h3><div style="padding-left:20px">
+  <h3><li>경로</li></h3><div style="padding-left:20px">
   <div id="code">trace(targetPath(this));</div><br>
   - 이 개체의 경로 출력. 결과는 <code>_level0.&lt;인스턴스 이름&gt;</code> (인스턴스 이름을 정해두지 않았다면 <code>instance1</code>부터 시작해서 먼저 추가된 순서대로 <code>instance2</code>, <code>instance3</code>, ...으로 인스턴스 이름이 명명됨)<br />
   <div id="code">trace(this.valueOf());</div><br>
   - <code>targetPath(this)</code>와 동일한 결과 출력</div>
-  <h3>24. 로드</h3><div style="padding-left:20px">
+  <h3><li>로드</li></h3><div style="padding-left:20px">
   <div id="code">trace(this.getBytesLoaded());</div><br>
   - 이 객체의 로드된 바이트 수를 출력한다.<br />
   <div id="code">trace(this.getBytesTotal());</div><br>
   - 이 객체의 전체 용량을 알려준다.</div>
-  <h3>25. 파일 열기</h3><div style="padding-left:20px">
+  <h3><li>파일 열기</li></h3><div style="padding-left:20px">
   <div id="code">getURL(&quot;C:/&quot;)</div><br>
   - <code>C:\</code> 열기<br />
   <div id="code">getURL(&quot;C:/Windows/NOTEPAD.EXE&quot;);</div><br>
@@ -433,7 +433,7 @@
   - <code>movie.html</code> 파일 열기<br />
   <div id="code">getURL (&quot;http://www&quot;, &quot;_blank&quot;);</div><br>
   - <code>http://www</code>를 새로운 창으로 열기</div>
-  <h3>26. 화면</h3><div style="padding-left:20px">
+  <h3><li>화면</li></h3><div style="padding-left:20px">
   <div id="code">Stage.showMenu = &quot;true&quot;;</div><br>
   - 스크린 메뉴 보임<br />
   <div id="code">Stage.showMenu = &quot;false&quot;;</div><br>
@@ -449,7 +449,7 @@
   - 픽셀로 표시된 창의 높이<br />
   <div id="code">Stage.width</div><br>
   - 픽셀로 표시된 창의 너비 (높이는 <code>Stage.height * Stage.width</code>)</div>
-  <h3>27. 무비 클립의 모양</h3>
+  <h3><li>무비 클립의 모양</li></h3>
   <div style="padding-left:20px">
   <div id="code">_root.createEmptyMovieClip(&quot;box&quot;,1);</div><br />
   - 무비 클립 <code>box</code> 만들기<br><div id="code">
@@ -465,7 +465,7 @@
   (1, 1)로 움직이고<br>
   10픽셀 굵기, <code><span style="color: #0c0;">#00CC00</span></code> 색으로 지정함<br>
   <code>_root.box</code>를 (<code>Stade.width</code>, 1), (<code>Stade.width</code>, <code>Stage.height</code>),(1, <code>Stage.height</code>), (1, 1) 순서대로 이동하면서 선 그리기</div>
-  <h3>28. 화면</h3><div style="padding-left:20px">
+  <h3><li>화면</li></h3><div style="padding-left:20px">
   <div id="code">fscommand(&quot;showmenu&quot;, true);</div><br>
   - 상단 메뉴 보임<br />
   <div id="code">fscommand(&quot;showmenu&quot;, false);</div><br>
@@ -488,7 +488,7 @@
   - <code>a.exe</code> 실행 (no message)<br />
   플래시 무비(<code>.exe</code>, <code>.swf</code>)가 위치하는 폴더 안에 <code>fscommand</code>라는 하위 폴더를 만들고<br />
   <code>fscommand</code> 폴더에 <code>a.exe</code>가 있을 때 플래시 무비를 실행하면 <code>a.exe</code> 실행<br /></div>
-  <h3>29. JavaScript 실행 (1)</h3><div style="padding-left:20px">
+  <h3><li>JavaScript 실행 (1)</li></h3><div style="padding-left:20px">
   <code>getURL</code> 함수를 사용<br>
   <div id="code">var hello = &quot;Hello, World&quot;;<br />
   getURL(&quot;javascript:alert(\&quot; &quot;+ hello + &quot;  \&quot;)&quot;);</div><br>
@@ -497,7 +497,7 @@
   - 브라우저 창 닫기<br />
   <div id="code">getURL(&quot;javascript:window.external.AddFavorite('http://','가')&quot; );</div><br>
   - <code>http://</code>로 연결되는 <code>가</code> 즐겨찾기 추가</div>
-  <h3>30. JavaScript 실행 (2)</h3>
+  <h3><li>JavaScript 실행 (2)</li></h3>
 <div style="padding-left:20px">
   <code>fscommand</code> 함수를 사용하여 <code>aaa.swf</code>의 Javascript 실행하기 (메시지 출력)<br />
   1. <code>aaa.swf</code>에<br>
@@ -512,7 +512,7 @@
   <tab></tab>alert(args);<br>};</div><br>
   을 추가하고 저장한다<br />
   5.  <code>aaa.html</code> 실행</div>
-<h3>31. JavaScript 실행 (3)</h3><div style="padding-left:20px">
+<h3><li>JavaScript 실행 (3)</li></h3><div style="padding-left:20px">
   <code>fscommand</code> 함수를 사용하여 <code>aaa.swf</code>의 javascript 실행하기 (변수 불러옴)<br />
   1. <code>aaa.swf</code>에 <br>
   <div id="code">fscommand (&quot;search&quot;, TextFieldvar);</div><br>
@@ -529,7 +529,7 @@
   3. <code>aaa.html</code> 실행<br>
   추가. 현 시점(2022.11.)에서 제작된 사이트를 여는 법:<br>
   Edge로 열기 - 맨 오른쪽의 … - 'Internet Explorer 모드에서 다시 열기' 클릭 - 밑의 '차단된 콘텐츠 허용' 클릭</div>
-  <h3>32. SWF 파일 로드 / 언로드하기</h3><div style="padding-left:20px">
+  <h3><li>SWF 파일 로드 / 언로드하기</li></h3><div style="padding-left:20px">
   <div id="code">_root.loadMovie(&quot;a.swf&quot;);</div><br>
   - <code>a.swf</code>를 <code>_root</code>에 불러오기<br />
   <div id="code">_root.bbb.loadMovie(&quot;a.swf&quot;)</div><br>
@@ -550,12 +550,12 @@
   - <code>this["bbb"]</code>(현재 타임라인의 <code>bbb</code> 무비클립)에 로드된 무비를 언로드<br />
   <div id="code">sss.bbb.unloadMovie();</div><br>
   - <code>sss.bbb</code>에 로드된 무비를 언로드</div>
-  <h3>33. SWF 파일 로드하기 (2)</h3><div style="padding-left:20px">
+  <h3><li>SWF 파일 로드하기 (2)</li></h3><div style="padding-left:20px">
   <div id="code">button.onPress = function() {<br>
   <tab></tab>_root.loadMovie(&quot;aaa.swf&quot;);<br>
   }</div><br>
   - <code>button</code>을 누를 시<code>_root</code>에 <code>aaa.swf</code>를 로드</div>
-  <h3>34. 무비 클립의 위치</h3><div style="padding-left:20px">
+  <h3><li>무비 클립의 위치</li></h3><div style="padding-left:20px">
   <code>_root.["ball_"+counter]</code>: <code>_root</code> 휘하의 <code>ball_&lt;counter&gt;</code> 무비 클립 (<code>counter</code>의 값에 따라 지칭하는 무비 클립이 달라짐)<br>
   <div id="code">_root[&quot;ball_&quot;+counter]._x = 11;</div><br>
   - <code>_root.[&quot;ball_&quot;+counter]</code>의 x좌표를 <code>11</code>로 설정<br />
@@ -563,7 +563,7 @@
   - <code>this.[&quot;ball_&quot;+counter]</code>의 x좌표를 <code>11</code>로 설정<br />
   <div id="code">aaa[&quot;ball_&quot;+counter]._x = 11;</div><br>
   - <code>aaa["ball_"+counter]</code>의 x좌표를 <code>11</code>로 설정</div>
-  <h3>35. 무비 클립의 복제 및 삭제</h3><div style="padding-left:20px">
+  <h3><li>무비 클립의 복제 및 삭제</li></h3><div style="padding-left:20px">
   <div id="code">this.createEmptyMovieClip(&quot;aaa&quot;, 1);</div><br>
   - 빈 <code>aaa</code> 무비 클립을 <code>1</code>에 생성 (<code>2</code>는 <code>1</code>을 덮음)<br />
   <div id="code">this.duplicateMovieClip (aaa, bbb, 1);</div><br>
@@ -606,7 +606,7 @@
   this[&quot;mc&quot; + i].removeMovieClip ();<br />
   };</div><br>
   - <code>mc1</code>부터 <code>mc360</code>까지 전부 삭제</div>
-  <h3>36. 무비 클립의 속성 변경</h3>
+  <h3><li>무비 클립의 속성 변경</li></h3>
   <div style="padding-left:20px">
   <div id="code">setProperty (&quot;mv&quot;, _x, 150);</div><br />
   - <code>mv</code>의 <code>_x</code> 속성(<code>mv</code>의 x좌표)을 <code>150</code>으로 변경(<code>mv</code>의 좌표를 <code>150</code>으로 이동)<br>
@@ -614,7 +614,7 @@
   - <code>myMovieX</code>에 <code>mv._x</code>(<code>mv</code>의 <code>_x</code>(x좌표) 속성)값 대입<br />
   <div id="code">trace(myMovieX);</div><br>
   - <code>myMovieX</code> 출력(결과는 <code>150</code>)</div>
-<h3>37. 무비 클립의 속성</h3>
+<h3><li>무비 클립의 속성</li></h3>
 <div style="padding-left:20px">
   범례: (%) - 0~100 사이의 실수(퍼센트), (#) - 모든 실수, (str) - 문자열, (bool) - <code>true</code> 또는 <code>false</code>, (name) - 이름<br>
   <code>_alpha</code>: 알파값(%)<br />
@@ -635,7 +635,7 @@
   <code>_ymouse</code>: 마우스y좌표(#)<br />
   <code>_xscale</code>: x배율(%)<br />
   <code>_yscale</code>: y배율(%)<br /></div>
-  <h3>38. 타임라인 컨트롤</h3><div style="padding-left:20px">
+  <h3><li>타임라인 컨트롤</li></h3><div style="padding-left:20px">
   <div id="code">_root.a.play;</div><br>
   - <code>_root.a</code> 재생<br />
   <div id="code">_root.a.stop;</div><br>
@@ -667,7 +667,7 @@
   <div id="code">updateAfterEvent();</div><br>
   - 무비 클립 갱신 (<code>onClipEvent</code> 핸들러 내에서만 사용)<br />
   (<code>onMouseDown</code>, <code>onMouseUp</code>, <code>onMouseMove</code>, <code>enterFrame</code> 등)<br /></div>
-  <h3>39. 객체 원격 조정</h3><div style="padding-left:20px">
+  <h3><li>객체 원격 조정</li></h3><div style="padding-left:20px">
   <div id="code">tellTarget (&quot;../a&quot;) { <br>
     <tab></tab>nextFrame(); <br>
     }</div><br>
@@ -676,7 +676,7 @@
 	<tab></tab>&lt;실행할 액션&gt;<br>
 	}</div><br>
   - 만약 10프레임이 로드되면 액션 실행</div>
-  <h3>40. 속성 설정</h3>
+  <h3><li>속성 설정</li></h3>
   <div style="padding-left:20px">
   <code>with</code> 문<br />
   <div id="code">for (i=0; i&lt;1000; i++) {<br />
@@ -697,7 +697,7 @@
   <tab></tab>}<br />
   }</div><br />
   - 위의 <code>with</code>문과 같은 기능을 함</div>
-  <h3>41. 배열 (1)</h3>
+  <h3><li>배열 (1)</li></h3>
   <div style="padding-left:20px">
   <div id="code">aaa = new Array();</div><br>
   - 새 배열 <code>aaa</code>를 생성<br />
@@ -750,7 +750,7 @@
   - <code>xxx</code>에 <code>true</code>를 숫자로 변환한 값을 대입 (<code>xxx</code>는 <code>1</code>)<br />
   <div id="code">xxx = Number(false)</div><br>
   - <code>xxx</code>에 <code>false</code>를 숫자로 변환한 값을 대입 (<code>xxx</code>는 <code>0</code>)<br /></div>
-  <h3>42. 배열 (2)</h3><div style="padding-left:20px">
+  <h3><li>배열 (2)</li></h3><div style="padding-left:20px">
   무비클립을 배열로 저장하기<br>
   <div id="code">cliparray = new Array();</div><br>
   - 새 배열 <code>cliparray</code> 선언<br />
@@ -763,7 +763,7 @@
   }</div><br />
   - <code>cliparray[1~3]</code>에 <code>_root.clip1</code>~<code>_root.clip3</code>까지 차례로 대입<br>
   <code>cliparray[1~3].x</code>와 <code>cliparray[1~3].y</code>에 각각 <code>_root.clip1~3</code>의 x좌표와 y좌표를 순서대로 넣고 각각 출력</div>
-  <h3>43. 문자 변수</h3><div style="padding-left:20px">
+  <h3><li>문자 변수</li></h3><div style="padding-left:20px">
   <div id="code">myString = new String();</div><br>
   - 새 문자 변수 <code>myString</code> 선언<br />
   <div id="code">myString = new String(&quot;가나다&quot;);</div><br>
@@ -804,7 +804,7 @@
   <div id="code">sss = myDate.toString();<br>
 	day = sss.substring(0,3);</div><br>
 	- 문자로 변환 </div>
-  <h3>44. 배열 (3)</h3><div style="padding-left:20px">
+  <h3><li>배열 (3)</li></h3><div style="padding-left:20px">
   문장을 배열로 저장하기<br />
   <div id="code">aaa = &quot;a b c d e&quot;;<br />
   aaalen = aaa.length;<br />
@@ -827,7 +827,7 @@
   <tab></tab>trace( &quot;*&quot; + bbb[a] + &quot;*&quot; )   <br>
   };</div><br />
   - <code>aaa</code>를 배열 <code>bbb</code>에 저장(<code>bbb</code>는 <code>{&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;}</code>) 및 <code>*&lt;bbb[0]&gt;*</code>부터 <code>*&lt;bbb[bbbno-1]&gt;*</code>까지 출력</div>
-<h3>45. 텍스트 필드 (3)</h3><div style="padding-left:20px">
+<h3><li>텍스트 필드 (3)</li></h3><div style="padding-left:20px">
   텍스트 필드 글자속성<br>
 	<div id="code">for (a=1; a&lt;=22; a++) {<br />
   <tab></tab>this[&quot;k&quot;+(a)].textColor=0xff0000;<br />
@@ -839,10 +839,10 @@
   텍스트 색상을 <code><span style="color: #f00;">#FF0000</span></code>으로 설정<br>
 	경계선을 활성화, 색상을 <code><span style="color: #f00;">#FF0000</span></code>으로 설정<br>
 	배경을 활생화, 색상을 <code><span style="color: #fff;">#FFFFFF</span></code>로 설정</div>
-  <h3>46. 텍스트 필드 (4)</h3><div style="padding-left:20px">
+  <h3><li>텍스트 필드 (4)</li></h3><div style="padding-left:20px">
   <div id="code">TextField.removeTextField();</div><br>
 	- <code>TextField</code> 텍스트 필드 삭제</div>
-  <h3>47. 텍스트 필드 (5)</h3><div style="padding-left:20px">
+  <h3><li>텍스트 필드 (5)</li></h3><div style="padding-left:20px">
   <div id="code">createTextField (&quot;instanceName&quot;, depth, x, y, width, height)</div><br>
 	- 텍스트 필드 생성<br />
   <code>instanceName</code>: 새 텍스트 필드의 인스턴스 이름<br />
@@ -852,79 +852,140 @@
   <code>width</code>: 새 텍스트 필드의 넓이를 지정하는 0 이상의 실수<br />
   <code>height</code>: 새 텍스트 필드의 높이를 지정하는 0 이상의 실수<br />
   <div id="code">instanceName.type = &quot;dynamic&quot;;</div><br>
-	- 텍스트 필드의 기본 속성  (dynamic 또는 input)<br />
-  instanceName.autoSize = &quot;false&quot;;             // (글자수에 맞게 테두리 크기 자동 조절 true false center right)<br />
-  instanceName.border = false;                 // (테두리) <br />
-  instanceName.borderColor = 0xff0000;         // (테두리 색상) <br />
-  instanceName.background = false;             // (배경)<br />
-  instanceName.backgroundColor=0xffffff;       // (배경 색상)<br />
-  instanceName.textColor = 0xff0000;           // (글자 색상)<br />
-  instanceName.multiline = false;              // (한줄  또는  여러줄)<br />
-  instanceName.selectable = true;              // (텍스트 필드를 선택할 수 있는지 여부)<br />
-  instanceName.maxChars = null;                // (사용자가 입력할 수 있는 최대 문자 수) (null 이면 무한대)<br />
-  instanceName.length = 0;                     // (글자 수)<br />
-  instanceName._name = &quot;&quot;;                     // (인스턴스 이름)<br />
-  instanceName.variable = &quot;&quot;;                  // (변수 이름)<br />
-  instanceName.html = false;                   // (html 태그 사용 여부)<br />
-  instanceName.htmlText = &quot;&quot;;                  // (html 태그)<br />
-  instanceName.wordWrap = true;                // (자동 줄바꿈 )<br />
-  instanceName._x = 0;                         // (x 좌표)<br />
-  instanceName._y = 0;                         // (y 좌표)<br />
-  instanceName._width  = 0;                    // (넓이)<br />
-  instanceName._height = 0;                    // (높이)<br />
-  instanceName._xscale = 100;                  // (넓이 조절 %)<br />
-  instanceName._yscale = 100;                  // (높이 조절 %)<br />
-  instanceName.restrict = &quot;&quot;;                  // (입력할 수 있는 문자 세트)<br />
-  instanceName.embedFonts = false;             // (장치 글꼴 사용 여부)<br />
-  instanceName.password = false;               // (****표시)<br />
-  instanceName._visible =  true;               // (보임/안보임.  false로 설정된 텍스트 필드는 사용할 수 없음)<br />
-  instanceName.scroll = 0;                     // (현재 스크롤 수직 위치)<br />
-  instanceName.hscroll = 0;                    // (현재 스크롤 수평 위치)<br />
-  instanceName.maxscroll = 0;                  // (TextField.scroll의 최대값)<br />
-  instanceName.maxhscroll = 0;                 // (TextField.hscroll의 최대값)<br />
-  instanceName.text = &quot;&quot;;                      // (글자)</h3>
-  </p>
-<p class="font1">myformat = new TextFormat();                 // 텍스트 필드의 기본 TextFormat 속성<br />
-  myformat.align = &quot;left&quot;;                     // (단락의 정렬 )<br />
-  myformat.blockIndent  = 0;                   // (왼쪽 여백에서 블록 들여쓰기. 포인트 단위)<br />
-  myformat.indent  = 0;                        // (왼쪽 여백에서 단락 들여쓰기. 각 단락의 첫 줄에만 적용)<br />
-  myformat.bold = false;                       // (텍스트가 굵은체로 표시되는지 여부)<br />
-  myformat.bullet = false;                     // (텍스트가 불릿 목록에 있는지 여부 * 표시)<br />
-  myformat.color  = 0x000000;                  // (텍스트의 색상)<br />
-  myformat.font = &quot;Times New Roman&quot;;           // (텍스트의 글꼴)<br />
-  myformat.italic = false;                     // (텍스트가 기울임체로 표시되는지 여부)<br />
-  myformat.leading  = 0;                       // (줄 사이의 행간 세로 간격)<br />
-  myformat.leftMargin  = 0;                    // (단락의 왼쪽 여백 포인트 단위)<br />
-  myformat.rightMargin  = 0;                   // (단락의 오른쪽 여백 포인트 단위)<br />
-  myformat.tabStops = [];                      // (사용자 정의 탭 중지를 지정 // (empty array))<br />
-  myformat.target = &quot;&quot;;                        // (브라우저에서 하이퍼링크가 표시되는 창)<br />
-  myformat.size = 12;                          // (텍스트의 크기)<br />
-  myformat.underline = false;                  // (텍스트에 밑줄이 그어졌는지 여부)<br />
-myformat.url = &quot;&quot;;                           // (텍스트가 링크되는 URL)</p>
-<p class="font1">instanceName.text = &quot;this is my test field \r aaa&quot; + &quot;bbb&quot;;    // 텍스트에 내용 넣기<br />
-  instanceName.setTextFormat(myformat);        //  텍스트 필드의 TextFormat  변경</div>
-  ----------------------------------------------------------------------------<br />
-  instanceName.restrict = &quot;A-Z 0-9&quot;;           // 대문자, 공백, 숫자만 입력할 수 있음<br />
-  instanceName.restrict = &quot;^a-z&quot;;              // 소문자를 제외한 모든 문자를 입력<br />
-  instanceName.restrict = &quot;A-Z^Q&quot;;             // 대문자 Q를 제외한 대문자만 입력<br />
-  instanceName.restrict = &quot;\\-&quot;                // 마이너스 부호 (-) 만 입력<br />
-  ----------------------------------------------------------------------------<br />
-  aa.html = true;                              // html 태그 사용 (b)<br />
-  aa.htmlText = &quot;&lt;b&gt; this is bold text &lt;/b&gt;&quot;;<br />
-  ----------------------------------------------------------------------------<br />
-  aa.html = true;                              // html 태그 사용 (table)<br />
-  aa.htmlText = &quot;&quot;;<br />
+	- 텍스트 필드의 기본 속성  (<code>dynamic</code> 또는 <code>input</code>)<br />
+  <div id="code">instanceName.autoSize = &quot;false&quot;;</div><br>
+  - 글자수에 맞게 테두리 크기 자동 조절 (<code>true</code>, <code>false</code>)<br>
+  글자 위치 정렬 (<code>center</code>, <code>right</code>)<br />
+  <div id="code">instanceName.border = false;</div><br>
+  - 테두리 활성화 여부 <br />
+  <div id="code">instanceName.borderColor = 0xff0000;</div><br>
+  - 테두리 색상<br />
+  <div id="code">instanceName.background = false;</div><br>
+  - 배경색 사용 여부<br />
+  <div id="code">instanceName.backgroundColor=0xffffff;</div><br>
+  - 배경 색상<br />
+  <div id="code">instanceName.textColor = 0xff0000;</div><br>
+    - 글자 색상<br />
+    <div id="code">instanceName.multiline = false;</div><br>
+    - 한줄(<code>false</code>) 또는 여러줄(<code>true</code>)<br />
+    <div id="code">instanceName.selectable = true;</div><br>
+	- 텍스트 필드를 선택할 수 있는지 여부<br />
+    <div id="code">instanceName.maxChars = null;</div><br>
+	- 사용자가 입력할 수 있는 최대 문자 수(<code>null</code>이면 무한대)<br />
+    <div id="code">instanceName.length = 0;</div><br>
+	- 글자 수를 <code>0</code>으로<br />
+    <div id="code">instanceName._name = &quot;&quot;;</div><br>
+	- 인스턴스 이름(값 대입)<br />
+    <div id="code">instanceName.variable = &quot;&quot;;</div><br>
+	- 변수 이름(값 대입)<br />
+    <div id="code">instanceName.html = false;</div><br>
+	- HTML 태그 사용 여부<br />
+    <div id="code">instanceName.htmlText = &quot;&quot;;</div><br>
+    - HTML 텍스트<br />
+    <div id="code">instanceName.wordWrap = true;</div><br>
+    - 자동 줄바꿈 여부<br />
+    <div id="code">instanceName._x = 0;<br>
+	instanceName._y = 0;</div><br>
+	- x값과 y값<br />
+    <div id="code">instanceName._width  = 0;<br />
+    instanceName._height = 0;</div><br>
+	- 너비와 높이<br />
+    <div id="code">instanceName._xscale = 100;<br />
+    instanceName._yscale = 100;</div><br>
+	- 너비와 높이 조절 (백분율)<br />
+    <div id="code">instanceName.restrict = &quot;&quot;;</div><br>
+	- 입력할 수 있는 문자 세트 (후술)<br />
+    <div id="code">instanceName.embedFonts = false;</div><br>
+	- 장치 글꼴 사용 여부(<code>true</code>가 미사용, <code>false</code>가 사용)<br />
+    <div id="code">instanceName.password = false;</div><br>
+	- <code>****</code> 표시<br />
+    <div id="code">instanceName._visible = true;</div><br>
+    - 가시성 (<code>false</code>로 설정된 텍스트 필드는 사용할 수 없음)<br />
+    <div id="code">instanceName.scroll = 0;</div><br>
+	- 현재 스크롤 수직 위치<br />
+    <div id="code">instanceName.hscroll = 0;</div><br>
+    - 현재 스크롤 수평 위치<br />
+    <div id="code">instanceName.maxscroll = 0;</div><br>
+	- <code>TextField.scroll</code>의 최댓값<br />
+    <div id="code">instanceName.maxhscroll = 0;</div><br>
+    - <code>TextField.hscroll</code>의 최댓값<br />
+    <div id="code">instanceName.text = &quot;&quot;;</div><br>
+    - 필드에 들어갈 글자<br>
+    <div id="code">instanceName.text = &quot;this is my test field \r aaa&quot; + &quot;bbb&quot;;</div><br>
+	- 텍스트에 내용(<code>this is my test field \r aaabbb</code>) 넣기<br />
+  <div id="code">instanceName.setTextFormat(myformat);</div><br>
+	- 텍스트 필드의 속성을 <code>myFormat</code>으로 변경<br>
+  <div id="code">myformat = new TextFormat();</div><br>
+  	- 새 <code>TextFormat</code>(텍스트 필드의 속성) 생성<br />
+  <div id="code">myformat.align = &quot;left&quot;;</div><br>
+	- 단락의 정렬<br />
+  <div id="code">myformat.blockIndent = 0;</div><br>
+  - 왼쪽 여백에서 블록 들여쓰기 (포인트)<br />
+  <div id="code">myformat.indent = 0;</div><br>
+	- 왼쪽 여백에서 단락 들여쓰기 (각 단락의 첫 줄에만 적용)<br />
+  <div id="code">myformat.bold = false;</div><br>
+	- 텍스트가 볼드체로 표시되는지 여부<br />
+  <div id="code">myformat.bullet = false;</div><br>
+	- 텍스트가 불릿(*표시) 목록에 있는지 여부<br />
+  <div id="code">myformat.color  = 0x000000;</div><br>
+	- 텍스트의 색상<br />
+  <div id="code">myformat.font = &quot;Times New Roman&quot;;</div><br>
+  	- 텍스트의 글꼴<br />
+  <div id="code">myformat.italic = false;</div><br>
+  	- 텍스트가 이탤릭체로 표시되는지 여부<br />
+  <div id="code">myformat.leading = 0;</div><br>
+	- 줄 사이의 행간 세로 간격<br />
+  <div id="code">myformat.leftMargin = 0;<br>
+	myformat.rightMargin = 0;</div><br>
+	- 단락의 왼쪽, 오른쪽 여백 (포인트)<br />
+  <div id="code">myformat.tabStops = [];</div><br>
+	- 사용자 정의 탭 중지를 지정 (empty array)<br />
+  <div id="code">myformat.target = &quot;&quot;;</div><br>
+	- 브라우저에서 하이퍼링크가 표시되는 창<br />
+  <div id="code">myformat.size = 12;</div><br>
+	- 텍스트의 크기<br />
+  <div id="code">myformat.underline = false;</div><br>
+	- 텍스트에 밑줄이 그어졌는지 여부<br />
+<div id="code">myformat.url = &quot;&quot;;</div><br>
+	- 텍스트가 링크되는 URL<br></div>
+  <h3><li>텍스트 필드에 입력할 수 있는 문자 세트</li></h3><div style="padding-left:20px">
+  <div id="code">instanceName.restrict = &quot;A-Z 0-9&quot;;</div><br>
+	- 대문자, 공백(<code> </code>), 숫자만 입력할 수 있음<br />
+  <div id="code">instanceName.restrict = &quot;^a-z&quot;;</div><br>
+	- 소문자를 제외한 모든 문자를 입력<br />
+  <div id="code">instanceName.restrict = &quot;A-Z^Q&quot;;</div><br>
+  	- <code>Q</code>를 제외한 대문자만 입력<br />
+  <div id="code">instanceName.restrict = &quot;\\-&quot;</div><br>
+	- <code>-</code> 만 입력</div>
+  <h3><li>텍스트 필드에서 HTML 사용 (1)</li></h3><div style="padding-left:20px">
+  <div id="code">aa.html = true;</div><br>
+	- HTML 태그 사용 - 볼드체 텍스트<br />
+  <div id="code">aa.htmlText = &quot;&lt;b&gt; this is bold text &lt;/b&gt;&quot;;</div><br></div>
+  <h3><li>텍스트 필드에서 HTML 사용 (2)</li></h3><div style="padding-left:20px">
+  <div id="code">aa.html = true;</div><br>
+  - HTML 태그 사용 - 표 사용<br />
+  <div id="code">aa.htmlText = &quot;&quot;;<br />
   aa.htmlText += &quot; &lt;table id='ttt' border='1'&gt; &lt;tr&gt; &lt;td&gt; 테이블의 텍스트1 &lt;/td&gt; &quot;;<br />
   aa.htmlText += &quot; &lt;td&gt; 테이블의 텍스트2 &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &quot;;<br />
-  aa.htmlText += &quot; &lt;a href=' ' &gt; 이동 하기 &lt;/a&gt; &quot;;<br />
-  ----------------------------------------------------------------------------<br />
-  function Func(arg){  trace (&quot;You clicked me!  Argument was &quot;+arg);   }; <br />
-  aa.html = true;                              // html 태그 사용 (asfunction)<br />
-  aa.htmlText = &quot;&lt;A HREF=\&quot;asfunction:Func,Foo \&quot;&gt; Click &lt;/A&gt;&quot;; <br />
-  ----------------------------------------------------------------------------<br />
-  on (release) {TextField.hscroll += 1; }      // 텍스트를 수평으로 스크롤<br />
-  on (release) {TextField.scroll += 1;  }      // 텍스트를 수직으로 스크롤<br />
-  x = TextField.maxscroll;                     // 총 줄수를 표시<br />
+  aa.htmlText += &quot; &lt;a href=' ' &gt; 이동 하기 &lt;/a&gt; &quot;;</div><br></div>
+  <h3><li>HTML에서 ActionScript 함수 사용</li></h3><div style="padding-left:20px">
+  <div id="code">function Func(arg) {<br>
+  <tab></tab>trace (&quot;You clicked me! Argument was &quot; + arg);<br>
+  };<br>
+  aa.html = true;<br />
+  aa.htmlText = &quot;&lt;a href=&quot;asfunction:Func, Foo&quot;&gt; Click &lt;/a&gt;&quot;; </div><br />
+  - <code>Func</code> 함수를 통해 <code>You clicked me! Argument was Foo</code>를 출력하는 링크 <code>Click</code></div>
+  <h3><li>텍스트 필드 조정</li></h3><div style="padding-left:20px">
+  <div id="code">on (release) {<br>
+	<tab></tab>TextField.hscroll++;<br>
+	}</div><br>
+	- 텍스트를 수평으로 스크롤<br />
+  <div id="code">on (release) {<br>
+	<tab></tab>TextField.scroll++;<br>
+    }</div><br>
+	- 텍스트를 수직으로 스크롤<br />
+  <div id="code">x = TextField.maxscroll;</div><br>
+  - 총 줄 수를 표시</div>
   ----------------------------------------------------------------------------<br />
   TextField.onSetFocus = function(){           // 텍스트 입력 (텍스트필드 속성이 입력일때)<br />
   this.text=&quot; input data &quot;;                 // 마우스 클릭시 내용 자동 입력<br />
@@ -1297,7 +1358,7 @@ myformat.url = &quot;&quot;;                           // (텍스트가 링크�
   91 [    92     93 ]    94 ^    95 _    96 `<br />
   123 {   124 |   125 }   126  ~<br />
   ----------------------------------------------------------------------------</p>
-<p><a href="https://wbal1.github.io/as2doctxt.txt">원본 텍스트 읽기</a><br />
+</ol><p><a href="https://wbal1.github.io/as2doctxt.txt">원본 텍스트 읽기</a><br />
   출처: <a href="http://wwwmoa.com.ne.kr/zflashact/actionscript.txt">http://wwwmoa.com.ne.kr/zflashact/actionscript.txt</a></p>
 <br />
 </body>
