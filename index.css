@@ -88,15 +88,15 @@
 }
 @media (prefers-color-scheme: dark) {
 	.as2box {
-		border-color: #FFD0D0;
+		border-color: #FF0000;
 		color: black;
 	}
 	.jsbox {
-		border-color: #D0FFD0;
+		border-color: #00FF00;
 		color: black;
 	}
 	.cbox {
-		border-color: #D0D0FF;
+		border-color: #0000FF;
 		color: black;
 	}
 }
