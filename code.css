@@ -29,6 +29,8 @@ code { /* 인라인 코드 */
 	line-height: 20px;
 	padding-left: 8px;
 	font-family: var(--cff);
+	white-space: pre;
+	tab-size: 4;
 }
 @media (prefers-color-scheme: dark) { /* 다크 모드 */
 	#code {
