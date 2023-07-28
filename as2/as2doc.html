@@ -6,17 +6,16 @@
 <link href="./../code.css" rel="stylesheet" type="text/css" />
 <link href="./../font.css" rel="stylesheet" type="text/css" />
 <link href="./../dmode_r.css" rel="stylesheet" type="text/css" />
-</head>
-
 <style>
-	@media(min-width: 960px) {
-		.contain {
+	@media (min-width: 960px) {
+		.Container {
 			padding: 20px 200px 10px 200px;
 		}
 	}
 </style>
+</head>
 
-<body class="font1"><div class="contain">
+<body class="font1"><div class="Container">
 <h1 align="center" class="font1">AS2 정리</h1>
 <div align="center">
 	<p><a href="https://blog.naver.com/0223storm/90065932584">원글 출처</a>&nbsp;&nbsp;&nbsp;<a href="https://wbal1.github.io/index">홈으로</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;본 페이지는 1920px 너비의 브라우저 환경에 최적화되어 있습니다.</p>
@@ -698,6 +697,7 @@ getURL(&quot;javascript:alert(\&quot; &quot;+ hello + &quot;  \&quot;)&quot;);</
 				_rotation = random(360);
 		}
 }</div><br />
+<<<<<<< HEAD
 	- <code>aaa[0]</code>부터 <code>aaa[999]</code>까지
 	(<code>Math.floor(Math.random() * 500)</code>((0~1 사이 무작위 실수 × 500)의 정수부), 0~500 사이 무작위 값)으로 이동하고 무작위로 각도를 변경<br>
 	<code>tellTarget</code> 문 (무비 클립 한정)<br />
@@ -1050,6 +1050,368 @@ getURL(&quot;javascript:alert(\&quot; &quot;+ hello + &quot;  \&quot;)&quot;);</
 	this[&quot;slidememo&quot;+memodate].removeMovieClip();         // 무비클립 삭제하기<br />
 	};<br />
 	jpgload();</p>
+=======
+  - <code>aaa[0]</code>부터 <code>aaa[999]</code>까지
+  (<code>Math.floor(Math.random() * 500)</code>((0~1 사이 무작위 실수 × 500)의 정수부), 0~500 사이 무작위 값)으로 이동하고 무작위로 각도를 변경<br>
+  <code>tellTarget</code> 문 (무비 클립 한정)<br />
+  <div id="code">for (i=0; i&lt;1000; i++) {
+	tellTarget (aaa[i]) {
+		_x = Math.floor(Math.random() * 500);
+		_y = random(500);
+		_rotation = random(360);
+	}
+}</div><br />
+  - 위의 <code>with</code>문과 같은 기능을 함</div>
+  <h3><li>배열 (1)</li></h3>
+  <div style="padding-left:20px">
+  <div id="code">aaa = new Array();</div><br>
+  - 새 배열 <code>aaa</code>를 생성<br />
+  <div id="code">aaa = new Array(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;);</div><br>
+  - 새 배열 <code>aaa</code>에 <code>&quot;1&quot;, &quot;2&quot;, &quot;3&quot;</code>을 넣어 생성<br />
+  <div id="code">bbb = [&quot;Sun&quot;,&quot;Mon&quot;,&quot;Tue&quot;];</div><br>
+  - <code>bbb</code>에 <code>[&quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;]</code>를 대입 (배열 생성)<br />
+  <div id="code">aaa[1] = &quot;abc&quot;;</div><br>
+  - <code>aaa[1]</code>에 <code>"abc"</code>를 대입 ( <code>&quot;2&quot;</code>가 <code>&quot;abc&quot;</code>로 바뀜)<br />
+  <div id="code">aaa[0] = &quot;Jan&quot;;
+aaa[1] = &quot;Feb&quot;;
+aaa[2] = &quot;Mar&quot;;</div>
+  <br>
+  - <code>aaa[0~2]</code>를 <code>[&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;]</code>로 변경<br />
+  <div id="code">aaa[3] = &quot;Apr&quot;</div><br>
+  - 배열값 추가 (<code>aaa</code>는 <code>[&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;]</code>)<br />
+  <div id="code">ccc = aaa.concat(bbb);</div><br>
+  - <code>aaa</code> 뒤에 <code>bbb</code>를 합쳐 새로운 배열 <code>ccc</code>를 만듦 (<code>ccc</code>는 <code>[&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;]</code>)<br />
+  <div id="code">ddd = ccc.join(&quot;/&quot;);</div><br>
+  - 배열값들을 다 합쳐서 <code>/</code>로 구분한 값을 <code>ddd</code>에 대입 (<code>ddd</code> 값은 <code>&quot;Jan/Feb/Mar/Apr/Sun/Mon/Tue&quot;</code>)<br />
+  <div id="code">ddd = ccc.length;</div><br>
+  - <code>ddd</code>에 <code>ccc</code>의 원소 갯수를 대입 (<code>ddd</code> 값은 <code>7</code>)<br />
+  <div id="code">ddd = ccc.slice(2,4);</div><br>
+  - <code>ddd</code>에 <code>ccc[2~3]</code>로 이루어진 배열을 대입(<code>ddd</code>는 <code>[&quot;Mar&quot;, &quot;Apr&quot;]</code>)<br />
+  <div id="code">eee = ccc.push(&quot;z&quot;,&quot;zz&quot;);</div><br>
+  - <code>ccc</code>에 <code>[&quot;z&quot;, &quot;zzz&quot;]</code>를 추가 한 후 <code>eee</code>에 <code>ccc</code>의 원소 갯수를 대입 (<code>eee</code>는 <code>9</code>, <code>ccc</code>는 <code>[&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;z&quot;, &quot;zz&quot;]</code>)<br />
+  <div id="code">eee = ccc.pop();</div><br>
+  - <code>ccc</code>에서 마지막 값을 분리하고 그 값을 <code>eee</code>에 대입 (<code>eee</code>는 <code>&quot;zz&quot;</code>, <code>ccc</code>는 <code>[&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;z&quot;]</code>)<br />
+  <div id="code">eee = ccc.shift();</div><br>
+  - <code>ccc</code>에서 첫 번째 값을 분리하고 그 값을 <code>eee</code>에 대입(<code>eee</code>는 <code>&quot;Jan&quot;</code>, <code>ccc</code>는 <code>[&quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;Sun&quot;, &quot;Mon&quot;, &quot;Tue&quot;, &quot;z&quot;]</code>)<br />
+  <div id="code">eee = ccc.reverse();</div><br>
+  - <code>ccc</code>의 앞뒤를 바꿔 <code>eee</code>에 대입 (<code>eee</code> 값은 <code>[&quot;z&quot;, &quot;Tue&quot;, &quot;Mon&quot;, &quot;Sun&quot;, &quot;Apr&quot;, &quot;Mar&quot;, &quot;Feb&quot;]</code>, <code>ccc</code> 역시 똑같이 바뀜)<br />
+  <div id="code">eee = ccc.splice(2,5,&quot;x&quot;,&quot;xx&quot;,&quot;xxx&quot;);</div><br>
+  - <code>ccc[2~4]</code>를 <code>eee[2~4]</code>에, <code>ccc[2~4]</code>에 <code>[&quot;x&quot;, &quot;xx&quot;, &quot;xxx&quot;]</code>를 대입 (<code>eee</code>는 <code>[&quot;Mon&quot;, &quot;Sun&quot;, &quot;Apr&quot;, &quot;Mar&quot;, &quot;Feb&quot;]</code>, <code>ccc</code>는 <code>[&quot;z&quot;, &quot;Tue&quot;, &quot;x&quot;, &quot;xx&quot;, &quot;xxx&quot;]</code>)<br />
+  <div id="code">eee = ccc.unshift(&quot;1&quot;,&quot;2&quot;);</div><br>
+  - <code>ccc</code>에 첫번째부터 <code>[&quot;1&quot;, &quot;2&quot;]</code> 를 추가한 후  그 길이를 <code>eee</code>에 대입 (<code>eee</code>는 <code>7</code>, <code>ccc</code>는 <code>[&quot;1&quot;, &quot;2&quot;, &quot;z&quot;, &quot;Tue&quot;, &quot;x&quot;, &quot;xx, &quot;xxx&quot;]</code>)<br />
+  <div id="code">sss = new Array(1,2,3);</div><br>
+  - 새 배열 <code>sss</code>에 <code>[1, 2, 3]</code>을 넣어 선언<br />
+  <div id="code">uuu = sss.toString();</div><br>
+  - <code>sss</code>를 한 개의 문자열로 변환한 값을 <code>uuu</code>에 대입 (<code>uuu</code>는 <code>&quot;1,2,3&quot;</code>)<br />
+  <div id="code">vvv = uuu.toLowerCase();</div><br>
+  - <code>uuu</code>의 모든 대문자를 소문자로 변환하여 <code>vvv</code>에 대입 (원래 값은 변경되지 않음, <code>vvv</code>와 <code>uuu</code>의 값은 동일)<br />
+  <div id="code">vvv = uuu.toUpperCase();</div><br>
+  - <code>uuu</code>의 모든 소문자를 대문자로 변환하여 <code>vvv</code>에 대입 (원래 값은 변경되지 않음, <code>vvv</code>와 <code>uuu</code>의 값은 동일)<br />
+  <div id="code">xxx = Number(&quot;111&quot;)</div><br>
+  - <code>xxx</code>에 <code>&quot;111&quot;</code>을 숫자로 변환한 값을 대입 (<code>xxx</code>는 111)<br />
+  <div id="code">xxx = Number(&quot;aaa&quot;)</div><br>
+  - <code>xxx</code>에 <code>&quot;aaa&quot;</code>를 숫자로 변환한 값을 대입 (<code>xxx</code>는 <code>NaN</code>)<br />
+  <div id="code">xxx = Number(true)</div><br>
+  - <code>xxx</code>에 <code>true</code>를 숫자로 변환한 값을 대입 (<code>xxx</code>는 <code>1</code>)<br />
+  <div id="code">xxx = Number(false)</div><br>
+  - <code>xxx</code>에 <code>false</code>를 숫자로 변환한 값을 대입 (<code>xxx</code>는 <code>0</code>)<br /></div>
+  <h3><li>배열 (2)</li></h3><div style="padding-left:20px">
+  무비클립을 배열로 저장하기<br>
+  <div id="code">cliparray = new Array();</div><br>
+  - 새 배열 <code>cliparray</code> 선언<br />
+  <div id="code">for (a=1; a&lt;=3; a++)  {
+	cliparray[a] =  _root[&quot;clip&quot;+a];
+	cliparray[a].x =  _root[&quot;clip&quot;+a]._x;
+	cliparray[a].y =  _root[&quot;clip&quot;+a]._y;
+	trace(cliparray[a].x);
+	trace(cliparray[a].y);
+}</div><br />
+  - <code>cliparray[1~3]</code>에 <code>_root.clip1</code>~<code>_root.clip3</code>까지 차례로 대입<br>
+  <code>cliparray[1~3].x</code>와 <code>cliparray[1~3].y</code>에 각각 <code>_root.clip1~3</code>의 x좌표와 y좌표를 순서대로 넣고 각각 출력</div>
+  <h3><li>문자 변수</li></h3><div style="padding-left:20px">
+  <div id="code">myString = new String();</div><br>
+  - 새 문자 변수 <code>myString</code> 선언<br />
+  <div id="code">myString = new String(&quot;가나다&quot;);</div><br>
+  - <code>myString</code>에 <code>가나다</code> 문자 넣기<br />
+  <div id="code">tet=&quot;가나다&quot;;
+myString = new String(tet);</div><br>
+  - <code>tet</code>에 <code>가나다</code>를 넣고, 변수 <code>tet</code>를 <code>myString</code>에 넣기<br />
+  <div id="code">text0=myString.charAt(0);</div><br>
+	- <code>text0</code> 값은 <code>&quot;가&quot;</code> - 문자 1개(0번) 읽기<br />
+  <div id="code">text1=myString.charAt(1);</div><br>
+	- <code>text1</code> 값은 <code>&quot;나&quot;</code> - 문자 1개(1번) 읽기<br />
+  <div id="code">text2=myString.charAt(2);</div><br>
+	- <code>text2</code> 값은 <code>&quot;다&quot;</code> - 문자 1개(2번) 읽기<br />
+  <div id="code">text3=myString.concat(&quot;라마&quot;,&quot;바사&quot;,&quot;다&quot;);</div><br>
+	- <code>text3</code> 값은 <code>&quot;가나다라마바사다&quot;</code> - 문자열 3개(<code>라마</code>, <code>바사</code>, <code>다</code> 추가)<br />
+  <div id="code">text4=text3.substr(2,4);</div><br>
+	- <code>text4</code> 값은 <code>&quot;다라마바&quot;</code> - 문자 여러 개(2개, 2번·4번) 읽기<br />
+  <div id="code">text5=text3.substring(2,4);</div><br>
+	- <code>text5</code> 값은 <code>&quot;다라&quot;</code> - 문자 여러(2개, 2·4번)개 읽기<br />
+  <div id="code">text6=text3.slice(2,4);</div><br>
+	- <code>text6</code> 값은 <code>&quot;다라&quot;</code> - 문자 여러(2개, 2·4번)개 읽기<br />
+  <div id="code">text7=myString.charCodeAt(1);</div><br>
+	- <code>text7</code> 값은 <code>45208</code> - 문자를 코드화(<code>System.useCodepage</code>가 꺼져 있는 경우)<br />
+  <div id="code">text8=&quot;a&quot; + String.fromCharCode(64) + &quot;m&quot;;</div><br>
+	- <code>text8</code> 값은 <code>&quot;a@m&quot;</code> - 코드를 문자로 변환<br />
+  <div id="code">text9= text3.indexOf(&quot;다&quot;);</div><br>
+	- <code>text9</code> 값은 <code>2</code> - 문자 <code>다</code>의 첫 위치<br />
+  <div id="code">text10= text3.lastIndexOf(&quot;다&quot;);</div><br>
+	- <code>text10</code> 값은 <code>7</code> - 문자 <code>다</code>의 마지막 위치<br />
+  <div id="code">text11= text3.length;</div><br>
+	- <code>text11</code> 값은 <code>8</code> -  문자의 길이<br />
+  <div id="code">text12= text3.split(&quot;나&quot;);</div><br>
+	- <code>text12</code> 값은 <code>&quot;가,다라마바사다&quot;</code> - 문자 분리(<code>나</code> 분리)<br />
+  <div id="code">text13= text6.concat(text3);</div><br>
+	- <code>text13</code> 값은 <code>&quot;다라가나다라마바사다&quot;</code> - 문자합침 (<code>text6</code>과 <code>text3</code> 결합)<br />
+  <div id="code">text14= text13.substr((text13.length-1),1);</div><br>
+	- <code>text14</code> 값은 <code>&quot;다&quot;</code> - 마지막 문자 읽기<br />
+  <div id="code">sss = myDate.toString();
+day = sss.substring(0,3);</div><br>
+	- 문자로 변환 </div>
+  <h3><li>배열 (3)</li></h3><div style="padding-left:20px">
+  문장을 배열로 저장하기<br />
+	<div id="code">aaa = &quot;a b c d e&quot;;
+aaalen = aaa.length;
+bbb = new Array();
+for (a=0; a&lt;=aaalen; a++)  {
+	bbb[a] = &quot;&quot;;
+};
+bbbno = 0;
+bbbchr = &quot;&quot;;
+for (a=0; a&lt;=aaalen; a++)  {
+	if (aaa.charAt(a) == &quot; &quot;) {
+		bbb[bbbno] = bbbchr;
+		bbbno += 1;
+		bbbchr = &quot;&quot;;
+	} else {
+		bbbchr += aaa.charAt(a);
+	};
+};
+for (a=0; a&lt;=bbbno; a++)  {
+	trace( &quot;*&quot; + bbb[a] + &quot;*&quot; )
+};</div><br />
+  - <code>aaa</code>를 배열 <code>bbb</code>에 저장(<code>bbb</code>는 <code>{&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;}</code>) 및 <code>*&lt;bbb[0]&gt;*</code>부터 <code>*&lt;bbb[bbbno-1]&gt;*</code>까지 출력</div>
+<h3><li>텍스트 필드 (3)</li></h3><div style="padding-left:20px">
+  텍스트 필드 글자속성<br>
+	<div id="code">for (a=1; a&lt;=22; a++) {
+	this[&quot;k&quot;+(a)].textColor=0xff0000;
+	this[&quot;k&quot;+(a)].border=true;
+	this[&quot;k&quot;+(a)].borderColor=0xff0000;
+	this[&quot;k&quot;+(a)].background=true;
+	this[&quot;k&quot;+(a)].backgroundColor=0xffffff;
+};</div><br />- <code>k[1]</code>부터 <code>k[22]</code>까지 다음과 같이 설정:<br />
+  텍스트 색상을 <code><span style="color: #f00;">#FF0000</span></code>으로 설정<br>
+	경계선을 활성화, 색상을 <code><span style="color: #f00;">#FF0000</span></code>으로 설정<br>
+	배경을 활생화, 색상을 <code><span style="color: #fff;">#FFFFFF</span></code>로 설정</div>
+  <h3><li>텍스트 필드 (4)</li></h3><div style="padding-left:20px">
+  <div id="code">TextField.removeTextField();</div><br>
+	- <code>TextField</code> 텍스트 필드 삭제</div>
+  <h3><li>텍스트 필드 (5)</li></h3><div style="padding-left:20px">
+  <div id="code">createTextField (&quot;instanceName&quot;, depth, x, y, width, height)</div><br>
+	- 텍스트 필드 생성<br />
+  <code>instanceName</code>: 새 텍스트 필드의 인스턴스 이름<br />
+  <code>depth</code>: 새 텍스트 필드의 깊이를 지정하는 양의 정수 (<code>2</code>는 <code>1</code>을 덮음)<br />
+  <code>x</code>: 새 텍스트 필드의 x좌표를 지정하는 실수<br />
+  <code>y</code>: 새 텍스트 필드의 y좌표를 지정하는 실수<br />
+  <code>width</code>: 새 텍스트 필드의 넓이를 지정하는 0 이상의 실수<br />
+  <code>height</code>: 새 텍스트 필드의 높이를 지정하는 0 이상의 실수<br />
+  <div id="code">instanceName.type = &quot;dynamic&quot;;</div><br>
+	- 텍스트 필드의 기본 속성  (<code>dynamic</code> 또는 <code>input</code>)<br />
+  <div id="code">instanceName.autoSize = &quot;false&quot;;</div><br>
+  - 글자수에 맞게 테두리 크기 자동 조절 (<code>true</code>, <code>false</code>)<br>
+  글자 위치 정렬 (<code>center</code>, <code>right</code>)<br />
+  <div id="code">instanceName.border = false;</div><br>
+  - 테두리 활성화 여부 <br />
+  <div id="code">instanceName.borderColor = 0xff0000;</div><br>
+  - 테두리 색상<br />
+  <div id="code">instanceName.background = false;</div><br>
+  - 배경색 사용 여부<br />
+  <div id="code">instanceName.backgroundColor=0xffffff;</div><br>
+  - 배경 색상<br />
+  <div id="code">instanceName.textColor = 0xff0000;</div><br>
+    - 글자 색상<br />
+    <div id="code">instanceName.multiline = false;</div><br>
+    - 한줄(<code>false</code>) 또는 여러줄(<code>true</code>)<br />
+    <div id="code">instanceName.selectable = true;</div><br>
+	- 텍스트 필드를 선택할 수 있는지 여부<br />
+    <div id="code">instanceName.maxChars = null;</div><br>
+	- 사용자가 입력할 수 있는 최대 문자 수(<code>null</code>이면 무한대)<br />
+    <div id="code">instanceName.length = 0;</div><br>
+	- 글자 수를 <code>0</code>으로<br />
+    <div id="code">instanceName._name = &quot;&quot;;</div><br>
+	- 인스턴스 이름(값 대입)<br />
+    <div id="code">instanceName.variable = &quot;&quot;;</div><br>
+	- 변수 이름(값 대입)<br />
+    <div id="code">instanceName.html = false;</div><br>
+	- HTML 태그 사용 여부<br />
+    <div id="code">instanceName.htmlText = &quot;&quot;;</div><br>
+    - HTML 텍스트<br />
+    <div id="code">instanceName.wordWrap = true;</div><br>
+    - 자동 줄바꿈 여부<br />
+    <div id="code">instanceName._x = 0;
+instanceName._y = 0;</div><br>
+	- x값과 y값<br />
+    <div id="code">instanceName._width  = 0;
+instanceName._height = 0;</div><br>
+	- 너비와 높이<br />
+    <div id="code">instanceName._xscale = 100;
+instanceName._yscale = 100;</div><br>
+	- 너비와 높이 조절 (백분율)<br />
+    <div id="code">instanceName.restrict = &quot;&quot;;</div><br>
+	- 입력할 수 있는 문자 세트 (후술)<br />
+    <div id="code">instanceName.embedFonts = false;</div><br>
+	- 장치 글꼴 사용 여부(<code>true</code>가 미사용, <code>false</code>가 사용)<br />
+    <div id="code">instanceName.password = false;</div><br>
+	- <code>****</code> 표시<br />
+    <div id="code">instanceName._visible = true;</div><br>
+    - 가시성 (<code>false</code>로 설정된 텍스트 필드는 사용할 수 없음)<br />
+    <div id="code">instanceName.scroll = 0;</div><br>
+	- 현재 스크롤 수직 위치<br />
+    <div id="code">instanceName.hscroll = 0;</div><br>
+    - 현재 스크롤 수평 위치<br />
+    <div id="code">instanceName.maxscroll = 0;</div><br>
+	- <code>TextField.scroll</code>의 최댓값<br />
+    <div id="code">instanceName.maxhscroll = 0;</div><br>
+    - <code>TextField.hscroll</code>의 최댓값<br />
+    <div id="code">instanceName.text = &quot;&quot;;</div><br>
+    - 필드에 들어갈 글자<br>
+    <div id="code">instanceName.text = &quot;this is my test field \r aaa&quot; + &quot;bbb&quot;;</div><br>
+	- 텍스트에 내용(<code>this is my test field \r aaabbb</code>) 넣기<br />
+  <div id="code">instanceName.setTextFormat(myformat);</div><br>
+	- 텍스트 필드의 속성을 <code>myFormat</code>으로 변경<br>
+  <div id="code">myformat = new TextFormat();</div><br>
+  	- 새 <code>TextFormat</code>(텍스트 필드의 속성) 생성<br />
+  <div id="code">myformat.align = &quot;left&quot;;</div><br>
+	- 단락의 정렬<br />
+  <div id="code">myformat.blockIndent = 0;</div><br>
+  - 왼쪽 여백에서 블록 들여쓰기 (포인트)<br />
+  <div id="code">myformat.indent = 0;</div><br>
+	- 왼쪽 여백에서 단락 들여쓰기 (각 단락의 첫 줄에만 적용)<br />
+  <div id="code">myformat.bold = false;</div><br>
+	- 텍스트가 볼드체로 표시되는지 여부<br />
+  <div id="code">myformat.bullet = false;</div><br>
+	- 텍스트가 불릿(*표시) 목록에 있는지 여부<br />
+  <div id="code">myformat.color  = 0x000000;</div><br>
+	- 텍스트의 색상<br />
+  <div id="code">myformat.font = &quot;Times New Roman&quot;;</div><br>
+  	- 텍스트의 글꼴<br />
+  <div id="code">myformat.italic = false;</div><br>
+  	- 텍스트가 이탤릭체로 표시되는지 여부<br />
+  <div id="code">myformat.leading = 0;</div><br>
+	- 줄 사이의 행간 세로 간격<br />
+  <div id="code">myformat.leftMargin = 0;
+myformat.rightMargin = 0;</div><br>
+	- 단락의 왼쪽, 오른쪽 여백 (포인트)<br />
+  <div id="code">myformat.tabStops = [];</div><br>
+	- 사용자 정의 탭 중지를 지정 (empty array)<br />
+  <div id="code">myformat.target = &quot;&quot;;</div><br>
+	- 브라우저에서 하이퍼링크가 표시되는 창<br />
+  <div id="code">myformat.size = 12;</div><br>
+	- 텍스트의 크기<br />
+  <div id="code">myformat.underline = false;</div><br>
+	- 텍스트에 밑줄이 그어졌는지 여부<br />
+<div id="code">myformat.url = &quot;&quot;;</div><br>
+	- 텍스트가 링크되는 URL<br></div>
+  <h3><li>텍스트 필드에 입력할 수 있는 문자 세트</li></h3><div style="padding-left:20px">
+  <div id="code">instanceName.restrict = &quot;A-Z 0-9&quot;;</div><br>
+	- 대문자, 공백(<code> </code>), 숫자만 입력할 수 있음<br />
+  <div id="code">instanceName.restrict = &quot;^a-z&quot;;</div><br>
+	- 소문자를 제외한 모든 문자를 입력<br />
+  <div id="code">instanceName.restrict = &quot;A-Z^Q&quot;;</div><br>
+  	- <code>Q</code>를 제외한 대문자만 입력<br />
+  <div id="code">instanceName.restrict = &quot;\\-&quot;</div><br>
+	- <code>-</code> 만 입력</div>
+  <h3><li>텍스트 필드에서 HTML 사용 (1)</li></h3><div style="padding-left:20px">
+  <div id="code">aa.html = true;</div><br>
+	- HTML 태그 사용 - 볼드체 텍스트<br />
+  <div id="code">aa.htmlText = &quot;&lt;b&gt; this is bold text &lt;/b&gt;&quot;;</div><br></div>
+  <h3><li>텍스트 필드에서 HTML 사용 (2)</li></h3><div style="padding-left:20px">
+  <div id="code">aa.html = true;</div><br>
+  - HTML 태그 사용 - 표 사용<br />
+  <div id="code">aa.htmlText = &quot;&quot;;
+aa.htmlText += &quot; &lt;table id='ttt' border='1'&gt; &lt;tr&gt; &lt;td&gt; 테이블의 텍스트1 &lt;/td&gt; &quot;;
+aa.htmlText += &quot; &lt;td&gt; 테이블의 텍스트2 &lt;/td&gt; &lt;/tr&gt; &lt;/table&gt; &quot;;
+aa.htmlText += &quot; &lt;a href=' ' &gt; 이동 하기 &lt;/a&gt; &quot;;</div><br></div>
+  <h3><li>HTML에서 ActionScript 함수 사용</li></h3><div style="padding-left:20px">
+  <div id="code">function Func(arg) {
+	trace (&quot;You clicked me! Argument was &quot; + arg);
+};
+aa.html = true;
+aa.htmlText = &quot;&lt;a href=&quot;asfunction:Func, Foo&quot;&gt; Click &lt;/a&gt;&quot;; </div><br />
+  - <code>Func</code> 함수를 통해 <code>You clicked me! Argument was Foo</code>를 출력하는 링크 <code>Click</code></div>
+  <h3><li>텍스트 필드 조정</li></h3><div style="padding-left:20px">
+  <div id="code">on (release) {
+	TextField.hscroll++;
+}</div><br>
+	- 텍스트를 수평으로 스크롤<br />
+  <div id="code">on (release) {
+	TextField.scroll++;
+}</div><br>
+	- 텍스트를 수직으로 스크롤<br />
+  <div id="code">x = TextField.maxscroll;</div><br>
+  - 총 줄 수를 표시</div>
+  <h3><li>마우스 클릭 시 내용 자동 입력</li></h3><div style="padding-left:20px">
+  텍스트 필드 속성이 입력일 때
+  <div id="code">TextField.onSetFocus = function() {
+	this.text=&quot; input data &quot;;
+};</div><br />
+	- 마우스 클릭 시 내용 <code> input data </code> 자동 입력</div>
+  <h3><li>텍스트 필드 커서</li></h3><div style="padding-left:20px">
+  <code>aaa</code>와 <code>bbb</code>라는 두 개의 텍스트 필드를 만든 후<br />
+  <div id="code">aaa.text=&quot;1234567890&quot;
+Selection.setFocus(&quot;aaa&quot;);</div><br />
+	- 텍스트 모든 문자 포커스. 문자 없으면 커서 깜박
+	<div id="code">Selection.setSelection(2,5);</div><br>
+	- (시작점, 끝점).  결과는 <code>&quot;345&quot;</code> 포커스
+	<div id = "code">bbb.text = Selection.getBeginIndex();</div><br>
+	- 포커스 시작점 반환. 결과는 <code>2</code>
+	<div id = "code">bbb.text = Selection.getEndIndex();</div><br>
+	- 포커스 끝점 반환. 결과는 <code>5</code>
+	<div id = "code">bbb.text = Selection.getCaretIndex();</div><br>
+	- 깜박이는 커서 위치 반환. 결과는 <code>5</code>
+	<div id = "code">bbb.text = Selection.getFocus();</div><br>
+	- 포커스 변수 이름 반환.  결과는 <code>_level0.aaa</code></div>
+----------------------------------------------------------------------------<br />
+  ccc.onRollOut = function () { Selection.setFocus(&quot;aaa&quot;); }   //  마우스 아웃때 문자 포커스<br />
+  ----------------------------------------------------------------------------<br />
+  // _root.var1 동적텍스트 와 _root.var2 입력텍스트에  각각 aaa.txt 파일 데이타 불러오기<br />
+  // aaa.txt 내용 (변수명이 같아야 한다)<br />
+  // &amp;var1=aaa가나다bbb라마바ccc사&amp;<br />
+  // &amp;var2=ddd가나다eee라마바fff사&amp;<br />
+  System.useCodepage = true; <br />
+  var var1 = &quot;1&quot;, var2 = &quot;2&quot;;<br />
+  _root.loadVariables(&quot;aaa.txt&quot;);        // loadVariables 명령으로  aaa.txt 파일 불러오기<br />
+  trace(var1);  trace(var2);             // (화면은 바뀌지만  값은 안바뀐다)<br />
+  _root.var1.loadVariables(&quot;aaa.txt&quot;);   // 잘못된 명령어<br />
+  loadVariables(&quot;aaa.txt&quot;,var1);         // 잘못된 명령어<br />
+  loadVariables(&quot;aaa.txt&quot;,var1ins);      // 잘못된 명령어<br />
+  loadVariablesNum(&quot;aaa.txt&quot; , 0 );      // loadVariablesNum 명령으로  aaa.txt 파일 불러오기<br />
+  trace(var1);  trace(var2);             // (화면은 바뀌지만  값은 안바뀐다)<br />
+  mytxt = new LoadVars();                // load 명령으로 aaa.txt 파일 불러오기 <br />
+  mytxt.load(&quot;aaa.txt&quot;); <br />
+  mytxt.onLoad =  function () {<br />
+  var1 = String( &quot;/&quot; + mytxt.var1 + &quot;.jpg&quot;);<br />
+  var2 = String( &quot;/&quot; + mytxt.var2 + &quot;.jpg&quot;);<br />
+  trace(var1);    trace(var2);     // (onLoad 안에서는 화면도 바뀌고 값도 바뀐다)<br />
+  };<br />
+  trace(var1);  trace(var2);             // (onLoad 밖에서는 화면은 바뀌지만 값은 안바뀐다)<br />
+  ----------------------------------------------------------------------------<br />
+  memodate = 1;      // &lt;&lt; 메인 액션 &gt;&gt; <br />
+  function jpgload() {                                     // jpg파일 로드 함수<br />
+  this.createEmptyMovieClip(&quot;slidememo&quot;+memodate, 1);   // 빈 무비클립 만들기<br />
+  this[&quot;slidememo&quot;+memodate]._x = 48;<br />
+  this[&quot;slidememo&quot;+memodate]._y = 124;<br />
+  this[&quot;slidememo&quot;+memodate].loadMovie(&quot;c&quot;+ memodate +&quot;.jpg&quot;);  // jpg파일 로드<br />
+  this[&quot;slidememo&quot;+memodate]._xscale = 150;   // x크기 변형(%)<br />
+  this[&quot;slidememo&quot;+memodate]._yscale = 150;   // y크기 변형(%)<br />
+  };<br />
+  function jpgunload() {                                   // jpg파일 언로드 함수<br />
+  this[&quot;slidememo&quot;+memodate].unloadMovie();             // 무비클립에 로드된 무비를 언로드<br />
+  this[&quot;slidememo&quot;+memodate].removeMovieClip();         // 무비클립 삭제하기<br />
+  };<br />
+  jpgload();</p>
+>>>>>>> 790332c78cdff84ff00ec434685257e0bc05cda1
 <p class="font1">on(press) {        // &lt;&lt;  단추 무비클립 액션 &gt;&gt;          // 버튼 누르면 jpg 파일 1장씩 로드<br />
 	jpgunload();<br />
 	memodate +=1 <br />
