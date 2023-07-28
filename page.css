@@ -10,13 +10,13 @@
 	--side-padding: 0;
 	padding: 20px var(--side-padding) 10px var(--side-padding);
 }
-@media (min-width: 1280px) {
-	.Container {
-		--side-padding: 200px;
-	}
-}
 @media (min-width: 960px) {
 	.Container {
 		--side-padding: 100px;
+	}
+}
+@media (min-width: 1280px) {
+	.Container {
+		--side-padding: 200px;
 	}
 }
