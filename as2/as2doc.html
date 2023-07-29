@@ -78,37 +78,37 @@ trace (z);</div>
 	<div id="code">for (i=1; i&lt;=120;  i+=12) {<br><tab></tab>continue;<br>};</div>
 	<br>- <code>for step</code> 반복문<br />
 	<div id="code">while (true) {
-		if (a == 0) {
-				break;
-		};
+	if (a == 0) {
+		break;
+	};
 };</div><br>
 	- <code>while</code>  반복문<br />
 	<div id="code">do {
-		if(a == 0) {
-				break;
-		};
+	if(a == 0) {
+		break;
+	};
 };
 while(true);</div><br>
 		- <code>do</code> 반복문<br />
 	<div id="code">if ((n == 0) || (n &gt;= 5) &amp;&amp; (n &lt;= 55) !(n=15)) {
-		gotoAndPlay(1);
+	gotoAndPlay(1);
 } else if (n == 2) {
-		gotoAndPlay(2);
+	gotoAndPlay(2);
 } else {
-		gotoAndPlay(3);
+	gotoAndPlay(3);
 };</div><br />
 	- <code>if</code> 조건문<br>
 	<div id="code">num_ch = 3;
 switch (num_ch) {
-		case 1: {
-				trace ( &quot; case 1 tested true &quot; );
-				break;
-		} case 2: {
-				trace ( &quot; case 2 tested true &quot; );
-				break;
-		} default: {
-				trace ( &quot; no case tested true &quot; );
-		}
+	case 1: {
+		trace ( &quot; case 1 tested true &quot; );
+		break;
+	} case 2: {
+		trace ( &quot; case 2 tested true &quot; );
+		break;
+	} default: {
+		trace ( &quot; no case tested true &quot; );
+	}
 };</div><br>
 	- <code>switch</code> 조건문<br /></div>
 	<h3><li>함수 선언</li></h3><div style="padding-left:20px">
@@ -222,35 +222,35 @@ trace (account);</div><br>
 	- 마우스 감춤<br />
 	※ 이하 5개 액션이 <code>depth</code>를 무시하면 <code>depth 무시</code>를, 그렇지 않으면 <code>depth 적용</code>을 출력함.<br>
 	<div id="code">myClip.onMouseDown = function () {
-		trace (&quot; depth 무시&quot;);
+	trace (&quot; depth 무시&quot;);
 };</div><br>
 	- 마우스를 <code>myClip</code> 무비클립에 누를 때<br />
 	<div id="code">myClip.onMouseUp = function () {
-		trace (&quot;depth 무시&quot;);
+	trace (&quot;depth 무시&quot;);
 };</div><br>
 	- 마우스를 <code>myClip</code> 무비클립에 눌렀다 놓을 때<br />
 	<div id="code">myClip.onMouseMove = function () {
-		trace (&quot;depth 무시&quot;);
+	trace (&quot;depth 무시&quot;);
 };</div><br>
 	- 마우스를 <code>myClip</code> 위에서 이동할 때<br />
 	<div id="code">myClip.onPress = function () {
-		trace (&quot;depth 적용&quot;);
+	trace (&quot;depth 적용&quot;);
 };</div><br>
 	- <code>myClip</code>을 누를 때<br />
 	<div id="code">myClip.onRelease = function () {
-		trace (&quot;depth 적용 &quot;);
+	trace (&quot;depth 적용 &quot;);
 };</div><br>
 	- <code>myClip</code>을 눌렀다 놓을 때<br />
 	<div id="code">myClip.onReleaseOutside = function () {
-		trace (&quot;Outside&quot;);
+	trace (&quot;Outside&quot;);
 };</div><br>
 	- <code>myClip</code>에서 나가서 놓을 때 <code>Outside</code>를 출력<br />
 	<div id="code">myClip.onRollOver = function () {
-		trace (&quot;Over called&quot;);
+	trace (&quot;Over called&quot;);
 };</div><br>
 	- 마우스가 <code>myClip</code> 위에 있을 때 계속 <code>Over called</code>를 출력<br />
 	<div id="code">myClip.onRollOut = function () {
-		trace (&quot;Out called&quot;);
+	trace (&quot;Out called&quot;);
 };</div><br>
 	- 마우스가 <code>myClip</code> 밖에 있을 때 계속 <code>Out called</code>를 출력</div>
 	<h3><li>버튼 액션</li></h3>
@@ -258,7 +258,7 @@ trace (account);</div><br>
 	버튼을 한 번 클릭 후 액션을 넣는다.<br>
 	맨 마지막 <code>}</code>에는 <code>;</code>를 붙이지 않는다.<br />
 	<div id="code">on (&lt;조건&gt;) {
-		&lt;실행할 액션&gt;
+	&lt;실행할 액션&gt;
 }</div><br>
 	<strong>조건:</strong><br>
 	<code>press</code>: 클릭할 때<br />
@@ -280,7 +280,7 @@ trace (account);</div><br>
 	무비 클립 클릭 후 액션을 넣는다.<br />
 	맨 마지막 <code>}</code>에는 <code>;</code>를 붙이지 않는다.<br>
 	<div id="code">onClipEvent (&lt;조건&gt;) {
-		&lt;실행할 액션&gt;
+	&lt;실행할 액션&gt;
 }</div><br>
 	<strong>조건:</strong><br>
 	<code>load</code>: 로드될 때 <br />
@@ -294,32 +294,32 @@ trace (account);</div><br>
 	<code>data</code>: <code>loadVariables</code> 또는 <code>loadMovie</code> 함수로 실행하는 무비 클립에 데이터가 수신될 때</div>
 	<h3><li>텍스트 필드</li></h3><div style="padding-left:20px">
 	<div id="code">TextField.onChanged = function () {
-		trace (&quot;onChanged called&quot;);
-	};</div><br />
+	trace (&quot;onChanged called&quot;);
+};</div><br />
 	- <code>TextField</code> 텍스트 필드의 내용이 변경될 때 <code>onChanged called</code> 출력<br />
 	<div id="code">TextField.onSetFocus = function () {
 		trace (&quot;onSetFocus called&quot;);
 };</div><br />
 	- <code>TextField</code> 텍스트 필드의 내용 부분에 마우스가 클릭 될 때 <code>onSetFocus</code> 출력<br />
 	<div id="code">TextField.onKillFocus = function () {
-		trace (&quot;onKillFocus called&quot;);
+	trace (&quot;onKillFocus called&quot;);
 };</div><br />
 	- <code>TextField</code> 텍스트 필드의 내용 바깥 부분에 마우스가 클릭 될 때 <code>onKillFocus called</code> 출력<br />
 	<div id="code">TextField.onScroller = function () {
-		trace (&quot;onScroller called&quot;);
+	trace (&quot;onScroller called&quot;);
 };</div><br />
 	- <code>TextField</code> 텍스트 필드의 내용이 스크롤 될 때 <code>onScroller called</code> 출력</div>
 <h3><li>로드/언로드</li></h3><div style="padding-left:20px">
 	<div id="code">myMovieClip.onData = function () {
-		trace (&quot;onData called&quot;);
+	trace (&quot;onData called&quot;);
 };</div><br />
 	- <code>myMovieClip</code> 무비 클립이 <code>loadVariables</code> 또는 <code>loadMovie</code> 함수로부터 데이터를 받을 때 <code>onData called</code> 출력<br />
 	<div id="code">myMovieClip.onLoad =  function () {
-		>trace (&quot;onLoad called&quot;);
+	trace (&quot;onLoad called&quot;);
 };</div><br />
 	- <code>myMovieClip</code> 무비 클립이 <code>load</code> 함수로부터 데이터를 받을 때 <code>onLoad called</code> 출력<br />
 	<div id="code">myMovieClip.onUnLoad =  function () {
-		trace (&quot;onUnLoad called&quot;);
+	trace (&quot;onUnLoad called&quot;);
 };</div><br />
 	- <code>myMovieClip</code> 무비 클립이 언로드될 때 <code>onUnLoad called</code> 출력<br />
 	<div id="code">myMovieClip.stop();</div><br />
@@ -341,25 +341,25 @@ trace (account);</div><br>
 };</div><br>
 	- <code>_root</code>에서 프레임 진입 시 액션 실행<br />
 	<div id="code">onEnterFrame = function() {
-		&lt;실행할 액션&gt;
+	&lt;실행할 액션&gt;
 };</div><br>
 	- 이 심볼(<code>_root</code> 포함)에서 프레임 진입 시 액션 실행</div>
 	<h3><li>타이머</li></h3><div style="padding-left:20px">
 	<div id="code">tmtm = getTimer();</div><br />
 	- <code>tmtm</code>에 현재 타이머 값 할당(밀리초 단위)<br>
 	<div id="code">onEnterFrame = function() {
-		if ( (getTimer()-tmtm) &gt;= 500 ) {
-				tmtm=getTimer();
-				trace (tmtm);
-		};
-		if ( (getTimer()-tmtm) &gt;= 1000 ) {
-				tmtm=getTimer();
-				trace (tmtm);
-		};
-		if ( (getTimer()-tmtm) &gt;= 2000 ) {
-				tmtm=getTimer();
-				trace (tmtm);
-		};
+	if ( (getTimer()-tmtm) &gt;= 500 ) {
+		tmtm=getTimer();
+		trace (tmtm);
+	};
+	if ( (getTimer()-tmtm) &gt;= 1000 ) {
+		tmtm=getTimer();
+		trace (tmtm);
+	};
+	if ( (getTimer()-tmtm) &gt;= 2000 ) {
+		tmtm=getTimer();
+		trace (tmtm);
+	};
 };</div><br>
 	- 첫 번째 <code>if</code>문: <code>tmtm</code>과 현재 타이머 값이 <code>500</code>만큼 차이가 나면 (0.5초마다) <code>tmtm</code>에 새롭게 현재 타이머 값을 할당하고 <code>tmtm</code> 값을 출력 <br>
 	두 번째 <code>if</code>문: <code>tmtm</code>과 현재 타이머 값이 <code>1000</code>만큼 차이가 나면 (1초마다) 첫 번째 <code>if</code>문과 동일한 기능 수행<br>
@@ -367,11 +367,11 @@ trace (account);</div><br>
 	<h3><li>반복문 (2)</li></h3>
 	<div style="padding-left:20px">
 	<div id="code">onEnterFrame = function() {
-		nr += 1;
-		if (nr &gt; 5) {
-				delete  onEnterFrame;
-		};
-		trace (nr);
+	nr += 1;
+	if (nr &gt; 5) {
+		delete  onEnterFrame;
+	};
+	trace (nr);
 };</div><br>
 	- <code>nr</code>에 계속 1씩 추가, <code>nr</code>이 <code>5</code>보다 크면 반복 실행 중지 후 <code>nr</code> 출력 (5번 반복)</div>
 	<h3><li>텍스트 필드 (2)</li></h3><div style="padding-left:20px">
@@ -380,10 +380,10 @@ trace (account);</div><br>
 	<div id="code">ins.border = true;</div><br />
 	- <code>ins</code>의 경계선을 활성화<br>
 	<div id="code">function callback() {
-		ins._x += 5;
-		if ( ins._x &gt; 400 ) {
-				clearInterval( intervalID );
-		};
+	ins._x += 5;
+	if ( ins._x &gt; 400 ) {
+		clearInterval( intervalID );
+	};
 }</div><br />
 	- <code>callback</code>을 "<code>ins</code>의 x값을 <code>5</code>씩 증가, <code>400</code>을 넘고 <code>clearInterval</code> 함수를 사용해 반복 중단"으로 정의<br>
 	<div id="code">var intervalID;<br />
@@ -458,12 +458,12 @@ trace (account);</div><br>
 	<div style="padding-left:20px">
 	<div id="code">_root.createEmptyMovieClip(&quot;box&quot;,1);</div><br />
 	- 무비 클립 <code>box</code> 만들기<br><div id="code">with (_root.box) {
-		moveTo(1, 1);
-		lineStyle(10, 0x00cc00, 100);
-		lineTo(Stage.width, 1);
-		lineTo(Stage.width, Stage.height);
-		lineTo(1, Stage.height);
-		lineTo(1, 1);
+	moveTo(1, 1);
+	lineStyle(10, 0x00cc00, 100);
+	lineTo(Stage.width, 1);
+	lineTo(Stage.width, Stage.height);
+	lineTo(1, Stage.height);
+	lineTo(1, 1);
 };</div><br>
 	- <code>_root.box</code>를<br>
 	(1, 1)로 움직이고<br>
@@ -512,7 +512,7 @@ getURL(&quot;javascript:alert(\&quot; &quot;+ hello + &quot;  \&quot;)&quot;);</
 	4.  <code>aaa.html</code> 파일을 편집기로 열고<div id="code">function aaa_DoFSCommand(command, args) { ... }</div><br>
 	속에<br />
 	<div id="code">if (command == &quot;messagebox&quot;) {
-		alert(args);
+	alert(args);
 };</div><br>
 	을 추가하고 저장한다<br />
 	5.  <code>aaa.html</code> 실행</div>
@@ -525,9 +525,9 @@ getURL(&quot;javascript:alert(\&quot; &quot;+ hello + &quot;  \&quot;)&quot;);</
 	<div id="code">function aaa_DoFSCommand(command, args) { ... }</div><br>
 	속에<br>
 	<div id="code">if (command == &quot;search&quot;) { // aaa.HTML의 코드
-		EEEfind = &quot;FFFFFFFF&quot;;
-		window.document.aaa.SetVariable(&quot;TextFieldvar&quot;, EEEfind) ;
-		return TextFieldvar;
+	EEEfind = &quot;FFFFFFFF&quot;;
+	window.document.aaa.SetVariable(&quot;TextFieldvar&quot;, EEEfind) ;
+	return TextFieldvar;
 };</div><br />
 	삽입 <br>
 	3. <code>aaa.html</code> 실행<br>
@@ -556,7 +556,7 @@ getURL(&quot;javascript:alert(\&quot; &quot;+ hello + &quot;  \&quot;)&quot;);</
 	- <code>sss.bbb</code>에 로드된 무비를 언로드</div>
 	<h3><li>SWF 파일 로드하기 (2)</li></h3><div style="padding-left:20px">
 	<div id="code">button.onPress = function() {
-		_root.loadMovie(&quot;aaa.swf&quot;);
+	_root.loadMovie(&quot;aaa.swf&quot;);
 }</div><br>
 	- <code>button</code>을 누를 시<code>_root</code>에 <code>aaa.swf</code>를 로드</div>
 	<h3><li>무비 클립의 위치</li></h3><div style="padding-left:20px">
@@ -583,31 +583,31 @@ getURL(&quot;javascript:alert(\&quot; &quot;+ hello + &quot;  \&quot;)&quot;);</
 	<div id="code">myClip.swapDepths(otherClip);</div><br>
 	- 클립 깊이를 <code>otherClip</code> 클립과 바꿈<br />
 	<div id="code">for (i=1; i&lt;=360; i++)  {
-		duplicateMovieClip (ins1, &quot;mc&quot;+i, i);
-		setProperty (&quot;mc&quot;+i, _x, random(300));
-		setProperty (&quot;mc&quot;+i, _y, random(300));
-		setProperty (&quot;mc&quot;+i, _alpha, random(300));
-		setProperty (&quot;mc&quot;+i, _xscale, 150);
-		setProperty (&quot;mc&quot;+i, _yscale, 150);
+	duplicateMovieClip (ins1, &quot;mc&quot;+i, i);
+	setProperty (&quot;mc&quot;+i, _x, random(300));
+	setProperty (&quot;mc&quot;+i, _y, random(300));
+	setProperty (&quot;mc&quot;+i, _alpha, random(300));
+	setProperty (&quot;mc&quot;+i, _xscale, 150);
+	setProperty (&quot;mc&quot;+i, _yscale, 150);
 };</div><br>
 	- <code>ins1</code>을 <code>mc1, mc2, ..., mc360</code>이라는 이름으로 360개 복사,<br>
 	각 클립을 (0~360 중 하나, 0~360 중 하나)으로 이동,<br>
 	각 클립의 알파값을 0~360 중 하나로 지정,<br>
 	각 클립을 가로로 <code>150</code>%, 세로로 <code>150</code>% 확대<br />
 	<div id="code">for (i=1; i&lt;=360; i++)  {
-		duplicateMovieClip (ins1, &quot;mc&quot;+i, i);
-		this[&quot;mc&quot; + i]._x = i;
-		this[&quot;mc&quot; + i]._y = i;
+	duplicateMovieClip (ins1, &quot;mc&quot;+i, i);
+	this[&quot;mc&quot; + i]._x = i;
+	this[&quot;mc&quot; + i]._y = i;
 };</div><br />
 	- <code>ins1</code>을 <code>mc1, mc2, ..., mc360</code>이라는 이름으로 360개 복사<br>
 	<code>mc1</code>을 (1, 1)로, <code>mc2</code>를 (2,2), ...로 해서 <code>mc360</code>까지 차례대로 (360, 360)까지 이동<br>
 	<div id="code">for (i=1; i&lt;=50; i++)  {
-		this[&quot;mc_&quot;+i]._x += 10;
-		this[&quot;mc_&quot;+i]._y += 10;
+	this[&quot;mc_&quot;+i]._x += 10;
+	this[&quot;mc_&quot;+i]._y += 10;
 };</div><br />
 	- <code>mc1</code>부터 <code>mc50</code>까지 각각x축, y축 방향으로 10씩 평행이동<br>
 	<div id="code">for (i=1; i&lt;=360; i++)  {
-		this[&quot;mc&quot; + i].removeMovieClip ();
+	this[&quot;mc&quot; + i].removeMovieClip ();
 };</div><br>
 	- <code>mc1</code>부터 <code>mc360</code>까지 전부 삭제</div>
 	<h3><li>무비 클립의 속성 변경</li></h3>
@@ -677,18 +677,18 @@ getURL(&quot;javascript:alert(\&quot; &quot;+ hello + &quot;  \&quot;)&quot;);</
 }</div><br>
 	- <code>../a</code> 무비클립을 (클립의) 다음 프레임으로 이동<br />
 	<div id="code">if (_framesloaded == 10) {
-		&lt;실행할 액션&gt;
+	&lt;실행할 액션&gt;
 }</div><br>
 	- 만약 10프레임이 로드되면 액션 실행</div>
 	<h3><li>속성 설정</li></h3>
 	<div style="padding-left:20px">
 	<code>with</code> 문<br />
 	<div id="code">for (i=0; i&lt;1000; i++) {
-		with (aaa[i]) {
-				_x = Math.floor(Math.random() * 500);
-				_y = random(500);
-				_rotation = random(360);
-		}
+	ith (aaa[i]) {
+		_x = Math.floor(Math.random() * 500);
+		_y = random(500);
+		_rotation = random(360);
+	}
 }</div><br />
   - <code>aaa[0]</code>부터 <code>aaa[999]</code>까지
   (<code>Math.floor(Math.random() * 500)</code>((0~1 사이 무작위 실수 × 500)의 정수부), 0~500 사이 무작위 값)으로 이동하고 무작위로 각도를 변경<br>
@@ -1080,51 +1080,79 @@ function jpgload() {
 	jpgload();
 }</div><br />
 	- 버튼 누르면 JPG 파일 1장씩 로드</div>
-	----------------------------------------------------------------------------<br />
-	// 툴팁 사용하기<br />
-	function  tooltip(tool1,tool2,tool3) {          // tooltip() 함수<br />
-	if (tool1==1) { createTextField (&quot;daysssdisp&quot;, 202, -375, -210, 700, 420); };<br />
-	if (tool1==2) { createTextField (&quot;daysssdisp&quot;, 202, -350, -210, 700, 420); };<br />
-	daysssdisp.type = &quot;dynamic&quot;;               // 텍스트 필드의 속성 <br />
-	daysssdisp.border = true;                  // (테두리) <br />
-	daysssdisp.borderColor = 0x00ffff;         // (테두리 색상)<br />
-	daysssdisp.background = true;              // (배경)<br />
-	daysssdisp.backgroundColor=0xffffee;       // (배경 색상)<br />
-	daysssdisp.textColor = 0x000077;           // (글자 색상)</p>
-<p class="font1"> myformat = new TextFormat();<br />
-	myformat.size = 12;                  // (텍스트의 크기)<br />
-	myformat.align = &quot;left&quot;;             // (단락의 정렬 )<br />
-	myformat.indent = 20;                // (들여쓰기 포인트 단위)<br />
-	<br />
-	text000 =  &quot;&quot;;                       // 줄바꿈 코드 삭제 하기<br />
-	text111 =  tool2.length;<br />
-	if (text111 &gt;= 3000) {  text111 = 3000; };<br />
-	for (i=0; i&lt;=text111; i++)  {<br />
-	text222 =  tool2.charCodeAt(i);<br />
-	if (text222 == 10) {  text000 +=  &quot;&quot;;<br />
-	} else  {  text000 +=  tool2.substr(i,1);         };<br />
-	};</p>
-<p class="font1"> daysssdisp.text =  &quot; \n ( &quot; + tool3 + &quot; ) \n&quot; + text000;  // (글자) <br />
-	daysssdisp.setTextFormat(myformat);<br />
-	};</p>
-<p class="font1"> sssdayboxmc1.onRollOver = function () {  tooltip(1, d1, 1);    };  // 클립오버시 툴팁 보임<br />
-	sssdayboxmc2.onRollOver = function () {  tooltip(1, d2, 2);    };<br />
-	sssdayboxmc3.onRollOver = function () {  tooltip(2, d3, 3);    };<br />
-	for (o=1;o&lt;=3;o++) {                                               // 클립아웃시 툴팁 안보임<br />
-	this[&quot;sssdayboxmc&quot;+o].onRollOut = function () {  daysssdisp.removeTextField ();  }; <br />
-	};<br />
-	----------------------------------------------------------------------------<br />
-	var fruits = [&quot;oranges&quot;, &quot;apples&quot;, &quot;strawberries&quot;, &quot;pineapples&quot;];   // 정렬 (문자)<br />
-	trace(fruits.join());<br />
-	fruits.sort();<br />
-	trace(fruits.join());<br />
-	--------------------------------------------------------------------------<br />
-	var myArray=[23,634,1,184,9,54];                                    // 정렬 (숫자)<br />
-	trace(myArray.join());<br />
-	function order(a,b){ return a-b; };<br />
-	myArray.sort(order);<br />
-	trace(myArray.join());<br />
-	----------------------------------------------------------------------------<br />
+	<h3><li>툴팁 사용하기</li></h3><div style="padding-left:20px">
+	<div id = "code">function  tooltip(tool1,tool2,tool3) {
+	if (tool1==1) {
+		createTextField (&quot;daysssdisp&quot;, 202, -375, -210, 700, 420);
+	};
+	if (tool1==2) {
+		createTextField (&quot;daysssdisp&quot;, 202, -350, -210, 700, 420);
+	};
+
+	daysssdisp.type = &quot;dynamic&quot;;               // 텍스트 필드의 속성
+	daysssdisp.border = true;                  // (테두리 - 활성화)
+	daysssdisp.borderColor = 0x00ffff;         // (테두리 색상 - <span style = "color: #0ff;">#00FFFF</span>로)
+	daysssdisp.background = true;              // (배경 - 활성화)
+	daysssdisp.backgroundColor=0xffffee;       // (배경 색상 - <span style = "color: #ffe;">#FFFFEE</span>로)
+	daysssdisp.textColor = 0x000077;           // (글자 색상 - <span style = "color: #007;">#000077</span>로)
+
+	myformat = new TextFormat();
+	myformat.size = 12;                  // (텍스트의 크기 - 12)
+	myformat.align = &quot;left&quot;;             // (단락의 정렬 - 왼쪽 정렬)
+	myformat.indent = 20;                // (들여쓰기 포인트 단위 - 20)
+
+	text000 =  &quot;&quot;;                       // 줄바꿈 코드 삭제 하기
+	text111 =  tool2.length;
+	if (text111 &gt;= 3000) {
+		text111 = 3000;
+	};
+	for (i=0; i&lt;=text111; i++)  {
+		text222 =  tool2.charCodeAt(i);
+		if (text222 == 10) {
+			text000 +=  &quot;&quot;;
+		} else {
+			text000 +=  tool2.substr(i,1);
+		};
+	};
+
+	daysssdisp.text =  &quot; \n ( &quot; + tool3 + &quot; ) \n&quot; + text000;  // (글자)
+	daysssdisp.setTextFormat(myformat);
+};</div><br>
+	- <code>tooltip</code> 함수<br>
+	<div id = "code">sssdayboxmc1.onRollOver = function () {
+	tooltip(1, d1, 1);
+};
+sssdayboxmc2.onRollOver = function () {
+	tooltip(1, d2, 2);
+};
+sssdayboxmc3.onRollOver = function () {
+	tooltip(2, d3, 3);
+};</div><br>
+	- 클립오버시 툴팁 보임
+<div id = "code">for (o=1;o&lt;=3;o++) {
+	this[&quot;sssdayboxmc&quot;+o].onRollOut = function () {
+		daysssdisp.removeTextField ();
+	};
+};</div><br>
+	- 클립아웃시 툴팁 안보임</div>
+	<h3><li>문자 정렬</li></h3><div style="padding-left:20px">
+	<div id = "code">var fruits = [&quot;oranges&quot;, &quot;apples&quot;, &quot;strawberries&quot;, &quot;pineapples&quot;];
+trace(fruits.join());</div><br>
+	- 결괏값 <code>oranges,apples,strawberries,pineapples</code>
+	<div id = "code">fruits.sort();
+trace(fruits.join());</div><br />
+	- 결괏값 <code>apples,oranges,pineapples,strawberries</code></div>
+	<h3><li>숫자 정렬</li></h3><div style="padding-left:20px">
+	<div id = "code">var myArray=[23,634,1,184,9,54];
+trace(myArray.join());</div><br>
+	- 결괏값 <code>23,634,1,184,9,54</code>
+	<div id = "code">function order(a,b) {
+	return a-b;
+};
+myArray.sort(order);
+trace(myArray.join());</div><br>
+	- 결괏값 <code>1,9,23,54,184,634</code></div>
+	---------------------------------------------------------------------------<br />
 	this._x += 5;                                                        // sin 곡선<br />
 	v = this._x;<br />
 	this._y = 50*Math.sin(v*Math.PI/180);<br />
