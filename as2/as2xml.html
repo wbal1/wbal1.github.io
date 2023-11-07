@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html lang="ko-KR">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>플래시 AS2 - XML 파일 읽기 - WBall</title>
+	<link href="./../code.css" rel="stylesheet" type="text/css" />
+	<link href="./../page.css" rel="stylesheet" type="text/css" />
+	<link href="./../dmode_r.css" rel="stylesheet" type="text/css" />
+	<style>
+		.ti {
+			text-indent: 1em;
+		}
+		.notebox {
+			margin: 1em 1em 1em 0;
+			padding: .75em .75em .75em .75em;
+			background-color: lightgray;
+			font-size: .9em;
+			outline: 1px solid black;
+		}
+		table {
+			border-collapse: collapse;
+			margin-top: .75em;
+		}
+		th, td {
+			border: 1px solid black;
+			width: 10em;
+			height: 1.5em;
+			padding-left: .25em;
+			padding-right: .25em;
+		}
+		th {
+			background-color: #777;
+			color: white;
+		}
+		td {
+			background-color: greenyellow;
+			font-family: "Cascadia Code", "Consolas", monospace;
+		}
+	</style>
+</head>
+
+<body class="font1"><div class="Container">
+	<h1 align="center" class="font1">플래시 AS2 - XML 파일 읽기</h1>
+	<div align="center">
+		<p><a href="https://permadi.com/2009/09/flash-as2-reading-xml-file/">원글 출처 (영문)</a>&nbsp;&nbsp;&nbsp;<a href="https://wbal1.github.io/index">홈으로</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;본 페이지는 1920px 너비의 브라우저 환경에 최적화되어 있습니다.</p>
+	</div>
+	<hr />
+
+	<p class="ti">
+		XML 지원은 플래시 5에서 처음 추가되어, 플래시 4에서는 지원되지 않습니다.
+		본 튜토리얼은 플래시 무비가 Flash MX 및 후속 버전을 사용하여 어떻게 외부
+		XML 파일로부터 데이터를 되찾아오는지를 설명합니다.
+	</p>
+
+	<ol>
+		<h2><li>배경</li></h2>
+		<p class="ti">
+			왜 파일로부터 데이터를 읽을 필요가 있을까요? "오늘의 뉴스"를 표시하는
+			무비가 있다고 합시다. SWF 파일 속에 뉴스 내용을 담을 수 있겠지만,
+			그렇게 하면, 매 번 뉴스가 바뀌면, 플래시 파일을 편집해야 합니다.
+			이는 매우 실용적이지 않습니다. 그리하여 이를 통해 1. (편집하고 플래시
+			파일을 재컴파일하는) 시간을 절약하고; 2. 당신의 앱에서 (캡슐화, 구현을
+			숨기는) 데이터를 분리한다는 이득을 얻을 수 있습니다.
+			<div class="notebox ti">
+				당신은 외부 데이터를 보내기 위해 일반 텍스트 파일을 보낼 수 있습니다-
+				<a href="https://permadi.com/2009/09/flash-as2-reading-xml-file/">여기(영문)</a>을
+				참조하십시오. 그리고 외부의 데이터를 보내는 또 다른 방법은
+				<a href="https://permadi.com/tutorial/flashQueryString/">쿼리 스트링(영문)</a>을
+				사용하거나
+				<a href="https://permadi.com/tutorial/flashVars/index.html">FlashVars(영문)</a>을
+				사용하여 데이터를 포함시키는 것입니다.
+			</div>
+		</p>
+		<p class="ti">
+			왜 XML을 사용하나요? XML을 사용하는 것의 이득은 당신이 데이터를 더욱
+			우아한 서식으로 만들 수 있고; 그리고 또, XML이 요즘 광범위하게 사용됨에
+			따라, 잠재적으로 다른 의도를 위해 정확히 같은 XML 파일이 쓰일 수 있습니다.
+			XML 파일이 데이터의 계층적인 구도를 나타냄에 매우 좋음에 따라, 다른 파일
+			형식을 요구하는 지저분한 형식을 피할 수 있습니다.
+		</p>
+		<p class="ti">
+			XML을 사용하는 것의 주요 약점은 액션스크립트 코딩에서 늘어난 복잡성이고;
+			거기에 몇몇 플래시 5 플레이어들이 의도된 방식으로 XML 파일을 읽지 못할 수 있는 버그
+			가 있습니다(아래에서 더 봅시다).
+		</p>
+		<h2><li>요구사항</li></h2>
+		<p class="ti">
+			이 튜토리얼을 이해하기 위해서는, 다음을 아는 것을 추천드립니다:
+			<ul style="padding-bottom: 1em;">
+				<li>텍스트 박스를 통해 플래시에서 변수 불러오기</li>
+				<li>약간의 일반적인 플래시 액션스크립트 작성 지식 및 구문</li>
+				<li>약간의 기본적인 XML 지식 (계층적 구조, 형식화)</li>
+			</ul>
+			이 튜토리얼은 플래시 MX를 사용하지만, 플래시 MX 2004에서도 적용 가능합니다.
+			플래시 5에서도 사용 가능하지만, 아래 주의사항을 참조하세요:
+			<div class="notebox">
+				<b>참조:</b> 이 튜토리얼은 적절하게 동작하기 위해 플래시 6/MX 플러그인/플레이어를 요구합니다.
+				XML이 플래시 5에서 지원된다 하더라도; 약간의 오래된 플래시 5 플레이어는 무비가 몇몇 XML 파일들을
+				정확하게 불러올 수 없는 것을 초래합니다. 이 문제는 플래시 플레이어 5.0.41 버전에서
+				발생하였고 5.0.42 버전에서 수정되었습니다. 위의 예제가 당신의 기기에서 동작하지
+				않는다면, 매크로미디어에서 최신 버전의 플래시 플레이어를 다운로드해야 합니다.
+				플래시 5 플레이어 버전들을 지원해야 한다면, 해결 방법을 보기 위해 <a href="https://permadi.com/2009/09/flash-as2-reading-xml-file/">이 링크(영문)</a>를
+				보시기 바랍니다.
+			</div>
+		</p>
+		<h2><li>XML 샘플 파일</li></h2>
+		<p class="ti">
+			이 튜토리얼에서 쓰일 XML 파일은 "news.xml"이라고 불립니다. 이는
+			<a href="https://permadi.com/tutorial/flashXMLNewsExample/news.xml">여기</a>서
+			다운로드할 수 있습니다. XML 파일의 구조는 아래에서 나타납니다. 플래시가 아무튼
+			무시할 것이기에 DTD는 사용하지 않을 것임을 알아두십시오.
+		</p>
+		<div id="code">&lt;?xml version="1.0" standalone="yes"?>
+&lt;news>
+	&lt;header>Vacation is Good&lt;/header>
+	&lt;content>Scientists discovered a cure for the .......&lt;/content>
+	&lt;info more_info="www.permadi.com">
+		&lt;author>F. Permadi&lt;/author>
+		&lt;comment>No comment&lt;/comment>        
+	&lt;/info>
+&lt;/news></div>
+		<p style="margin-top: 1.5em;" class="ti">
+			XML 파일의 루트가 <code>&lt;news></code>라는 것을 기억하십시오. <code>&lt;news></code>
+			속성은 <code>&lt;header></code>, <code>&lt;content></code>, <code>&lt;info></code> 요소를
+			1개씩 포함합니다. <code>&lt;info></code> 요소는 <code>"more_info"</code> 특성을 포함하고
+			<code>&lt;comment></code>와 <code>&lt;author></code> 요소를 포함합니다.
+			<div class="notebox">
+				<b>XML 편집에 관한 노트</b>
+				<p class="ti">
+					만일 요소의 값으로써 다음 중 하나에 해당하는 특수 문자를 사용한다면, 이름 객체를
+					사용해야 합니다:
+				</p>
+				<table>
+					<tr>
+						<th>기호</th>
+						<th>이름 객체</th>
+					</tr>
+					<tr>
+						<td>></th>
+						<td>&amp;gt;</th>
+					</tr>
+					<tr>
+						<td>"</td>
+						<td>&amp;quot;</th>
+					</tr>
+					<tr>
+						<td>'</td>
+						<td>&amp;apos;</tr>
+					</tr>
+					<tr>
+						<td>&</td>
+						<td>&amp;amp;</td>
+					</tr>
+					<tr>
+						<td><</td>
+						<td>&amp;lt;</td>
+					</tr>
+				</table>
+				<p class="ti">
+					예를 들어, <code>&lt;header></code>를 <code>Vacation is Good & Healthy</code>로 대체하려면
+					이렇게 하십시오:
+					<div id="code">&lt;header>Vacation is Good &amp;amp; Healthy&lt;/header></div><br>
+					이렇게가 아니라:
+					<div id="code">&lt;header>Vacation is Good & Healthy&lt;/header></div>
+				</p>
+			</div>
+		</p>
+		<h2><li>스켈레톤 플래시 무비 만들기</li></h2>
+		<p class="ti">
+			플래시 무비 예제로 시작해 봅시다. 이 무비는 위의 XML 파일로부터의 데이터를 사용하여
+			"오늘의 뉴스"를 표시할 것입니다. 여기는 1프레임이 어떻게 보이는지입니다:<br>
+			<img src="https://permadi.com/tutorial/flashXMLNewsExample/images/plainlayout.gif" style="margin-top: .5em; margin-bottom: .2em;"><br>
+			이 무비는 4개의 텍스트 상자를 가졌습니다:
+			<ul style="padding-bottom: .8em;">
+				<li><code>header</code>를 표시하는 것</li>
+				<li><code>Loading data...</code>를 표시하는 것</li>
+				<li><code>author</code>를 표시하는 것</li>
+				<li>
+					텍스트 <code>My News Page</code>는 정적 텍스트 (이 텍스트로만은 그렇게 많은 일을
+					하지 않을 것입니다)
+				</li>
+			</ul>
+		</p>
+		<p class="ti">
+			각각의 텍스트는 동적 텍스트이고, (아래와 같이 속성 탭의 "변수"에서 명시된) 변수 이름과
+			연결되어 있습니다.
+		</p>
+		<p class="ti">
+			<code>header</code> 텍스트 상자는 <code>header</code> 변수와 연결되어 있습니다. 이 상자는
+			<code>&lt;header></code> 뉴스를 유지할 것입니다. 유저가 텍스트를 선택하지 못하도록 이 버튼<img src="https://permadi.com/tutorial/flashXMLNewsExample/images/selectableIcon.gif">을
+			눌러 비활성화하게 하십시오.
+		</p>
+	</ol>
+</div>
+</body>
+</html>
