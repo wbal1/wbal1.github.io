@@ -29,11 +29,11 @@
 			padding-right: .25em;
 		}
 		th {
-			background-color: #777;
+			background-color: #888;
 			color: white;
 		}
 		td {
-			background-color: greenyellow;
+			background-color: palegreen;
 			font-family: "Cascadia Code", "Consolas", monospace;
 		}
 		.imgs {
@@ -209,12 +209,31 @@
 			지금은 <code>&lt;date></code>와 <code>&lt;comment></code>같은 다른 XML 속성을 무시할 것입니다.
 		</p>
 		<h2><li>플래시에서 XML 파일 불러오기</li></h2>
-		<p class="li">
+		<p class="ti">
 			다음 코드는 XML 항목을 불러옵니다:
 		</p>
 		<div id="code">var xmlData=new XML();
 xmlData.ignoreWhite=true;
-		</div>
+xmlData.load("news.xml");</div>
+		<p style="margin-top: 1.5em;" class="ti">
+			첫 번째 줄은 XML 객체를 만듭니다. 다음 줄은 플래시에게 XML 요소 간에 화이트스페이스를 무시하라고
+			알려줍니다. 보통은, 당신은 이를 항상 <code>true</code>로 설정하고 싶어하게 되고,
+			그렇지 않으면 플래시는 XML 파일을 제대로 읽지 않을 것입니다. 마지막 줄이 실제로 XML
+			파일을 로드하는 코드입니다.
+		</p>
+		<p class="ti">
+			이렇게 외부 파일을 로드한다면, 파일이 즉시 로드된다는 가정을 내리지 말아야 한다는 것에
+			주목할 가치가 있습니다. 플래시가 이 파일이 얼마나 큰 지 모르기 때문에, 무비가 계속
+			실행되는 동안 주로 백그라운드에서 이런 과정을 거칩니다. 그러나, 플래시는 파일이 이벤트
+			핸들러라고 불려지는 것에 의해 로드될 때 우리에게 알려줄 만큼 사려깊습니다. XML의 경우에는,
+			이벤트 핸들러는 <code>onLoad</code>라고 불립니다. (다시 말해서, 파일이 로드되면, 플래시는
+			<code>onLoad</code>라고 부릅니다.) 우리는 <code>onLoad</code> 코드를 구현할 것입니다.
+		</p>
+		<p class="ti">
+			참조: 이 튜토리얼에서는, XML 파일이 SWF 파일과 같은 도메인에 위치해있어야 합니다.
+			다른 도메인의 XML 파일에 접근해야 한다면, XML 파일에 <code>&lt;cross-domain-policy></code>를
+			작성함으로서
+		</p>
 	</ol>
 </div>
 </body>
