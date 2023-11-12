@@ -36,6 +36,10 @@
 			background-color: greenyellow;
 			font-family: "Cascadia Code", "Consolas", monospace;
 		}
+		.imgs {
+			margin-top: .5em;
+			margin-bottom: .2em;
+		}
 	</style>
 </head>
 
@@ -169,7 +173,7 @@
 		<p class="ti">
 			플래시 무비 예제로 시작해 봅시다. 이 무비는 위의 XML 파일로부터의 데이터를 사용하여
 			"오늘의 뉴스"를 표시할 것입니다. 여기는 1프레임이 어떻게 보이는지입니다:<br>
-			<img src="https://permadi.com/tutorial/flashXMLNewsExample/images/plainlayout.gif" style="margin-top: .5em; margin-bottom: .2em;"><br>
+			<img src="https://permadi.com/tutorial/flashXMLNewsExample/images/plainlayout.gif" class="imgs"><br>
 			이 무비는 4개의 텍스트 상자를 가졌습니다:
 			<ul style="padding-bottom: .8em;">
 				<li><code>header</code>를 표시하는 것</li>
@@ -190,6 +194,27 @@
 			<code>&lt;header></code> 뉴스를 유지할 것입니다. 유저가 텍스트를 선택하지 못하도록 이 버튼<img src="https://permadi.com/tutorial/flashXMLNewsExample/images/selectableIcon.gif">을
 			눌러 비활성화하게 하십시오.
 		</p>
+		<img src="https://permadi.com/tutorial/flashXMLNewsExample/images/headerProp.gif" class="imgs">
+		<p class="ti">
+			<code>Loading Data</code> 텍스트 상자는 <code>content</code> 변수와 관련되어 있습니다. 이 상자는
+			<code>&lt;content></code> 뉴스를 포함할 것입니다.
+		</p>
+		<img src="https://permadi.com/tutorial/flashXMLNewsExample/images/contentProp.gif" class="imgs">
+		<p class="ti">
+			<code>author</code> 텍스트 상자는 <code>author</code> 변수와 관련되어 있습니다. 이 상자는
+			<code>&lt;author></code> 뉴스의 이름을 포함할 것입니다.
+		</p>
+		<img src="https://permadi.com/tutorial/flashXMLNewsExample/images/authorProp.gif" class="img">
+		<p class="ti">
+			지금은 <code>&lt;date></code>와 <code>&lt;comment></code>같은 다른 XML 속성을 무시할 것입니다.
+		</p>
+		<h2><li>플래시에서 XML 파일 불러오기</li></h2>
+		<p class="li">
+			다음 코드는 XML 항목을 불러옵니다:
+		</p>
+		<div id="code">var xmlData=new XML();
+xmlData.ignoreWhite=true;
+		</div>
 	</ol>
 </div>
 </body>
