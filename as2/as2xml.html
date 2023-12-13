@@ -17,28 +17,42 @@
 			font-size: .9em;
 			outline: 1px solid black;
 		}
-		table {
+		.notebox table {
 			border-collapse: collapse;
 			margin-top: .75em;
 		}
-		th, td {
+		.notebox th, .notebox td {
 			border: 1px solid black;
 			width: 10em;
 			height: 1.5em;
 			padding-left: .25em;
 			padding-right: .25em;
 		}
-		th {
+		.notebox th {
 			background-color: #888;
 			color: white;
 		}
-		td {
+		.notebox td {
 			background-color: palegreen;
 			font-family: "Cascadia Code", "Consolas", monospace;
 		}
 		.imgs {
 			margin-top: .5em;
 			margin-bottom: .2em;
+		}
+		.xmltable {
+			font-family: "Cascadia Code", "Consolas", monospace;
+			font-size: .9em;
+			border-spacing: 0cap;
+		}
+		.xmltable td {
+			border-right: 1px solid lightgray;
+			border-bottom: 1px solid lightgray;
+			padding: .1em 0 .1em .25em;
+		}
+		.originalcr {
+			text-align: center;
+			margin-top: 2em;
 		}
 	</style>
 </head>
@@ -281,9 +295,1188 @@ xmlData.load("news.xml");
 		<p class="ti">
 			이제 XML 데이터를 어떻게 액세스하는지 살펴보겠습니다. <code>processXMLData</code>가
 			호출되면, XML 개체로 참조가 지나갑니다. 이 참조는 <code>this</code> 키워드로 접근할 수
-			있습니다.
+			있습니다. 이게 어떻게 생겼는지 봅시다:
+		</p>
+		<div style="border: 1px solid black; width:660px;">
+			<table class="xmltable">
+				<tr>
+					<td style="width: 30px;">[-]</td>
+					<td colspan="4">
+						this
+					</td>
+					<td style="width: 360px;"></td>
+				</tr>
+				<tr>
+					<td style="color: gray;">├</td>
+					<td style="width: 30px; color: grey">─</td>
+					<td colspan="3">attributes</td>
+					<td></td>
+				</tr>
+				<tr style="background-color: gold;">
+					<td style="color: darkgoldenrod">└</td>
+					<td>[-]</td>
+					<td colspan="3">ChildNodes</td>
+					<td></td>
+				</tr>
+				<tr style="background-color: gold;">
+					<td></td>
+					<td style="color: darkgoldenrod">├</td>
+					<td style="width: 30px;">[-]</td>
+					<td colspan="2">0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td style="width: 160px;">attributes</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="width: 30px;">[+]</td>
+					<td>childNodes</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>firstChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>lastChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nextSibling</td>
+					<td>null</td>
+				</tr>
+				<tr style="background-color: gold;">
+					<td></td>
+					<td style="color: darkgoldenrod">│</td>
+					<td style="color: darkgoldenrod">├</td>
+					<td style="color: darkgoldenrod">─</td>
+					<td>nodeName</td>
+					<td>"news"</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nodeType</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nodeValue</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td>[+]</td>
+					<td>parentNode</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">└</td>
+					<td style="color: grey">─</td>
+					<td>previousSibling</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">contentType</td>
+					<td>"application/x-www-form-urlencoded"</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">docTypeDecl</td>
+					<td>undefined</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">firstChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">ignoreWhite</td>
+					<td>true</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">lastChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">loaded</td>
+					<td>true</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">nextSibling</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">nodeName</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">nodeType</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">nodeValue</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">onLoad</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">parentNode</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">previousSibling</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">status</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">└</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">xmlDecl</td>
+					<td>undefined</td>
+				</tr>
+			</table>
+		</div>
+		<div style="font-size: .9em;">
+			디버거를 실행하고 <code>processXMLData</code>에 중단점을 넣음으로서 이러한 종류의 출력을
+			얻을 수 있습니다.
+		</div>
+		<p class="ti">
+			위의 다이어그램에 의거하면, <code>this</code>은 <code>1</code>개의 <code>news</code>라는 이름의
+			노드를 가집니다. 이는 XML 파일의 <code>&lt;news></code> 속성에 반응합니다. 우리는 이미 XML
+			파일로부터 <code>&lt;news></code> 노드가 자식 노드 3개(<code>&lt;header</code>, <code>&lt;content></code>,
+			그리고 <code>&lt;info></code>)가 있어야 한다는 사실을 압니다. 이 트리 뷰를 확장해 봅시다:
+		</p>
+		<div style="border: 1px solid black; width:660px;">
+			<table class="xmltable">
+				<tr>
+					<td width="30px">[-]</td>
+					<td colspan="6">this</td>
+					<td width="270px"></td>
+				</tr>
+				<tr>
+					<td style="color: grey">├</td>
+					<td width="30px" style="color: grey">─</td>
+					<td colspan="5">attributes</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td style="color: grey">└</td>
+					<td>[-]</td>
+					<td colspan="5">childNodes</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td style="color: grey">└</td>
+					<td width="30px">[-]</td>
+					<td colspan="4">0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td width="30px" style="color: grey">─</td>
+					<td colspan="3">attributes</td>
+					<td></td>
+				</tr>
+				<tr style="background-color: darkseagreen;">
+					<td></td>
+					<td></td>
+					<td style="color: darkgreen">└</td>
+					<td>[-]</td>
+					<td colspan="3">childNodes</td>
+					<td></td>
+				</tr>
+				<tr style="background-color: darkseagreen;">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: darkgreen">├</td>
+					<td width="30px">[-]</td>
+					<td colspan="2">0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td width="30px" style="color: grey">─</td>
+					<td width="180px">attributes</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td>[+]</td>
+					<td>childNodes</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>firstChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>lastChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nextSibling</td>
+					<td>null</td>
+				</tr>
+				<tr style="background-color: gold;">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: darkgoldenrod">│</td>
+					<td style="color: darkgoldenrod">├</td>
+					<td style="color: darkgoldenrod">─</td>
+					<td>nodeName</td>
+					<td>&quot;header&quot;</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nodeType</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nodeValue</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td>[+]</td>
+					<td>parentNode</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">└</td>
+					<td style="color: grey">─</td>
+					<td>previousSibling</td>
+					<td>null</td>
+				</tr>
+				<tr style="background-color: darkseagreen">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: darkgreen">├</td>
+					<td>[-]</td>
+					<td colspan="2">1</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>attributes</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td>[+]</td>
+					<td>childNodes</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>firstChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>lastChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nextSibling</td>
+					<td>null</td>
+				</tr>
+				<tr style="background-color: gold;">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: darkgoldenrod">│</td>
+					<td style="color: darkgoldenrod">├</td>
+					<td style="color: darkgoldenrod">─</td>
+					<td>nodeName</td>
+					<td>&quot;content&quot;</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nodeType</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nodeValue</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td>[+]</td>
+					<td>parentNode</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">└</td>
+					<td>[+]</td>
+					<td>previousSibling</td>
+					<td></td>
+				</tr>
+				<tr style="background-color: darkseagreen;">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td>[-]</td>
+					<td colspan="2">2</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>attributes</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td>[+]</td>
+					<td>childNodes</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>firstChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>lastChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nextSibling</td>
+					<td>null</td>
+				</tr>
+				<tr style="background-color: gold;">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: darkgoldenrod">│</td>
+					<td style="color: darkgoldenrod">├</td>
+					<td style="color: darkgoldenrod">─</td>
+					<td>nodeName</td>
+					<td>&quot;info&quot;</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nodeType</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td>nodeValue</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">├</td>
+					<td>[+]</td>
+					<td>parentNode</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">│</td>
+					<td style="color: grey">└</td>
+					<td>[+]</td>
+					<td>previousSibling</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">firstChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">lastChild</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">nextSibling</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">nodeName</td>
+					<td>&quot;news&quot;</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">nodeType</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">nodeValue</td>
+					<td>null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">├</td>
+					<td>[+]</td>
+					<td colspan="2">parentNode</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td style="color: grey">└</td>
+					<td style="color: grey">─</td>
+					<td colspan="2">previousSibling</td>
+					<td>null</td>
+				</tr>
+			</table>
+		</div>
+		<p class="ti">
+			아니나 다를까, 거기 그들이 있네요. 순서는 XML 파일 속과 같이 항상 같습니다. 그래서, <code>child[0]</code>은
+			<code>&lt;header></code>고, <code>childNodes[1]</code>은 <code>&lt;content></code>고,
+			<code>childNodes[2]</code>는 <code>&lt;info></code>입니다.
+		</p>
+		<p class="ti">
+			그러나 왜 모든 <code>nodeValue</code>이 <code>null</code>이죠? 이는 XML 항목이 플래시에서
+			동작하는 방법입니다: <code>nodeValue</code>은 자식 노드로써 저장됩니다. 그래서, <code>&lt;header></code>의
+			값은 <code>header</code> 노드의 자식 노드가 됩니다. 우리는 이렇게 <code>header</code>의 값을
+			얻을 수 있습니다:
+		</p>
+		<div id="code">newsnode = this.childNodes[0]; // 처음으로 새 노드 갖기
+headerNode = newsNode.childNodes[0]; // 헤더 노드 갖기
+header = headerNode.childNodes[0].nodeValue; // 값 갖기</div>
+		<p style="margin-top: 1.5em;" class="ti">
+			아니면 대안으로:
+		</p>
+		<div id="code">header = this.childNodes[0].childNodes[0].childNodes[0].nodeValue;</div>
+		<p style="margin-top: 1.5em;" class="ti">
+			그걸 봅시다:
+		</p>
+		<div style="border: 1px solid black; width:660px;">
+			<table class="xmltable">
+				<tr>
+					<td width="30px">[-]</td>
+					<td colspan="8">this</td>
+					<td width="230px"></td>
+				</tr>
+				<tr>
+					<td style="color: grey;">├</td>
+					<td width="30px" style="color: grey">─</td>
+					<td colspan="7">attributes</td>
+					<td></td>
+				</tr>
+				<tr style="background-color: darkseagreen;">
+					<td style="color: darkgreen">└</td>
+					<td>[-]</td>
+					<td colspan="7">childNodes</td>
+					<td></td>
+				</tr>
+				<tr style="background-color: darkseagreen;">
+					<td></td>
+					<td style="color: darkgreen">└</td>
+					<td width="30px" style="background-color: #87cefa30;">[-]</td>
+					<td colspan="6" style="background-color: #87cefa30;">0</td>
+					<td style="background-color: #87cefa30;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="color: grey; background-color: #87cefa30;">├</td>
+					<td style="color: grey; background-color: #87cefa30;">─</td>
+					<td colspan="5" style="background-color: #87cefa30;">attributes</td>
+					<td style="background-color: #87cefa30;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="color: grey; background-color: #87cefa30;">└</td>
+					<td width="30px" style="background-color: #87cefa30;">[-]</td>
+					<td colspan="5" style="background-color: #87cefa30;">childNodes</td>
+					<td style="background-color: #87cefa30;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="color: grey; background-color: #87cefa30;">└</td>
+					<td width="30px" style="background-color: #9370d830;">[-]</td>
+					<td colspan="4" style="background-color: #9370d830;">0</td>
+					<td style="background-color: #9370d830;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="color: grey; background-color: #9370d830;">├</td>
+					<td width="30px" style="color: grey; background-color: #9370d830;">─</td>
+					<td colspan="3" style="background-color: #9370d830;">attributes</td>
+					<td style="background-color: #9370d830;"></td>
+				</tr>
+				<tr style="background-color: darkseagreen;">
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="color: darkgreen; background-color: #9370d830;">└</td>
+					<td style="background-color: #9370d830;">[-]</td>
+					<td colspan="3" style="background-color: #9370d830;">childNodes</td>
+					<td style="background-color: #9370d830;"></td>
+				</tr>
+				<tr style="background-color: darkseagreen;">
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: darkgreen; background-color: #9370d830;">├</td>
+					<td width="30px" style="background-color: #ff8c0030;">[-]</td>
+					<td colspan="2" style="background-color: #ff8c0030;">0</td>
+					<td style="background-color: #ff8c0030;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">│</td>
+					<td style="color: grey; background-color: #ff8c0030;">├</td>
+					<td width="30px" style="color: grey; background-color: #ff8c0030;">─</td>
+					<td width="150px" style="background-color: #ff8c0030;">attributes</td>
+					<td style="background-color: #ff8c0030;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">│</td>
+					<td style="color: grey; background-color: #ff8c0030;">├</td>
+					<td style="color: grey; background-color: #ff8c0030;">─</td>
+					<td style="background-color: #ff8c0030;">childNodes</td>
+					<td style="background-color: #ff8c0030;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">│</td>
+					<td style="color: grey; background-color: #ff8c0030;">├</td>
+					<td style="color: grey; background-color: #ff8c0030;">─</td>
+					<td style="background-color: #ff8c0030;">firstChild</td>
+					<td style="background-color: #ff8c0030;">null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">│</td>
+					<td style="color: grey; background-color: #ff8c0030;">├</td>
+					<td style="color: grey; background-color: #ff8c0030;">─</td>
+					<td style="background-color: #ff8c0030;">lastChild</td>
+					<td style="background-color: #ff8c0030;">null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">│</td>
+					<td style="color: grey; background-color: #ff8c0030;">├</td>
+					<td style="color: grey; background-color: #ff8c0030;">─</td>
+					<td style="background-color: #ff8c0030;">nextSibling</td>
+					<td style="background-color: #ff8c0030;">null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">│</td>
+					<td style="color: grey; background-color: #ff8c0030;">├</td>
+					<td style="color: grey; background-color: #ff8c0030;">─</td>
+					<td style="background-color: #ff8c0030;">nodeName</td>
+					<td style="background-color: #ff8c0030;">null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">│</td>
+					<td style="color: grey; background-color: #ff8c0030;">├</td>
+					<td style="color: grey; background-color: #ff8c0030;">─</td>
+					<td style="background-color: #ff8c0030;">nodeType</td>
+					<td style="background-color: #ff8c0030;">3</td>
+				</tr>
+				<tr style="background-color: gold;">
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: darkgoldenrod; background-color: #9370d830;">│</td>
+					<td style="color: darkgoldenrod; background-color: #ff8c0030;">├</td>
+					<td style="color: darkgoldenrod; background-color: #ff8c0030;">─</td>
+					<td style="background-color: #ff8c0030;">nodeValue</td>
+					<td style="background-color: #ff8c0030;">&quot;Vacation is Good&quot;</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">│</td>
+					<td style="color: grey; background-color: #ff8c0030;">├</td>
+					<td style="background-color: #ff8c0030;">[+]</td>
+					<td style="background-color: #ff8c0030;">parentNode</td>
+					<td style="background-color: #ff8c0030;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">│</td>
+					<td style="color: grey; background-color: #ff8c0030;">└</td>
+					<td style="color: grey; background-color: #ff8c0030;">─</td>
+					<td style="background-color: #ff8c0030;">previousSibling</td>
+					<td style="background-color: #ff8c0030;">null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">├</td>
+					<td style="color: grey; background-color: #9370d830;">─</td>
+					<td colspan="2" style="background-color: #9370d830;">firstChild</td>
+					<td style="background-color: #9370d830;">null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">├</td>
+					<td style="color: grey; background-color: #9370d830;">─</td>
+					<td colspan="2" style="background-color: #9370d830;">lastChild</td>
+					<td style="background-color: #9370d830;">null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">├</td>
+					<td style="color: grey; background-color: #9370d830;">─</td>
+					<td colspan="2" style="background-color: #9370d830;">nextSibling</td>
+					<td style="background-color: #9370d830;">null</td>
+				</tr>
+				<tr style="background-color: darkseagreen;">
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: darkgreen; background-color: #9370d830;">├</td>
+					<td style="color: darkgreen; background-color: #9370d830;">─</td>
+					<td colspan="2" style="background-color: #9370d830;">nodeName</td>
+					<td style="background-color: #9370d830;">&quot;header&quot;</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">├</td>
+					<td style="color: grey; background-color: #9370d830;">─</td>
+					<td colspan="2" style="background-color: #9370d830;">nodeType</td>
+					<td style="background-color: #9370d830;">1</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">├</td>
+					<td style="color: grey; background-color: #9370d830;">─</td>
+					<td colspan="2" style="background-color: #9370d830;">nodeValue</td>
+					<td style="background-color: #9370d830;">null</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">├</td>
+					<td style="background-color: #9370d830;">[+]</td>
+					<td colspan="2" style="background-color: #9370d830;">parentNode</td>
+					<td style="background-color: #9370d830;"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #87cefa30;"></td>
+					<td style="background-color: #9370d830;"></td>
+					<td style="color: grey; background-color: #9370d830;">└</td>
+					<td style="color: grey; background-color: #9370d830;">─</td>
+					<td colspan="2" style="background-color: #9370d830;">previousSibling</td>
+					<td style="background-color: #9370d830;">null</td>
+				</tr>
+			</table>
+		</div>
+		<p class="ti">
+			아니나 다를까. 여기 있네요. 비슷하게, <code>&lt;content></code> 항목의 <code>nodeValue</code> 값은
+			<code>this.childNodes[0].ChildNodes[1].ChildNodes[0].nodeValue</code>에 있을 것입니다.
+		</p>
+		<p class="ti">
+			<code>childNodes[0]</code>를 <code>firstChild</code>로도 일컫을 수 있습니다. 그래서 이렇게도 해볼 수 있습니다:
+		</p>
+		<div id="code">header = this.firstChild.firstChild.firstChild.nodeValue;
+content = this.firstChild.childNodes[1].firstChild.nodeValue;</div>
+		<p class="ti" style="margin-top: 1.5em;">
+			전에 플래시에서 XML을 전혀 써본 적이 없다면, 이 모든 게 헷갈려 보일 수 있습니다.
+			약간의 코드를 작성하고 속성 몇 개에 접근하는 것을 추천합니다. 디버거는 여기서 위와 같이
+			트리 뷰를 볼 수 있기에 매우 도움이 됩니다.
+		</p>
+		<p class="ti">
+			한 번만 개념에 익숙해지면, 순차적 단계 없이 XML 파일의 모든 항목에 접근할 수 있게 됩니다.
+			지금은, 플래시 무비에 코드를 사용하기 충분한 정보가 있습니다.
+		</p>
+		<div id="code">function processXMLData(success) {
+	if (success) {
+		<b>header</b> = this.childNodes[0].childNodes[0].childNodes[0].nodeValue;
+		<b>content</b> = this.firstChild.childNodes[1].firstChild.nodeValue;
+	} else {
+		content = "Today's news not found";
+	}
+}
+
+var xmlData=new XML();
+xmlData.ignoreWhite=true;
+xmlData.onLoad=processXMLData;
+xmlData.load("news.xml");
+stop();</div>
+		<p class="ti" style="margin-top: 1.5em;">
+			그 코드 조각에 대한 노드에 접근하는 방식은 매우 일관되지는 않아 보이지만, 괜찮습니다,
+			목적을 보여주기 위해 이 방식으로 일을 하고 있습니다.
+		</p>
+		<p class="ti">
+			무비를 실행하면, 이렇게 되어야 합니다:
+		</p>
+		<img src="https://permadi.com/tutorial/flashXMLNewsExample/images/run1.gif">
+		<p class="ti">
+			쿨하군요. <code>header</code>와 <code>content</code>라고 텍스트 상자들을 이름지었기 때문에,
+			그들은 우리가 방금 할당한 값을 자동으로 보여줄 것입니다. 그래서 우리는 이제 <code>&lt;author></code>
+			노드 값을 출력하기 위한 코드만을 더해야 합니다.
+		</p>
+		<p class="ti">
+			<code>&lt;author></code> 노드는 <code>&lt;title></code>보다 한 층 더 깊고 <code>&lt;info</code>
+			노드 하에 네스팅되어 있기에, 노드에 접근하기 위한 긴 코드는:
+		</p>
+		<div id="code">newsNode = this.firstChild;
+infoNode = newsNode.childNodes[2];
+authorNode = firstChild.childNodes[1];
+author = authorNode.firstChild.nodeValue;</div>
+		<p style="margin-top: 1.5em;" class="ti">
+			이제 코드를 쓰고, 그 동안, 코드를 더 깔끔하게 만들기 위해 노드에 접근하는 방법을 다시
+			써봅시다.
+		</p>
+		<div id="code">function processXMLData(success) {
+	if (success) {
+		var newsNode=this.firstChild;
+		var headerNode=newsNode.childNodes[0];
+		var contentNode=newsNode.childNodes[1];
+		var infoNode=newsNode.childNodes[2];
+		var authorNode=infoNode.childNodes[1];
+
+		header=headerNode.firstChild.nodeValue;	
+		content=contentNode.firstChild.nodeValue;	
+		author=authorNode.firstChild.nodeValue; 
+	} else {
+		content = "Today's news is not found";
+	}
+}
+
+var xmlData=new XML();
+xmlData.ignoreWhite=true;
+xmlData.onLoad=processXMLData;
+xmlData.load("news.xml");
+stop();</div>
+		<p style="margin-top: 1.5em" class="ti">
+			이런, 코드는 여전히 살짝 어질러져 있군요. 우리 XML 파일은 꽤 단순하지만, 만일 누군가가
+			노드를 바른 순서에 놔야 한다는 것을 까먹는가면 어떨까요? 만약 누군가가 <code>&lt;content></code>
+			다음에 <code>&lt;header></code>를 넣으면 어떨까요? 코드를 더 깨끗하게 만들고 더 많은 노드를
+			처리할 수 있게 합시다. 또한, 좋은 XML 연습이 될 것입니다.
+		</p>
+		<p class="ti">
+			노드를 반환하도록 함수를 작성합시다.
+		</p>
+		<div id="code">function findNode(node, nodeName) {
+	if (node.nodeName==nodeName) {
+		return node;
+	}
+	for (var i=0; node.childNodes && i&lt;node.childNodes.length; i++) {
+		var foundNode=findNode(node.childNodes[i], nodeName);
+		if (foundNode!=null) {
+			return foundNode;
+		}
+	}
+	return null;
+}
+function getValue(node) {
+	if (node && node.firstChild) {
+		return node.firstChild.nodeValue;
+	}
+	return "";
+}</div>
+		<p style="margin-top: 1.5em;" class="ti">
+			<code>findNode</code> 함수는 통과한 <code>node</code>가 특정한 <code>nodeName</code>을
+			가졌는지 확인할 것입니다. 아니면, 코드는 자식 노드를 계속 돌고 다시 확인합니다(같은 함수를
+			호출합니다). 결국에는, 이름 붙은 노드는 찾아지거나 아니게 됩니다. 아니라면, <code>null</code>이
+			반환됩니다. (참고: 이 함수는 XML 파일 아래에 같은 이름을 가진 노드가 여러 개 있을 경우에
+			올바르게 동작하지 않을 것입니다. 그에 대해서는, 어느 노드를 반환할지 명시해야 합니다— 그러나
+			이는 튜토리얼로 설명하기에는 너무 멀리 갑니다.)
+		</p>
+		<p class="ti">
+			<code>getValue</code> 함수는 단순히 노드의 값을 반환합니다. 이는 <code>firstChild.nodeValue</code>를
+			치기 위한 속기입니다. 이는 단지 노드의 값을 원할 매 시간마다 지저분함을 줄여 줍니다.
+		</p>
+		<p class="ti">
+			이제 이러한 변화를 포함합시다:
+		</p>
+		<div id="code">function processXMLData(success) {
+	if (success) {
+		var rootNode=this.firstChild;
+
+		var headerNode=findNode(rootNode, "header");
+		header=getValue(headerNode);
+			
+		var contentNode=findNode(rootNode, "content");
+		content=getValue(contentNode);
+			
+		var authorNode=findNode(rootNode, "author");
+		author=getValue(authorNode);
+	} else {
+		content="Today's news is not found";
+	}
+}
+
+function findNode(node, nodeName)
+{
+	if (node.nodeName==nodeName) {
+		return node;
+	}
+	for (var i=0; node.childNodes && i&lt;node.childNodes.length; i++) {
+		var foundNode=findNode(node.childNodes[i], nodeName);
+		if (foundNode!=null)
+		return foundNode;
+	}
+	return null;
+}
+function getValue(node) {
+	if (node && node.firstChild) {
+		return node.firstChild.nodeValue;
+	}
+	return "";
+}
+var xmlData=new XML();
+xmlData.ignoreWhite=true;
+xmlData.onLoad=processXMLData;
+xmlData.load("news.xml");
+stop();</div>
+		<p style="margin-top: 1.5em;" class="ti">
+			우리의 예시에서 <code>attributeName</code>가 <code>more_info</code>인 <code>node.attributes.attributeName</code>를
+			사용해서 플래시에서 노드의 속성을 얻을 수 있습니다.
+		</p>
+		<div id="code">function processXMLData(success) {
+	if (success) {
+		var rootNode=this.firstChild;
+
+		var headerNode=findNode(rootNode, "header");
+		header=getValue(headerNode);
+			
+		var contentNode=findNode(rootNode, "content");
+		content=getValue(contentNode);
+			
+		var authorNode=findNode(rootNode, "author");
+		author=getValue(authorNode);
+
+		<b>var infoNode=findNode(rootNode, "info");
+		if (infoNode) {
+			moreInfo=infoNode.attributes.more_info;
+		}</b>
+	} else {
+		content="Today's news is not found";
+	}
+}
+
+<i>// ...
+// 코드의 나머지 부분은 수정되지 않았고 표시되지 않았습니다</i></div>
+		<p style="margin-top: 1.5em" class="ti">
+			파일을 여기에서 다운로드할 수 있습니다: <a href="https://permadi.com/tutorial/flashXMLNewsExample/example1.fla">FLA 파일</a>, <a href="https://permadi.com/tutorial/flashXMLNewsExample/news.xml">XML 파일 (news.xml)</a>
 		</p>
 	</ol>
+	<div class="originalcr">
+		<a href="https://permadi.com/tutorial/termofuse/index.html">원문 이용 약관(영문)</a>, 
+		<a href="https://permadi.com/tutorial/index.html">원저작자의 더 많은 튜토리얼(영문)</a><br>
+		<span style="font-size: .85em;">원저작자:</span><br>
+		<span style="font-size: 1.1em;">(C) F. Permadi, 2003. 10.</span><br>
+		permadi@permadi.com
+	</div>
 </div>
 </body>
 </html>
