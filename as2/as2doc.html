@@ -6,6 +6,33 @@
 <link href="./../code.css" rel="stylesheet" type="text/css" />
 <link href="./../page.css" rel="stylesheet" type="text/css" />
 <link href="./../dmode_r.css" rel="stylesheet" type="text/css" />
+<style>
+	:root {
+		--bd: 1px solid #333;
+	}
+	table {
+		border-spacing: 0;
+		border-top: var(--bd);
+		border-left: var(--bd);
+	}
+	th, td {
+		padding: 3px 5px 3px 5px;
+		border-right: var(--bd);
+		border-bottom: var(--bd);
+	}
+	.tcode {
+		background-color: #f1f1f1;
+		font-family: var(--cff);
+	}
+	@media (prefers-color-scheme: dark) { /* dark mode */
+		.tcode {
+			background-color: #333;
+		}
+		:root {
+			--bd: 1px solid #aaa;
+		}
+	}
+</style>
 </head>
 
 <body class="font1"><div class="Container">
@@ -15,19 +42,66 @@
 </div>
 <hr />
 <ol><h3><li>주석</li></h3><div style="padding-left:20px">
-	<div id="code">// .....</div><br />
-	주석 기호 (한 줄)<br />
-	<div id="code">/* ..... */</div><br />
-	주석 기호 (여러 줄)</div>
+	<table>
+		<thead><tr>
+			<th style = "width: 150px;">유형</th>
+			<th style = "width: 200px;">의미</th>
+		</tr></thead>
+		<tbody>
+			<tr>
+				<td class="tcode">// .....</td>
+				<td>주석 기호 (한 줄)</td>
+			</tr>
+			<tr>
+				<td class = "tcode">/* ..... */</td>
+				<td>주석 기호 (여러 줄)</td>
+			</tr>
+		</tbody>
+	</table></div>
 <h3><li>코드</li></h3><div style="padding-left:20px">
-	<div id="code">\r</div><br />리턴 코드  (ASC 13)<br />
-	<div id="code">\n</div><br />줄바꿈 코드 (ASC 10)<br />
-	<div id="code">\r\n</div><br />줄바꿈 코드  (2줄)<br />
-	<div id="code">\t</div><br />Tab 코드 (ASC 9)<br />
-	<div id="code">\b</div><br />Backspace 코드 (ASC 8)<br />
-	<div id="code">&amp;</div><br />텍스트 파일 데이터 구분 코드</div>
+	<table>
+		<thead><tr>
+			<th style = "width: 50px;" rowspan="2">코드</th>
+			<th style = "width: 250px" rowspan="2">의미</th>
+			<th colspan="2">ASCII</th>
+		</tr><tr>
+			<th style = "width: 50px;">16진</th>
+			<th style = "width: 50px;">10진</th>
+		</tr></thead>
+		<tbody><tr>
+			<td class = "tcode">\r</td>
+			<td>리턴 코드</td>
+			<td class = "tcode" style = "text-align: center;">0D</td>
+			<td class = "tcode" style = "text-align: center;">013</td>
+		</tr><tr>
+			<td class = "tcode">\n</td>
+			<td>줄바꿈 코드</td>
+			<td class = "tcode" style = "text-align: center;">0A</td>
+			<td class = "tcode" style = "text-align: center;">010</td>
+		</tr><tr>
+			<td class = "tcode">\r\n</td>
+			<td>줄바꿈 코드 (<code>CR LF</code>)</td>
+			<td class = "tcode" style = "text-align: center; color: gray;">-</td>
+			<td class = "tcode" style = "text-align: center; color: gray">-</td>
+		</tr><tr>
+			<td class = "tcode">\t</td>
+			<td>TAB 코드</td>
+			<td class = "tcode" style = "text-align: center;">09</td>
+			<td class = "tcode" style = "text-align: center;">009</td>
+		</tr><tr>
+			<td class = "tcode">\b</td>
+			<td>Backspace 코드</td>
+			<td class = "tcode" style = "text-align: center;">08</td>
+			<td class = "tcode" style = "text-align: center;">008</td>
+		</tr><tr>
+			<td class = "tcode">&amp;</td>
+			<td>텍스트 파일 데이터 구분 코드</td>
+			<td class = "tcode" style = "text-align: center;">26</td>
+			<td class = "tcode" style = "text-align: center;">038</td>
+		</tr></tbody>
+	</table>
 <h3><li>연산자</li></h3><div style="padding-left:20px">
-	<p>산술연산자 <code>+, -, *, /, %</code>
+	산술연산자 <code>+, -, *, /, %</code>
 		<br />- <code>%</code> : 나머지를 구한다<br />
 		대입연산자 <code>=, +=, -=, *=, /=, %=</code>
 		<br />- <code>i+=4</code> 와 <code>i=i+4</code>는 같다<br />
@@ -67,9 +141,7 @@ trace (z);</div>
 		<div id="code">aaa = 1;<br>set(&quot;ccc&quot;, &quot;aaa&quot;);<br>trace(ccc);</div><br />
 		- 변수에 값을 지정한다.  결과는 <code>aaa</code><br />
 		<div id="code">set(&quot;ooo&quot;, getProperty (&quot;ppp&quot;, _x ));</div><br>
-		<code>ppp</code> x 좌표를 <code>ooo</code> 에 지정.<br />
-	</p>
-</div>
+		<code>ppp</code> x 좌표를 <code>ooo</code> 에 지정.<br /></div>
 	<h3><li>반복문과 조건문 (1)</li></h3><div style="padding-left:20px">
 	<div id="code">for (a=1; a&lt;=10; a++) {
 			trace(&quot;a=&quot;+a);
@@ -1391,100 +1463,526 @@ lineTo( a,300 );</div><br>
 	lineTo( a,300 );
 };</div><br />
 	- 음악로드 상태선 그리기</div>
-	----------------------------------------------------------------------------<br />
-	// mp3 파일 순서대로 재생하기                           // 사운드 제어하기 (3)<br />
-	for (a=1; a&lt;=25; a++)  {<br />
-	_root[&quot;snd&quot;+a] = new Sound();<br />
-	_root[&quot;snd&quot;+a].attachSound(&quot;piano&quot;+a+&quot;.mp3&quot;);<br />
-	};<br />
-	k=1;  _root[&quot;snd&quot;+k].start();<br />
-	for (a = 1; a &lt;= 25; a++)  { <br />
-	_root[&quot;snd&quot;+a].onSoundComplete=function(){<br />
-	k++;  _root[&quot;snd&quot;+k].start(); <br />
-	};<br />
-	};<br />
-	----------------------------------------------------------------------------<br />
-	snd.setVolume(200);  // 볼륨 조절 (100 = 기본 , 200 = 2배 , 300 = 3배 )<br />
-	snd.setPan(100);     // 왼쪽 스피커 끔<br />
-	snd.setPan(-100);    // 오른쪽 스피커 끔<br />
-	snd.setPan(0);       // 양쪽 스피커 켬<br />
-	snd.start(0, 2);     // 음악 전체 2번 반복 재생 (attachSound 일때)<br />
-	snd.start(30, 5);    // 음악 30 seconds 부터 5번 반복 재생 (attachSound 일때)<br />
-	soundtime=snd.position;  snd.stop();  snd.start(soundtime/100); // 중간부터 재생<br />
-	trace( snd.duration );    // 음악 전체 음량<br />
-	trace( snd.position );    // 음악 현재 위치<br />
-	trace( snd.getPan() );    // setPan 값<br />
-	trace( sond.getBytesLoaded() ); // 음악 로드된 바이트 수 (loadSound 일때)<br />
-	trace( sond.getBytesTotal() );  // 음악 크기의 바이트 수 (loadSound 일때)<br />
-	sond.onLoad = function() { trace(&quot;재생&quot;);  };  // 소리재생 때 (loadSound 일때, loadSound 위에 표시)<br />
-	snd.onSoundComplete=function(){ trace(&quot;재생 완료&quot;);  };   // 소리재생 완료 때<br />
-	snd.onSoundComplete=function(){ snd.start(20, 1);  };     // 소리재생 무한 반복<br />
-	sond.onSoundComplete=function(){ sond.loadSound(&quot;sss.mp3&quot;, true); };  // 소리재생 무한 반복<br />
-	snd.stop();                    // snd  소리재생 멈춤<br />
-	stopAllSounds ();              // 모든 소리재생 멈춤<br />
-	----------------------------------------------------------------------------<br />
-	startDrag(&quot;myClip&quot;, true);            // 마우스 커서를  myClip 으로 바꾸기<br />
-	Mouse.hide(); <br />
-	----------------------------------------------------------------------------<br />
-	Key.getCode( );        //  가장 최근에 눌려진 키의 키 코드 값을 반환<br />
-	Key.getAscii( );       //  가장 최근에 눌러지거나 마우스에서 놓여진 키의 ASCII 코드를 반환<br />
-	Key.isDown( );         //  지정한 키가 눌려 있는지의 여부<br />
-	Key.isToggled( );      //  키의 상태<br />
-	Key.ENTER         (13)<br />
-	Key.SPACE         (32)<br />
-	Key.CONTROL       (17)<br />
-	Key.SHIFT         (16)<br />
-	Key.TAB           (9)<br />
-	Key.BACKSPACE     (8)<br />
-	Key.CAPSLOCK      (20)<br />
-	Key.ESCAPE        (27)<br />
-	Key.PGUP          (33)<br />
-	Key.PGDN          (34)<br />
-	Key.END           (35)<br />
-	Key.HOME          (36)<br />
-	Key.LEFT          (37)<br />
-	Key.UP            (38)<br />
-	Key.RIGHT         (39)<br />
-	Key.DOWN          (40)<br />
-	Key.INSERT        (45)<br />
-	Key.DELETEKEY     (46)<br />
-	----------------------------------------------------------------------------<br />
-	//  키보드 방향키를 눌렀을때<br />
-	_root.onEnterFrame = function() { <br />
-	if(Key.isDown(Key.RIGHT)) {          //  화면 오른쪽 이동<br />
-	this._x=_x+10;<br />
-	} else if (Key.isDown(Key.LEFT)) {   //  화면 왼쪽 이동<br />
-	this._x=_x-10;<br />
-	} else if (Key.isDown(Key.UP)) {     //  화면 위 이동<br />
-	this._y=_y-10;<br />
-	} else if (Key.isDown(Key.DOWN)) {   //  화면 아래 이동<br />
-	this._y=_y+10;<br />
-	}<br />
-	}<br />
-	----------------------------------------------------------------------------<br />
-	// 변수이름이 _root.kcode 란 동적텍스트를 만든후<br />
-	someListener = new Object();<br />
-	someListener.onKeyDown = function () {<br />
-	kcode=Key.getCode(); <br />
-	if(kcode == 32){ trace(&quot;space&quot;);  }  // space 키를 눌렀을때<br />
-	if(kcode == 13){ trace(&quot;enter&quot;);  }  // enter 키를 눌렀을때  (swf 파일에서 실행)<br />
-	if(kcode == 65){ trace(&quot; A or a&quot;); }  // A or a 키를 눌렀을때 (대소문자 모두 65)<br />
-	if(kcode == 66){ trace(&quot; B or b&quot;); }  // B or b 키를 눌렀을때 (대소문자 모두 66)<br />
-	if(kcode == 89){ trace(&quot; Y or y&quot;); }  // Y or y 키를 눌렀을때 (대소문자 모두 89)<br />
-	if(kcode == 90){ trace(&quot; Z or z&quot;); }  // Z or z 키를 눌렀을때 (대소문자 모두 90)<br />
-	};<br />
-	Key.addListener(someListener);<br />
-	----------------------------------------------------------------------------<br />
-	//  ASCII 코드<br />
-	(48,49,50,51,52,53,54,55,56,57)  0 1 2 3 4 5 6 7 8 9<br />
-	(65,66,67 ........... 88,89,90)  A B C ....... X Y Z<br />
-	(97,98,99 ........ 120,121,122)  a b c ....... x y z<br />
-	33 !    34 &quot;    35 #    36 $    37 %    38 &amp;    39 ' <br />
-	40 (    41 )    42 *    43 +    44 ,    45 -    46 .    47 /<br />
-	58 :    59 ;    60 &lt;    61 =    62 &gt;    63 ?    64 @<br />
-	91 [    92     93 ]    94 ^    95 _    96 `<br />
-	123 {   124 |   125 }   126  ~<br />
-	----------------------------------------------------------------------------</p>
+	<h3><li>사운드 제어 (3)</li></h3><div style="padding-left: 20px;">
+	MP3 파일 순서대로 재생하기
+	<div id="code">for (a=1; a&lt;=25; a++) {
+	_root[&quot;snd&quot;+a] = new Sound();
+	_root[&quot;snd&quot;+a].attachSound(&quot;piano&quot;+a+&quot;.mp3&quot;);
+};
+k=1;
+_root[&quot;snd&quot;+k].start();
+for (a = 1; a &lt;= 25; a++) {
+	_root[&quot;snd&quot;+a].onSoundComplete=function(){
+		k++;
+		_root[&quot;snd&quot;+k].start();
+	};
+};</div><br /></div>
+	<h3><li>사운드 제어 (4)</li></h3><div style="padding-left: 20px;">
+	<div id="code">snd.setVolume(200);</div><br>
+	- 볼륨 조절 (<code>100</code> = 기본 , <code>200</code> = 2배 , <code>300</code> = 3배 )<br />
+	<div id="code">snd.setPan(100);</div><br>
+	- 왼쪽 스피커 끔<br />
+	<div id="code">snd.setPan(-100);</div><br>
+	- 오른쪽 스피커 끔<br />
+	<div id="code">snd.setPan(0);</div><br>
+	- 양쪽 스피커 켬<br />
+	<div id = "code">snd.start(0, 2);</div><br>
+	- 음악 전체 <code>2</code>번 반복 재생 (<code>attachSound</code> 일 때)<br />
+	<div id = "code">snd.start(30, 5);</div><br>
+	- 음악 <code>30</code>초부터 <code>5</code>번 반복 재생 (<code>attachSound</code> 일 때)<br />
+	<div id = "code">soundtime=snd.position;
+snd.stop();
+snd.start(soundtime/100);</div><br>
+	- 중간부터 재생<br />
+	<div id = "code">trace( snd.duration );</div><br>
+	- 음악 전체 길이 출력<br />
+	<div id = "code">trace( snd.position );</div><br>
+	- 음악 현재 위치 출력<br />
+	<div id = "code">trace( snd.getPan() );</div><br>
+	- <code>setPan</code> 값<br />
+	<div id = "code">trace( sond.getBytesLoaded() );</div><br>
+	- 음악 파일이 로드된 바이트 수 (<code>loadSound</code> 일 때)<br />
+	<div id = "code">trace( sond.getBytesTotal() );</div><br>
+	- 음악 파일의 바이트 수 (<code>loadSound</code> 일 때)<br />
+	<div id = "code">sond.onLoad = function() {
+	trace(&quot;재생&quot;);
+};</div><br>
+	- 소리재생 때 (<code>loadSound</code> 일 때, <code>loadSound</code> 위에 표시)<br />
+	<div id = "code">snd.onSoundComplete=function(){
+	trace(&quot;재생 완료&quot;);
+};</div><br>
+	- 소리재생 완료 때<br />
+	<div id = "code">snd.onSoundComplete=function(){
+	snd.start(20, 1);
+};</div><br>
+	- 소리재생 무한 반복<br />
+	<div id = "code">sond.onSoundComplete=function(){
+	sond.loadSound(&quot;sss.mp3&quot;, true);
+};</div><br>
+	- 소리재생 무한 반복<br />
+	<div id = "code">snd.stop();</div><br>
+	- <code>snd</code> 소리재생 멈춤<br />
+	<div id = "code">stopAllSounds();</div><br>
+	- 모든 소리재생 멈춤<br /></div>
+	<h3><li>마우스 커서</li></h3><div style="padding-left: 20px;">
+	<div id = "code">startDrag(&quot;myClip&quot;, true);</div><br>
+	- 마우스 커서를 <code>myClip</code> 으로 바꾸기<br />
+	<div id = "code">Mouse.hide();</div><br />
+	- 마우스 커서 숨기기</div>
+	<h3><li>키 코드</li></h3><div style="padding-left: 20px;">
+	<div id = "code">Key.getCode();</div><br>
+	- 가장 최근에 눌려진 키의 키 코드 값을 반환<br />
+	<div id = "code">Key.getAscii();</div><br>
+	- 가장 최근에 눌러지거나 마우스에서 놓여진 키의 ASCII 코드를 반환<br />
+	<div id = "code">Key.isDown();</div><br>
+	- 지정한 키가 눌려 있는지의 여부<br />
+	<div id = "code">Key.isToggled();</div><br>
+	- 키의 상태<br />
+	<table>
+		<caption style = "font-size: 1.2em; margin: 5px 0 10px 0;">키 코드</caption>
+		<thead><tr>
+			<th style = "width: 160px;">코드</th>
+			<th style = "width: 200px;">키</th>
+			<th style = "width: 60px;">키 코드</th>
+		</tr></thead>
+		<tbody><tr>
+			<td class = "tcode">Key.ENTER</td>
+			<td>엔터 키</td>
+			<td class = "tcode" style = "text-align: center;">13</td>
+		</tr><tr>
+			<td class = "tcode">Key.SPACE</td>
+			<td>스페이스 바</td>
+			<td class = "tcode" style = "text-align: center;">32</td>
+		</tr><tr>
+			<td class = "tcode">Key.CONTROL</td>
+			<td>Ctrl 키</td>
+			<td class = "tcode" style = "text-align: center;">17</td>
+		</tr><tr>
+			<td class = "tcode">Key.SHIFT</td>
+			<td>Shift 키 (좌우 구별 없이)</td>
+			<td class = "tcode" style = "text-align: center;">16</td>
+		</tr><tr>
+			<td class = "tcode">Key.TAB</td>
+			<td>Tab 키</td>
+			<td class = "tcode" style = "text-align: center;">9</td>
+		</tr><tr>
+			<td class = "tcode">Key.BACKSPACE</td>
+			<td>백 스페이스</td>
+			<td class = "tcode" style = "text-align: center;">8</td>
+		</tr><tr>
+			<td class = "tcode">Key.CAPSLOCK</td>
+			<td>Caps Lock 키</td>
+			<td class = "tcode" style = "text-align: center;">20</td>
+		</tr><tr>
+			<td class = "tcode">Key.ESCAPE</td>
+			<td>Esc 키</td>
+			<td class = "tcode" style = "text-align: center;">27</td>
+		</tr><tr>
+			<td class = "tcode">Key.PGUP</td>
+			<td>PgUp (Page Up) 키</td>
+			<td class = "tcode" style = "text-align: center;">33</td>
+		</tr><tr>
+			<td class = "tcode">Key.PGDN</td>
+			<td>PgDn (Page Down) 키</td>
+			<td class = "tcode" style = "text-align: center;">34</td>
+		</tr><tr>
+			<td class = "tcode">Key.END</td>
+			<td>End 키</td>
+			<td class = "tcode" style = "text-align: center;">35</td>
+		</tr><tr>
+			<td class = "tcode">Key.HOME</td>
+			<td>Home 키</td>
+			<td class = "tcode" style = "text-align: center;">36</td>
+		</tr><tr>
+			<td class = "tcode">Key.LEFT</td>
+			<td>왼쪽 방향키</td>
+			<td class = "tcode" style = "text-align: center;">37</td>
+		</tr><tr>
+			<td class = "tcode">Key.UP</td>
+			<td>위 방향키</td>
+			<td class = "tcode" style = "text-align: center;">38</td>
+		</tr><tr>
+			<td class = "tcode">Key.RIGHT</td>
+			<td>오른쪽 방향키</td>
+			<td class = "tcode" style = "text-align: center;">39</td>
+		</tr><tr>
+			<td class = "tcode">Key.DOWN</td>
+			<td>아래 방향키</td>
+			<td class = "tcode" style = "text-align: center;">40</td>
+		</tr><tr>
+			<td class = "tcode">Key.INSERT</td>
+			<td>Insert 키</td>
+			<td class = "tcode" style = "text-align: center;">45</td>
+		</tr><tr>
+			<td class = "tcode">Key.DELETEKEY</td>
+			<td>Delete 키</td>
+			<td class = "tcode" style = "text-align: center;">46</td>
+		</tr></tbody>
+	</table></div>
+	<h3><li>키 조종 (1)</li></h3><div style = "padding-left: 20px;">
+	- 키보드 방향키를 눌렀을 때<br />
+	<div id = "code">_root.onEnterFrame = function() {
+	if(Key.isDown(Key.RIGHT)) { // 화면 오른쪽 이동
+		this._x=_x+10;
+	} else if (Key.isDown(Key.LEFT)) { // 화면 왼쪽 이동
+		this._x=_x-10;
+	} else if (Key.isDown(Key.UP)) { // 화면 위 이동
+		this._y=_y-10;
+	} else if (Key.isDown(Key.DOWN)) { // 화면 아래 이동
+		this._y=_y+10;
+	}
+}</div><br /></div>
+	<h3><li>키 조종 (2)</li></h3><div style="padding-left: 20px;">
+	동적 텍스트에 변수 <code>_root.kcode</code> 를 할당한 후<br />
+	<div id = "code">someListener = new Object();
+someListener.onKeyDown = function () {
+	kcode=Key.getCode();
+	if (kcode == 32) { // 스페이스 바를 눌렀을 때
+		trace(&quot;space&quot;);
+	}
+	if (kcode == 13) { // Enter 키를 눌렀을 때 (SWF 파일에서 실행)
+		trace(&quot;enter&quot;);
+	}
+	if (kcode == 65) { // A 키를 눌렀을 때 (Shift 키를 누른 여부 관계 없이 모두 65)
+		trace(&quot; A or a&quot;);
+	}
+	if (kcode == 66) { // B 키를 눌렀을 때 (Shift 키를 누른 여부 관계 없이 모두 66)
+		trace(&quot; B or b&quot;);
+	}
+	if (kcode == 89) { // Y 키를 눌렀을 때 (Shift 키를 누른 여부 관계 없이 모두 89)
+		trace(&quot; Y or y&quot;);
+	}
+	if (kcode == 90) { // Z 키를 눌렀을때 (Shift 키를 누른 여부 관계 없이 모두 90)
+		trace(&quot; Z or z&quot;);
+	}
+};
+Key.addListener(someListener);</div><br /></div>
+	<h3><li>ASCII 코드</li></h3><div style="padding-left: 20px;">
+	<div style = "overflow-x: scroll;"><table style = "width:1110px;">
+		<tr>
+			<th rowspan="2">코드</th>
+			<th>16진</th>
+			<td class = "tcode" style = "text-align: center;">30</td>
+			<td class = "tcode" style = "text-align: center;">31</td>
+			<td class = "tcode" style = "text-align: center;">32</td>
+			<td class = "tcode" style = "text-align: center;">33</td>
+			<td class = "tcode" style = "text-align: center;">34</td>
+			<td class = "tcode" style = "text-align: center;">35</td>
+			<td class = "tcode" style = "text-align: center;">36</td>
+			<td class = "tcode" style = "text-align: center;">37</td>
+			<td class = "tcode" style = "text-align: center;">38</td>
+			<td class = "tcode" style = "text-align: center;">39</td>
+			<td colspan="16" rowspan="3"></td>
+		</tr><tr>
+			<th>10진</th>
+			<td class = "tcode" style = "text-align: center;">048</td>
+			<td class = "tcode" style = "text-align: center;">049</td>
+			<td class = "tcode" style = "text-align: center;">050</td>
+			<td class = "tcode" style = "text-align: center;">051</td>
+			<td class = "tcode" style = "text-align: center;">052</td>
+			<td class = "tcode" style = "text-align: center;">053</td>
+			<td class = "tcode" style = "text-align: center;">054</td>
+			<td class = "tcode" style = "text-align: center;">055</td>
+			<td class = "tcode" style = "text-align: center;">056</td>
+			<td class = "tcode" style = "text-align: center;">057</td>
+		</tr><tr>
+			<th colspan = "2">문자</th>
+			<td class = "tcode" style = "text-align: center;">0</td>
+			<td class = "tcode" style = "text-align: center;">1</td>
+			<td class = "tcode" style = "text-align: center;">2</td>
+			<td class = "tcode" style = "text-align: center;">3</td>
+			<td class = "tcode" style = "text-align: center;">4</td>
+			<td class = "tcode" style = "text-align: center;">5</td>
+			<td class = "tcode" style = "text-align: center;">6</td>
+			<td class = "tcode" style = "text-align: center;">7</td>
+			<td class = "tcode" style = "text-align: center;">8</td>
+			<td class = "tcode" style = "text-align: center;">9</td>
+		</tr><tr><td colspan = "28"></td></tr><tr>
+			<th rowspan="2">코드</th>
+			<th>16진</th>
+			<td class = "tcode" style = "text-align: center;">041</td>
+			<td class = "tcode" style = "text-align: center;">042</td>
+			<td class = "tcode" style = "text-align: center;">043</td>
+			<td class = "tcode" style = "text-align: center;">044</td>
+			<td class = "tcode" style = "text-align: center;">045</td>
+			<td class = "tcode" style = "text-align: center;">046</td>
+			<td class = "tcode" style = "text-align: center;">047</td>
+			<td class = "tcode" style = "text-align: center;">048</td>
+			<td class = "tcode" style = "text-align: center;">049</td>
+			<td class = "tcode" style = "text-align: center;">04A</td>
+			<td class = "tcode" style = "text-align: center;">04B</td>
+			<td class = "tcode" style = "text-align: center;">04C</td>
+			<td class = "tcode" style = "text-align: center;">04D</td>
+			<td class = "tcode" style = "text-align: center;">04E</td>
+			<td class = "tcode" style = "text-align: center;">04F</td>
+			<td class = "tcode" style = "text-align: center;">050</td>
+			<td class = "tcode" style = "text-align: center;">051</td>
+			<td class = "tcode" style = "text-align: center;">052</td>
+			<td class = "tcode" style = "text-align: center;">053</td>
+			<td class = "tcode" style = "text-align: center;">054</td>
+			<td class = "tcode" style = "text-align: center;">055</td>
+			<td class = "tcode" style = "text-align: center;">056</td>
+			<td class = "tcode" style = "text-align: center;">057</td>
+			<td class = "tcode" style = "text-align: center;">058</td>
+			<td class = "tcode" style = "text-align: center;">059</td>
+			<td class = "tcode" style = "text-align: center;">05A</td>
+		</tr><tr>
+			<th>10진</th>
+			<td class = "tcode" style = "text-align: center;">065</td>
+			<td class = "tcode" style = "text-align: center;">066</td>
+			<td class = "tcode" style = "text-align: center;">067</td>
+			<td class = "tcode" style = "text-align: center;">068</td>
+			<td class = "tcode" style = "text-align: center;">069</td>
+			<td class = "tcode" style = "text-align: center;">070</td>
+			<td class = "tcode" style = "text-align: center;">071</td>
+			<td class = "tcode" style = "text-align: center;">072</td>
+			<td class = "tcode" style = "text-align: center;">073</td>
+			<td class = "tcode" style = "text-align: center;">074</td>
+			<td class = "tcode" style = "text-align: center;">075</td>
+			<td class = "tcode" style = "text-align: center;">076</td>
+			<td class = "tcode" style = "text-align: center;">077</td>
+			<td class = "tcode" style = "text-align: center;">078</td>
+			<td class = "tcode" style = "text-align: center;">079</td>
+			<td class = "tcode" style = "text-align: center;">080</td>
+			<td class = "tcode" style = "text-align: center;">081</td>
+			<td class = "tcode" style = "text-align: center;">082</td>
+			<td class = "tcode" style = "text-align: center;">083</td>
+			<td class = "tcode" style = "text-align: center;">084</td>
+			<td class = "tcode" style = "text-align: center;">085</td>
+			<td class = "tcode" style = "text-align: center;">086</td>
+			<td class = "tcode" style = "text-align: center;">087</td>
+			<td class = "tcode" style = "text-align: center;">088</td>
+			<td class = "tcode" style = "text-align: center;">089</td>
+			<td class = "tcode" style = "text-align: center;">090</td>
+		</tr><tr>
+			<th colspan = "2">문자</th>
+			<td class = "tcode" style = "text-align: center;">A</td>
+			<td class = "tcode" style = "text-align: center;">B</td>
+			<td class = "tcode" style = "text-align: center;">C</td>
+			<td class = "tcode" style = "text-align: center;">D</td>
+			<td class = "tcode" style = "text-align: center;">E</td>
+			<td class = "tcode" style = "text-align: center;">F</td>
+			<td class = "tcode" style = "text-align: center;">G</td>
+			<td class = "tcode" style = "text-align: center;">H</td>
+			<td class = "tcode" style = "text-align: center;">I</td>
+			<td class = "tcode" style = "text-align: center;">J</td>
+			<td class = "tcode" style = "text-align: center;">K</td>
+			<td class = "tcode" style = "text-align: center;">L</td>
+			<td class = "tcode" style = "text-align: center;">M</td>
+			<td class = "tcode" style = "text-align: center;">N</td>
+			<td class = "tcode" style = "text-align: center;">O</td>
+			<td class = "tcode" style = "text-align: center;">P</td>
+			<td class = "tcode" style = "text-align: center;">Q</td>
+			<td class = "tcode" style = "text-align: center;">R</td>
+			<td class = "tcode" style = "text-align: center;">S</td>
+			<td class = "tcode" style = "text-align: center;">T</td>
+			<td class = "tcode" style = "text-align: center;">U</td>
+			<td class = "tcode" style = "text-align: center;">V</td>
+			<td class = "tcode" style = "text-align: center;">W</td>
+			<td class = "tcode" style = "text-align: center;">X</td>
+			<td class = "tcode" style = "text-align: center;">Y</td>
+			<td class = "tcode" style = "text-align: center;">Z</td>
+		</tr><tr><td colspan = "28"></td></tr><tr>
+			<th rowspan="2">코드</th>
+			<th>16진</th>
+			<td class = "tcode" style = "text-align: center;">061</td>
+			<td class = "tcode" style = "text-align: center;">062</td>
+			<td class = "tcode" style = "text-align: center;">063</td>
+			<td class = "tcode" style = "text-align: center;">064</td>
+			<td class = "tcode" style = "text-align: center;">065</td>
+			<td class = "tcode" style = "text-align: center;">066</td>
+			<td class = "tcode" style = "text-align: center;">067</td>
+			<td class = "tcode" style = "text-align: center;">068</td>
+			<td class = "tcode" style = "text-align: center;">069</td>
+			<td class = "tcode" style = "text-align: center;">06A</td>
+			<td class = "tcode" style = "text-align: center;">06B</td>
+			<td class = "tcode" style = "text-align: center;">06C</td>
+			<td class = "tcode" style = "text-align: center;">06D</td>
+			<td class = "tcode" style = "text-align: center;">06E</td>
+			<td class = "tcode" style = "text-align: center;">06F</td>
+			<td class = "tcode" style = "text-align: center;">070</td>
+			<td class = "tcode" style = "text-align: center;">071</td>
+			<td class = "tcode" style = "text-align: center;">072</td>
+			<td class = "tcode" style = "text-align: center;">073</td>
+			<td class = "tcode" style = "text-align: center;">074</td>
+			<td class = "tcode" style = "text-align: center;">075</td>
+			<td class = "tcode" style = "text-align: center;">076</td>
+			<td class = "tcode" style = "text-align: center;">077</td>
+			<td class = "tcode" style = "text-align: center;">078</td>
+			<td class = "tcode" style = "text-align: center;">079</td>
+			<td class = "tcode" style = "text-align: center;">07A</td>
+		</tr><tr>
+			<th>10진</th>
+			<td class = "tcode" style = "text-align: center;">097</td>
+			<td class = "tcode" style = "text-align: center;">098</td>
+			<td class = "tcode" style = "text-align: center;">099</td>
+			<td class = "tcode" style = "text-align: center;">100</td>
+			<td class = "tcode" style = "text-align: center;">101</td>
+			<td class = "tcode" style = "text-align: center;">102</td>
+			<td class = "tcode" style = "text-align: center;">103</td>
+			<td class = "tcode" style = "text-align: center;">104</td>
+			<td class = "tcode" style = "text-align: center;">105</td>
+			<td class = "tcode" style = "text-align: center;">106</td>
+			<td class = "tcode" style = "text-align: center;">107</td>
+			<td class = "tcode" style = "text-align: center;">108</td>
+			<td class = "tcode" style = "text-align: center;">109</td>
+			<td class = "tcode" style = "text-align: center;">110</td>
+			<td class = "tcode" style = "text-align: center;">111</td>
+			<td class = "tcode" style = "text-align: center;">112</td>
+			<td class = "tcode" style = "text-align: center;">113</td>
+			<td class = "tcode" style = "text-align: center;">114</td>
+			<td class = "tcode" style = "text-align: center;">115</td>
+			<td class = "tcode" style = "text-align: center;">116</td>
+			<td class = "tcode" style = "text-align: center;">117</td>
+			<td class = "tcode" style = "text-align: center;">118</td>
+			<td class = "tcode" style = "text-align: center;">119</td>
+			<td class = "tcode" style = "text-align: center;">120</td>
+			<td class = "tcode" style = "text-align: center;">121</td>
+			<td class = "tcode" style = "text-align: center;">122</td>
+		</tr><tr>
+			<th colspan = "2">문자</th>
+			<td class = "tcode" style = "text-align: center;">a</td>
+			<td class = "tcode" style = "text-align: center;">b</td>
+			<td class = "tcode" style = "text-align: center;">c</td>
+			<td class = "tcode" style = "text-align: center;">d</td>
+			<td class = "tcode" style = "text-align: center;">e</td>
+			<td class = "tcode" style = "text-align: center;">f</td>
+			<td class = "tcode" style = "text-align: center;">g</td>
+			<td class = "tcode" style = "text-align: center;">h</td>
+			<td class = "tcode" style = "text-align: center;">i</td>
+			<td class = "tcode" style = "text-align: center;">j</td>
+			<td class = "tcode" style = "text-align: center;">k</td>
+			<td class = "tcode" style = "text-align: center;">l</td>
+			<td class = "tcode" style = "text-align: center;">m</td>
+			<td class = "tcode" style = "text-align: center;">n</td>
+			<td class = "tcode" style = "text-align: center;">o</td>
+			<td class = "tcode" style = "text-align: center;">p</td>
+			<td class = "tcode" style = "text-align: center;">q</td>
+			<td class = "tcode" style = "text-align: center;">r</td>
+			<td class = "tcode" style = "text-align: center;">s</td>
+			<td class = "tcode" style = "text-align: center;">t</td>
+			<td class = "tcode" style = "text-align: center;">u</td>
+			<td class = "tcode" style = "text-align: center;">v</td>
+			<td class = "tcode" style = "text-align: center;">w</td>
+			<td class = "tcode" style = "text-align: center;">x</td>
+			<td class = "tcode" style = "text-align: center;">y</td>
+			<td class = "tcode" style = "text-align: center;">z</td>
+		</tr><tr><td colspan = "28"></td></tr><tr>
+			<th rowspan="2">코드</th>
+			<th>16진</th>
+			<td class = "tcode" style = "text-align: center;">21</td>
+			<td class = "tcode" style = "text-align: center;">22</td>
+			<td class = "tcode" style = "text-align: center;">23</td>
+			<td class = "tcode" style = "text-align: center;">24</td>
+			<td class = "tcode" style = "text-align: center;">25</td>
+			<td class = "tcode" style = "text-align: center;">26</td>
+			<td class = "tcode" style = "text-align: center;">27</td>
+			<td class = "tcode" style = "text-align: center;">28</td>
+			<td class = "tcode" style = "text-align: center;">29</td>
+			<td class = "tcode" style = "text-align: center;">2A</td>
+			<td class = "tcode" style = "text-align: center;">2B</td>
+			<td class = "tcode" style = "text-align: center;">2C</td>
+			<td class = "tcode" style = "text-align: center;">2D</td>
+			<td class = "tcode" style = "text-align: center;">2E</td>
+			<td class = "tcode" style = "text-align: center;">2F</td>
+			<td colspan="11" rowspan="3"></td>
+		</tr><tr>
+			<th>10진</th>
+			<td class = "tcode" style = "text-align: center;">033</td>
+			<td class = "tcode" style = "text-align: center;">034</td>
+			<td class = "tcode" style = "text-align: center;">035</td>
+			<td class = "tcode" style = "text-align: center;">036</td>
+			<td class = "tcode" style = "text-align: center;">037</td>
+			<td class = "tcode" style = "text-align: center;">038</td>
+			<td class = "tcode" style = "text-align: center;">039</td>
+			<td class = "tcode" style = "text-align: center;">040</td>
+			<td class = "tcode" style = "text-align: center;">041</td>
+			<td class = "tcode" style = "text-align: center;">042</td>
+			<td class = "tcode" style = "text-align: center;">043</td>
+			<td class = "tcode" style = "text-align: center;">044</td>
+			<td class = "tcode" style = "text-align: center;">045</td>
+			<td class = "tcode" style = "text-align: center;">046</td>
+			<td class = "tcode" style = "text-align: center;">047</td>
+		</tr><tr>
+			<th colspan = "2">문자</th>
+			<td class = "tcode" style = "text-align: center;">!</td>
+			<td class = "tcode" style = "text-align: center;">"</td>
+			<td class = "tcode" style = "text-align: center;">#</td>
+			<td class = "tcode" style = "text-align: center;">$</td>
+			<td class = "tcode" style = "text-align: center;">%</td>
+			<td class = "tcode" style = "text-align: center;">&</td>
+			<td class = "tcode" style = "text-align: center;">'</td>
+			<td class = "tcode" style = "text-align: center;">(</td>
+			<td class = "tcode" style = "text-align: center;">)</td>
+			<td class = "tcode" style = "text-align: center;">*</td>
+			<td class = "tcode" style = "text-align: center;">+</td>
+			<td class = "tcode" style = "text-align: center;">,</td>
+			<td class = "tcode" style = "text-align: center;">-</td>
+			<td class = "tcode" style = "text-align: center;">.</td>
+			<td class = "tcode" style = "text-align: center;">/</td>
+		</tr><tr><td colspan = "28"></td></tr><tr>
+			<th rowspan="2">코드</th>
+			<th>16진</th>
+			<td class = "tcode" style = "text-align: center;">3A</td>
+			<td class = "tcode" style = "text-align: center;">3B</td>
+			<td class = "tcode" style = "text-align: center;">3C</td>
+			<td class = "tcode" style = "text-align: center;">3D</td>
+			<td class = "tcode" style = "text-align: center;">3E</td>
+			<td class = "tcode" style = "text-align: center;">3F</td>
+			<td class = "tcode" style = "text-align: center;">40</td>
+			<td colspan="1" rowspan="3"></td>
+			<td class = "tcode" style = "text-align: center;">5B</td>
+			<td class = "tcode" style = "text-align: center;">5C</td>
+			<td class = "tcode" style = "text-align: center;">5D</td>
+			<td class = "tcode" style = "text-align: center;">5E</td>
+			<td class = "tcode" style = "text-align: center;">5F</td>
+			<td class = "tcode" style = "text-align: center;">60</td>
+			<td colspan="1" rowspan="3"></td>
+			<td class = "tcode" style = "text-align: center;">7B</td>
+			<td class = "tcode" style = "text-align: center;">7C</td>
+			<td class = "tcode" style = "text-align: center;">7D</td>
+			<td class = "tcode" style = "text-align: center;">7E</td>
+			<td colspan="7" rowspan="3"></td>
+		</tr><tr>
+			<th>10진</th>
+			<td class = "tcode" style = "text-align: center;">058</td>
+			<td class = "tcode" style = "text-align: center;">059</td>
+			<td class = "tcode" style = "text-align: center;">060</td>
+			<td class = "tcode" style = "text-align: center;">061</td>
+			<td class = "tcode" style = "text-align: center;">062</td>
+			<td class = "tcode" style = "text-align: center;">063</td>
+			<td class = "tcode" style = "text-align: center;">064</td>
+			<td class = "tcode" style = "text-align: center;">091</td>
+			<td class = "tcode" style = "text-align: center;">092</td>
+			<td class = "tcode" style = "text-align: center;">093</td>
+			<td class = "tcode" style = "text-align: center;">094</td>
+			<td class = "tcode" style = "text-align: center;">095</td>
+			<td class = "tcode" style = "text-align: center;">096</td>
+			<td class = "tcode" style = "text-align: center;">123</td>
+			<td class = "tcode" style = "text-align: center;">124</td>
+			<td class = "tcode" style = "text-align: center;">125</td>
+			<td class = "tcode" style = "text-align: center;">126</td>
+		</tr><tr>
+			<th colspan = "2">문자</th>
+			<td class = "tcode" style = "text-align: center;">:</td>
+			<td class = "tcode" style = "text-align: center;">;</td>
+			<td class = "tcode" style = "text-align: center;"><</td>
+			<td class = "tcode" style = "text-align: center;">=</td>
+			<td class = "tcode" style = "text-align: center;">></td>
+			<td class = "tcode" style = "text-align: center;">?</td>
+			<td class = "tcode" style = "text-align: center;">@</td>
+			<td class = "tcode" style = "text-align: center;">[</td>
+			<td class = "tcode" style = "text-align: center;">\</td>
+			<td class = "tcode" style = "text-align: center;">]</td>
+			<td class = "tcode" style = "text-align: center;">^</td>
+			<td class = "tcode" style = "text-align: center;">_</td>
+			<td class = "tcode" style = "text-align: center;">`</td>
+			<td class = "tcode" style = "text-align: center;">{</td>
+			<td class = "tcode" style = "text-align: center;">|</td>
+			<td class = "tcode" style = "text-align: center;">}</td>
+			<td class = "tcode" style = "text-align: center;">~</td>
+		</tr>
+	</table></div>
 </ol><p><a href="https://wbal1.github.io/as2/as2doctxt.txt">원본 텍스트 읽기</a><br />
 	출처: <code><a href="http://wwwmoa.com.ne.kr/zflashact/actionscript.txt">http://wwwmoa.com.ne.kr/zflashact/actionscript.txt</a></code></p>
 <br />

@@ -1,7 +1,13 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
 .font1 {
-	font-family: 'Gowun Batang', serif;
+	font-family: 'BookkMyungjo-Bd', serif;
 }
 
 .Container {
