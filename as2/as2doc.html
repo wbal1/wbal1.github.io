@@ -432,6 +432,7 @@ trace (account);</div><br>
 	- <code>C:\Windows\CALC.EXE</code> 열기<br />
 	<div id="code">getURL (&quot;aaa.exe&quot;);</div><br>
 	- <code>aaa.exe</code> 열기<br />
+	(이상 사항은 Microsoft Windows 환경에서 동작)
 	<div id="code">getURL (&quot;aaa.txt&quot;, &quot;_self&quot;);</div><br>
 	- <code>aaa.txt</code> 파일 열기<br />
 	<div id="code">getURL (&quot;movie.html&quot;, &quot;_self&quot;);</div><br>
@@ -1151,182 +1152,245 @@ trace(myArray.join());</div><br>
 myArray.sort(order);
 trace(myArray.join());</div><br>
 	- 결괏값 <code>1,9,23,54,184,634</code></div>
-	---------------------------------------------------------------------------<br />
-	this._x += 5;                                                        // sin 곡선<br />
-	v = this._x;<br />
-	this._y = 50*Math.sin(v*Math.PI/180);<br />
-	if  (v &gt;= 180)  { this[&quot;ss&quot;+ballcounter]._x *=  -1;  };  &lt;반복&gt;<br />
-	----------------------------------------------------------------------------<br />
-	RRR=270                                                              // 원<br />
-	onEnterFrame = function () {<br />
-	RRR=RRR+2; <br />
-	if (RRR  &gt;= 720) {  RRR = 0;  };<br />
-	this[&quot;ss&quot;]._x = (180*Math.cos(RRR*Math.PI/180));<br />
-	this[&quot;ss&quot;]._y = (180*Math.sin(RRR*Math.PI/180));<br />
-	};<br />
-	----------------------------------------------------------------------------<br />
-	this[&quot;ss&quot;]._x = (180*Math.cos(RRR*Math.PI/180));                     // 타원<br />
-	this[&quot;ss&quot;]._y = 60 + (60*Math.sin(RRR*Math.PI/180));<br />
-	----------------------------------------------------------------------------<br />
-	this[&quot;ss&quot;]._x = (120*Math.sin(RRR*Math.PI/180));                     // 대각원<br />
-	this[&quot;ss&quot;]._y = (120*Math.sin(RRR*Math.PI/180)) + (120*Math.cos(RRR*Math.PI/180));<br />
-	if (this[&quot;ss&quot;]._x &gt;= 100)  {                                          &lt;스케일 변경&gt;<br />
-	this[&quot;ss&quot;]._xscale -=  2;     this[&quot;ss&quot;]._yscale -=  2;<br />
-	if (this[&quot;ss&quot;]._xscale &lt;  50)  {   this[&quot;ss&quot;]._xscale =  50;  this[&quot;ss&quot;]._yscale =  50; };<br />
-	} else {<br />
-	this[&quot;ss&quot;]._xscale +=  2;      this[&quot;ss&quot;]._yscale +=  2;<br />
-	if (this[&quot;ss&quot;]._xscale &gt;  150)  {   this[&quot;ss&quot;]._xscale =  150;  this[&quot;ss&quot;]._yscale =  150;  };<br />
-	};<br />
-	----------------------------------------------------------------------------<br />
-	this[&quot;ss&quot;]._x = -(210*Math.cos(RRR*Math.PI/360));             //  나선 <br />
-	this[&quot;ss&quot;]._y = (10*Math.sin(RRR*Math.PI/20)) ;<br />
-	----------------------------------------------------------------------------<br />
-	mczzz += 10;                                                   // 방사원<br />
-	for (i=1; i&lt;=360; i=i+10)  { <br />
-	this[&quot;mc&quot; + i]._x =  (mczzz*Math.cos(mcrrr*Math.PI/180)); <br />
-	this[&quot;mc&quot; + i]._y =  (mczzz*Math.sin(mcrrr*Math.PI/180));<br />
-	mcrrr += 10;<br />
-	};<br />
-	----------------------------------------------------------------------------<br />
-	lineStyle( 5, 0xff00ff, 100 );    // (굵기,색깔,알파값)         // 선 그리기<br />
-	moveTo( 200, 200 );    lineTo( 300,300 );   lineTo( 100, 300 );<br />
-	----------------------------------------------------------------------------<br />
-	_root.createEmptyMovieClip( &quot;triangle&quot;, 1 );                    // 삼각형 그리기<br />
-	with ( _root.triangle )<br />
-	{<br />
-	lineStyle( 5, 0xff00ff, 100 );    //  (굵기,색깔,알파값)<br />
-	moveTo( 200, 200 );    lineTo( 300,300 );   lineTo( 100, 300 );   lineTo( 200, 200 );<br />
-	}<br />
-	----------------------------------------------------------------------------<br />
-	_root.createEmptyMovieClip(&quot;nemo&quot;, -1);                        // 사각형 그리기<br />
-	nemo.lineStyle(1, 0xff9933, 10); <br />
-	nemo.beginFill(0xff9933, 20);    (색칠)<br />
-	nemo.moveTo(100, 100); <br />
-	nemo.lineTo(300, 100);     nemo.lineTo(300, 300); <br />
-	nemo.lineTo(100, 300);     nemo.lineTo(100, 100);<br />
-	nemo.endFill();                       (색칠)<br />
-	----------------------------------------------------------------------------<br />
-	_root.createEmptyMovieClip( &quot;circle&quot;, 1 );                     // 원 그리기 (1)<br />
-	with ( _root.circle ) {<br />
-	lineStyle( 0, 0x0000FF, 100 );<br />
-	beginFill( 0xFF0000 );<br />
-	moveTo( 500, 500 );<br />
-	curveTo( 600, 500, 600, 400 );   curveTo( 600, 300, 500, 300 );<br />
-	curveTo( 400, 300, 400, 400 );   curveTo( 400, 500, 500, 500 );<br />
-	endFill();<br />
-	}<br />
-	----------------------------------------------------------------------------<br />
-	MovieClip.prototype.drawCircle = function(x, y, r) {       // 원 그리기 (2) <br />
-	this.moveTo(x+r, y);<br />
-	var segment = Math.tan(22.5*Math.PI/180);<br />
-	for (var angle = 45; angle&lt;=360; angle += 45) {<br />
-	var endx = r*Math.cos(angle*Math.PI/180);<br />
-	var endy = r*Math.sin(angle*Math.PI/180);<br />
-	var cx = endx+r*segment*Math.cos((angle-90)*Math.PI/180);<br />
-	var cy = endy+r*segment*Math.sin((angle-90)*Math.PI/180);<br />
-	this.curveTo(cx+x, cy+y, endx+x, endy+y);<br />
-	};<br />
-	}<br />
-	_root.createEmptyMovieClip(&quot;mcmc&quot;,1);<br />
-	this.mcmc.lineStyle( 15, 0xFF00FF, 100);<br />
-	this.mcmc.drawCircle(300,300,200);<br />
-	_root.mcmc.createEmptyMovieClip(&quot;mc&quot;,1);<br />
-	this.mcmc.mc.lineStyle( 5, 0x00FFFF, 100);<br />
-	this.mcmc.mc.drawCircle(300,300,100);<br />
-	----------------------------------------------------------------------------<br />
-	lineStyle(2, 0x000000, 50);                                  // 마우스로 선 그리기<br />
-	onMouseDown = function () {   toto=1;   MoveTo(_xmouse, _ymouse);    };<br />
-	onMouseUp = function () {  toto=0;  MoveTo(_xmouse, _ymouse);    }; <br />
-	onMouseMove = function () {   if ( toto==1 ) {   LineTo(_xmouse, _ymouse);   };   };<br />
-	----------------------------------------------------------------------------<br />
-	ins.onMouseDown = function () {  startDrag(this,true);   };  // 마우스로 그림 드래그 하기 (1)<br />
-	ins.onMouseMove = function () {  startDrag(this,false);  };<br />
-	ins.onMouseUp = function () {  stopDrag();   };<br />
-	----------------------------------------------------------------------------<br />
-	ins.onMouseDown = function () {                           // 마우스로 그림 드래그 하기 (2)<br />
-	left = -ins._width + 80;<br />
-	top = -ins._height + 80;<br />
-	right =  940;<br />
-	bottom = 580;<br />
-	startDrag(this,false, left, top, right, bottom);       // 드래그 영역<br />
-	}; <br />
-	ins.onMouseUp = function () {  stopDrag();  };<br />
-	----------------------------------------------------------------------------<br />
-	startDrag(target,[true, false],left, top, right, bottom);  // 드래그 시작<br />
-	stopDrag();                                                // 드래그 중지<br />
-	----------------------------------------------------------------------------<br />
-	// aaa 무비클립 과 _root.bbb 동적텍스트필드를 만든후  // 마우스의 위치에 따른 회전각도 구하기<br />
-	onEnterFrame = function() {<br />
-	potx = getProperty(aaa, _x); <br />
-	poty = getProperty(aaa, _y); <br />
-	potmx = getProperty(_root, _xmouse); <br />
-	potmy = getProperty(_root, _ymouse); <br />
-	potx = Math.round(potx - potmx) / 2;<br />
-	poty = Math.round(poty - potmy) / 2;<br />
-	aaa._rotation =  -Math.atan2(potx, poty) * (180/Math.PI)<br />
-	bbb =  Math.round(aaa._rotation)<br />
-	if (bbb &lt; 0) { bbb = 360 + bbb };<br />
-	}<br />
-	----------------------------------------------------------------------------<br />
-	createTextField (&quot;Name1&quot;, 1, 200, 50, 300, 50)      // 마우스의 위치에 따른 삼각형각도 구하기<br />
-	Name1.border = true;  Name1.variable = &quot;angle1&quot;;<br />
-	createTextField (&quot;Name2&quot;, 2, 510, 50, 300, 50)<br />
-	Name2.border = true;  Name2.variable = &quot;angle2&quot;;<br />
-	onEnterFrame = function() { <br />
-	createEmptyMovieClip( &quot;triangle&quot;, 3 ); <br />
-	with ( _root.triangle ) {<br />
-	lineStyle( 5, 0xff00ff, 100 );   //  (굵기,색깔,알파값)<br />
-	tx1 = 500;  ty1 = 400; <br />
-	tx2 = _xmouse;  ty2 =_ymouse;<br />
-	moveTo( tx1, ty1 );   lineTo( tx2,ty2 );<br />
-	lineTo(tx1,ty2 );   lineTo( tx1,ty1 ); <br />
-	}<br />
-	aaa = Math.abs(ty1 - ty2);<br />
-	bbb = Math.abs(tx1 - tx2);<br />
-	ccc = Math.sqrt(  Math.pow(aaa,2) - Math.pow(bbb,2)  ) <br />
-	angle1 = Math.round(Math.atan2(bbb, aaa) * (180/Math.PI));<br />
-	angle2 = Math.round(Math.atan2(aaa, bbb) * (180/Math.PI));<br />
-	if ( tx2 !=  _xmouse) { triangle.removeMovieClip ();  };<br />
-	}<br />
-	----------------------------------------------------------------------------<br />
-	// ball1 과 ball2 무비클립을 만든후                // 두개의 무비클립이 충돌할때 (hitTest)<br />
-	ball1._x = 150;   ball1._y = 100;<br />
-	ball2._x = 450;   ball2._y = 100;<br />
-	onEnterFrame = function() {<br />
-	ball2._x -=  1;<br />
-	if(ball2.hitTest(ball1)) {          //  충돌할때<br />
-	ball1._y = 50;          delete  onEnterFrame;<br />
-	}<br />
-	if(ball2.hitTest(300,100,true)) {   // 중심점이 (300,100) 일때<br />
-	ball2._x = 250;<br />
-	}<br />
-	if(ball2.hitTest(400,100,false)) {  //  외곽테두리가 (400,100) 일때<br />
-	ball1._x = 200;<br />
-	}<br />
-	if (ball2.hitTest(_root._xmouse, _root._ymouse, true)) {  // 마우스 오버때<br />
-	ball2._x += 1;<br />
-	}<br />
-	}<br />
-	----------------------------------------------------------------------------<br />
-	// 디렉로리에 있는 sss.mp3 재생                          // 사운드 제어하기 (1)<br />
-	sond = new Sound(); <br />
-	sond.loadSound(&quot;sss.mp3&quot;, true); <br />
-	----------------------------------------------------------------------------<br />
-	// 라이브러리에 있는 aaa.mp3 재생                        // 사운드 제어하기 (2)<br />
-	// 1. 파일메뉴 - 라이브러로 가져오기 (aaa.mp3) <br />
-	// 2. 창메뉴 - 라이브러리 - aaa.mp3에서 오른쪽 마우스<br />
-	// 3. 링크 -  actionscript로 내보내기 체크<br />
-	snd = new Sound();<br />
-	snd.attachSound(&quot;aaa.mp3&quot;); <br />
-	snd.start();<br />
-	lineStyle( 5, 0x0000ff, 100 );  //  (굵기,색깔,알파값) // 음악로드 전체선 그리기<br />
-	a = 300 +  (   Math.floor(snd.duration)  / 100    );<br />
-	moveTo( 300, 300 );    lineTo( a,300 ); <br />
-	onEnterFrame = function() { <br />
-	lineStyle( 5, 0xff00ff, 100 );  //  (굵기,색깔,알파값) // 음악로드 상태선 그리기<br />
-	a = 300 +  (   Math.floor( snd.position) / 100   );<br />
-	moveTo( 300, 300 );    lineTo( a,300 );<br />
-	};<br />
+	<h3><li>사인 곡선</li></h3><div style="padding-left: 20px;">
+	<div id="code">this._x += 5;
+v = this._x;
+this._y = 50*Math.sin(v*Math.PI/180);
+if (v &gt;= 180) {
+	this[&quot;ss&quot;+ballcounter]._x *= -1;
+};</div><br />
+	- <code>_x == 180</code>일 때까지 계속 반복</div>
+	<h3><li>원형 궤적 이동</li></h3><div style="padding-left: 20px;">
+	<div id = "code">RRR=270
+onEnterFrame = function () {
+	RRR = RRR + 2;
+	if (RRR &gt;= 720) {
+		RRR = 0;
+	};
+	this[&quot;ss&quot;]._x = (180*Math.cos(RRR*Math.PI/180));
+	this[&quot;ss&quot;]._y = (180*Math.sin(RRR*Math.PI/180));
+};</div><br /></div>
+	<h3><li>타원 궤적 이동</li></h3><div style="padding-left: 20px;">
+	<div id="code">this[&quot;ss&quot;]._x = (180*Math.cos(RRR*Math.PI/180));
+this[&quot;ss&quot;]._y = 60 + (60*Math.sin(RRR*Math.PI/180));</div><br /></div>
+	<h3><li>대각원 궤적 이동</li></h3><div style="padding-left: 20px;">
+	<div id="code">this[&quot;ss&quot;]._x = (120*Math.sin(RRR*Math.PI/180));
+this[&quot;ss&quot;]._y = (120*Math.sin(RRR*Math.PI/180)) + (120*Math.cos(RRR*Math.PI/180));</div><br>
+	- 기본형
+	<div id="code" style="margin-top: 15px;">if (this[&quot;ss&quot;]._x &gt;= 100)  {
+	this[&quot;ss&quot;]._xscale -=  2;
+	this[&quot;ss&quot;]._yscale -=  2;
+	if (this[&quot;ss&quot;]._xscale &lt; 50) {
+		this[&quot;ss&quot;]._xscale = 50;
+		this[&quot;ss&quot;]._yscale = 50;
+	}
+} else {
+	this[&quot;ss&quot;]._xscale +=  2;
+	this[&quot;ss&quot;]._yscale +=  2;
+	if (this[&quot;ss&quot;]._xscale &gt; 150) {
+		this[&quot;ss&quot;]._xscale = 150;
+		this[&quot;ss&quot;]._yscale = 150;
+	}
+}</div><br />
+	- 스케일 변경</div>
+	<h3><li>나선형 궤적 이동</li></h3><div style="padding-left: 20px;">
+	<div id="code">this[&quot;ss&quot;]._x = -(210*Math.cos(RRR*Math.PI/360));
+this[&quot;ss&quot;]._y = (10*Math.sin(RRR*Math.PI/20));</div><br /></div>
+	<h3><li>방사원</li></h3><div style="padding-left: 20px;">
+	<div id="code">mczzz += 10;
+for (i = 1; i &lt;= 360; i = i + 10) {
+	this[&quot;mc&quot; + i]._x = (mczzz*Math.cos(mcrrr*Math.PI/180));
+	this[&quot;mc&quot; + i]._y = (mczzz*Math.sin(mcrrr*Math.PI/180));
+	mcrrr += 10;
+};</div></div><br />
+	<h3><li>선 그리기</li></h3><div style="padding-left: 20px;">
+	<div id="code">lineStyle( 5, <span style="color: #f0f;">0xff00ff</span>, 100 ); // (굵기,색깔,알파값)</div><br>
+	- 선 양식 정하기
+	<div id="code">moveTo( 200, 200 );
+lineTo( 300, 300 );
+lineTo( 100, 300 );</div><br>
+	- 선 그리기</div>
+	<h3><li>삼각형 그리기</li></h3><div style="padding-left: 20px;">
+	<div id="code">_root.createEmptyMovieClip( &quot;triangle&quot;, 1 );
+with ( _root.triangle ) {
+	lineStyle( 5, <span style="color: #f0f;">0xff00ff</span>, 100 ); // (굵기,색깔,알파값)
+	moveTo( 200, 200 );
+	lineTo( 300,300 );
+	lineTo( 100, 300 );
+	lineTo( 200, 200 );
+}</div></div><br />
+	<h3><li>사각형 그리기</li></h3><div style="padding-left: 20px;">
+	<div id="code">_root.createEmptyMovieClip(&quot;nemo&quot;, -1);
+nemo.lineStyle(1, <span style="color: #f93;">0xff9933</span>, 10);</div><br>
+	- 양식 정하기
+	<div id="code">nemo.beginFill(<span style="color: #f93;">0xff9933</span>, 20);
+nemo.moveTo(100, 100);
+nemo.lineTo(300, 100);
+nemo.lineTo(300, 300);
+nemo.lineTo(100, 300);
+nemo.lineTo(100, 100);
+nemo.endFill();</div><br />
+	- 색칠</div>
+	<h3><li>원 그리기 (1)</li></h3><div style="padding-left: 20px;">
+	<div id="code">_root.createEmptyMovieClip( &quot;circle&quot;, 1 );
+with ( _root.circle ) {
+	lineStyle( 0, <span style="color: #00f">0x0000FF</span>, 100 );
+	beginFill( <span style="color: #f00">0xFF0000</span> );
+	moveTo( 500, 500 );
+	curveTo( 600, 500, 600, 400 );
+	curveTo( 600, 300, 500, 300 );
+	curveTo( 400, 300, 400, 400 );
+	curveTo( 400, 500, 500, 500 );
+	endFill();
+}</div><br /></div>
+	<h3><li>원 그리기 (2)</li></h3><div style="padding-left: 20px;">
+	<div id="code">MovieClip.prototype.drawCircle = function(x, y, r) {
+	this.moveTo(x+r, y);
+	var segment = Math.tan(22.5*Math.PI/180);
+	for (var angle = 45; angle&lt;=360; angle += 45) {
+		var endx = r*Math.cos(angle*Math.PI/180);
+		var endy = r*Math.sin(angle*Math.PI/180);
+		var cx = endx+r*segment*Math.cos((angle-90)*Math.PI/180);
+		var cy = endy+r*segment*Math.sin((angle-90)*Math.PI/180);
+		this.curveTo(cx+x, cy+y, endx+x, endy+y);
+	};
+}
+_root.createEmptyMovieClip(&quot;mcmc&quot;,1);
+this.mcmc.lineStyle( 15, <span style="color: #f0f;">0xFF00FF</span>, 100);
+this.mcmc.drawCircle(300,300,200);
+_root.mcmc.createEmptyMovieClip(&quot;mc&quot;,1);
+this.mcmc.mc.lineStyle( 5, <span style="color: #0ff;">0x00FFFF</span>, 100);
+this.mcmc.mc.drawCircle(300,300,100);</div><br /></div>
+	<h3><li>마우스로 선 그리기</li></h3><div style="padding-left: 20px;">
+	<div id="code">lineStyle(2, 0x000000, 50);
+onMouseDown = function () {
+	toto=1;
+	MoveTo(_xmouse, _ymouse);
+};
+onMouseUp = function () {
+	toto=0;
+	MoveTo(_xmouse, _ymouse);
+};
+onMouseMove = function () {
+	if ( toto==1 ) {
+		LineTo(_xmouse, _ymouse);
+	};
+};</div><br /></div>
+	<h3><li>마우스로 그림 드래그하기 (1)</li></h3><div style="padding-left: 20px;">
+	<div id="code">ins.onMouseDown = function () {
+	startDrag(this,true);
+};
+ins.onMouseMove = function () {
+	startDrag(this,false);
+};
+ins.onMouseUp = function () {
+	stopDrag();
+};</div><br /></div>
+	<h3><li>마우스로 그림 드래그하기 (2)</li></h3><div style="padding-left: 20px;">
+	<div id="code">ins.onMouseDown = function () {
+	left = -ins._width + 80;
+	top = -ins._height + 80;
+	right =  940;
+	bottom = 580;
+	startDrag(this,false, left, top, right, bottom); // 드래그 영역
+};
+ins.onMouseUp = function () {  stopDrag();  };</div><br /></div>
+	<h3><li>드래그</li></h3><div style="padding-left: 20px;">
+	<div id="code">startDrag(target,[true, false],left, top, right, bottom);</div><br>
+	- 드래그 시작<br />
+	<div id="code">stopDrag();</div><br>
+	- 드래그 중지<br /></div>
+	<h3><li>마우스의 위치에 따른 회전 각도</li></h3><div style="padding-left: 20px;">
+	무비클립 <code>aaa</code>와 동적 텍스트필드 <code>_root.bbb</code>를 만든 후 마우스의 위치에 따른 회전각도 구하기
+	<div id = "code">onEnterFrame = function() {
+	potx = getProperty(aaa, _x); 
+	poty = getProperty(aaa, _y); 
+	potmx = getProperty(_root, _xmouse); 
+	potmy = getProperty(_root, _ymouse); 
+	potx = Math.round(potx - potmx) / 2;
+	poty = Math.round(poty - potmy) / 2;
+	aaa._rotation =  -Math.atan2(potx, poty) * (180/Math.PI)
+	bbb =  Math.round(aaa._rotation)
+	if (bbb &lt; 0) {
+		bbb = 360 + bbb
+	};
+}</div><br /></div>
+	<h3><li>마우스의 위치에 따른 삼각형 각도</li></h3><div style="padding-left: 20px;">
+	<div id  = "code">createTextField (&quot;Name1&quot;, 1, 200, 50, 300, 50)      // 마우스의 위치에 따른 삼각형각도 구하기
+Name1.border = true;
+Name1.variable = &quot;angle1&quot;;
+createTextField (&quot;Name2&quot;, 2, 510, 50, 300, 50)
+Name2.border = true;
+Name2.variable = &quot;angle2&quot;;
+onEnterFrame = function() { 
+	createEmptyMovieClip( &quot;triangle&quot;, 3 ); 
+	with ( _root.triangle ) {
+		lineStyle( 5, <span style="color: #f0f">0xff00ff</span>, 100 ); // (굵기,색깔,알파값)
+		tx1 = 500;
+		ty1 = 400; 
+		tx2 = _xmouse;
+		ty2 =_ymouse;
+		moveTo( tx1, ty1 );
+		lineTo( tx2,ty2 );
+		lineTo(tx1,ty2 );
+		lineTo( tx1,ty1 ); 
+	}
+	aaa = Math.abs(ty1 - ty2);
+	bbb = Math.abs(tx1 - tx2);
+	ccc = Math.sqrt(  Math.pow(aaa,2) - Math.pow(bbb,2)  ) 
+	angle1 = Math.round(Math.atan2(bbb, aaa) * (180/Math.PI));
+	angle2 = Math.round(Math.atan2(aaa, bbb) * (180/Math.PI));
+	if ( tx2 != _xmouse) {
+		triangle.removeMovieClip ();
+	};
+}</div><br /></div>
+	<h3><li>무비 클립의 충돌</li></h3><div style="padding-left: 20px;">
+	무비 클립<code>ball1</code> 과 <code>ball2</code>를 만든 후, 두 개의 무비 클립이 충돌할 때 (<code>hitTest</code>)<br />
+	<div id = "code">ball1._x = 150;
+ball1._y = 100;
+ball2._x = 450;
+ball2._y = 100;
+onEnterFrame = function() {
+	ball2._x -=  1;
+	if(ball2.hitTest(ball1)) { // 충돌할 때
+		ball1._y = 50;
+		delete onEnterFrame;
+	}
+	if(ball2.hitTest(300,100,true)) { // 중심점이 (300,100) 일 때
+		ball2._x = 250;
+	}
+	if(ball2.hitTest(400,100,false)) { // 외곽 테두리가 (400,100) 일 때
+		ball1._x = 200;
+	}
+	if (ball2.hitTest(_root._xmouse, _root._ymouse, true)) { // 마우스 오버 때
+		ball2._x += 1;
+	}
+}</div><br /></div>
+	<h3><li>사운드 제어 (1)</li></h3><div style="padding-left: 20px;">
+	SWF 파일과 같은 디렉터리에 있는 <code>sss.mp3</code> 재생
+	<div id="code">sond = new Sound();
+sond.loadSound(&quot;sss.mp3&quot;, true);</div><br /></div>
+	<h3><li>사운드 제어 (2)</li></h3><div style="padding-left: 20px;">
+	FLA 파일 내의 라이브러리에 있는 <code>aaa.mp3</code> 재생<br>
+	- 1. [파일] - 라이브러로 가져오기 (<code>aaa.mp3</code>) <br />
+	- 2. [창] - [라이브러리] - <code>aaa.mp3</code>에서 오른쪽 마우스<br />
+	- 3. 링크 - ActionScript로 내보내기 체크<br />
+	<div id="code">snd = new Sound();
+snd.attachSound(&quot;aaa.mp3&quot;);
+snd.start();</div><br />
+	- 사운드 동작
+	<div id="code">lineStyle( 5, <span style="color: #00f">0x0000ff</span>, 100 ); // (굵기,색깔,알파값)
+a = 300 + ( Math.floor(snd.duration) / 100 );
+moveTo( 300, 300 );
+lineTo( a,300 );</div><br>
+	- 음악로드 전체선 그리기
+<div id="code">onEnterFrame = function() { 
+	lineStyle( 5, <span style="color: #f0f;">0xff00ff</span>, 100 ); // (굵기,색깔,알파값)
+	a = 300 + ( Math.floor( snd.position) / 100 );
+	moveTo( 300, 300 );
+	lineTo( a,300 );
+};</div><br />
+	- 음악로드 상태선 그리기</div>
 	----------------------------------------------------------------------------<br />
 	// mp3 파일 순서대로 재생하기                           // 사운드 제어하기 (3)<br />
 	for (a=1; a&lt;=25; a++)  {<br />
@@ -1422,7 +1486,7 @@ trace(myArray.join());</div><br>
 	123 {   124 |   125 }   126  ~<br />
 	----------------------------------------------------------------------------</p>
 </ol><p><a href="https://wbal1.github.io/as2/as2doctxt.txt">원본 텍스트 읽기</a><br />
-	출처: <a href="http://wwwmoa.com.ne.kr/zflashact/actionscript.txt">http://wwwmoa.com.ne.kr/zflashact/actionscript.txt</a></p>
+	출처: <code><a href="http://wwwmoa.com.ne.kr/zflashact/actionscript.txt">http://wwwmoa.com.ne.kr/zflashact/actionscript.txt</a></code></p>
 <br />
 </body>
 </html>
