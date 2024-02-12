@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Nuklear - WBall</title>
+<link href="./../code.css" rel="stylesheet" type="text/css" />
+<link href="./../page.css" rel="stylesheet" type="text/css" />
+<link href="./../dmode_r.css" rel="stylesheet" type="text/css" />
+<style>
+	p {
+		text-indent: 1em;
+	}
+</style>
+</head>
+
+<body class="font1"><div class="Container">
+<h1 align="center" class="font1">Nuklear</h1>
+<div align="center">
+	<p><a href="https://immediate-mode-ui.github.io/Nuklear/doc/index.html">원글 출처</a>&nbsp;&nbsp;&nbsp;<a href="https://wbal1.github.io/index">홈으로</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;본 페이지는 1920px 너비의 브라우저 환경에 최적화되어 있습니다.</p>
+</div>
+<hr />
+<ol><h3><li>개요</li></h3>
+<p>
+	이것은 ANSI C로 쓰여졌고 퍼블릭 도메인 하의 최소 상태 즉시 모드 그래픽 사용자 인터페이스입니다.
+	이것은 애플리케이션을 위한 단순한 내장 가능 그래픽 사용자 인터페이스이고 어떠한 종속성도
+	가지고 있지 않는, 기본 렌더 백엔드 혹은 OS 창 및 입력 핸들러이지만 매우 모듈적인 라이브러리를
+	제공하기보다는 단순한 입력 상태를 통해 접근하고 출력으로써 원시적인 도형을 설명하는 명령을
+	그립니다. 그래서 많은 수의 플랫폼을 추상화하고 백엔드를 렌더링하는 것을 시도하는 계층화된
+	라이브러리보다 이는 진짜 UI에만 집중합니다.
+</p>
+<h3><li>하이라이트</li></h3>
+<ul>
+	<li>그래픽 사용자 인터페이스 툴킷</li>
+	<li>단일 헤더 라이브러리</li>
+	<li>C89(a.k.a. ANSI C 혹은 ISO C90)로 작성됨</li>
+	<li>작은 코드베이스 (~1.8만 줄)</li>
+	<li>휴대성, 효율성 및 단순성에 중점을 둠</li>
+	<li>종속되지 않음 (필요없다면 기본 라이브러리마저)</li>
+	<li>완전 사용자화 및 스킨 씌우기 가능</li>
+	<li>필요 시 전면적 메모리 컨트롤로 적은 메모리 발자국을 남김</li>
+	<li>UTF-8 지원</li>
+	<li>전역 및 숨겨진 상태 없음</li>
+	<li>사용자화 가능한 라이브러리 모듈 (필요한 것만 컴파일하고 사용 가능)</li>
+	<li>선택적 폰트 굽기 및 정점 버퍼 출력</li>
+	<li><a href="https://github.com/Immediate-Mode-UI/Nuklear/">GitHub에서 코드 사용 가능</a></li>
+</ul>
+<h3><li>기능</li></h3>
+<ul>
+	<li>절대적으로 전혀 플랫폼 종속 코드가 아님</li>
+	<li>메모리 관리 조종 범위:</li>
+	<ul>
+		<li>표준 라이브러리에서 모든 것을 할당함으로써의 쉬운 사용에서</li>
+		<li>라이브러리 내의 모든 바이트를 조종하기까지</li>
+	</ul>
+	<li>폰트 핸들링 조종 범위:</li>
+	<ul>
+		<li>모든 것에 자신만의 폰트를 사용하는 것부터</li>
+		<li>이 라이브러리의 폰트 굽기와 핸들링 API를 사용하는 것까지</li>
+	</ul>
+</ul>
+</ol>
+</div></body>
