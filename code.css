@@ -13,13 +13,6 @@ code { /* 인라인 코드 */
 	line-height:30px;
 	white-space: pre;
 }
-@media (prefers-color-scheme: dark) { /* 다크 모드 */
-	code {
-		border: 1px solid #666;
-		color: #DDD;
-		background-color: #333;
-	}
-}
 #code { /* 코드 블럭 */
 	padding: .3em .3em;
 	margin: .3em 0 -1em;
@@ -35,6 +28,11 @@ code { /* 인라인 코드 */
 }
 @media (prefers-color-scheme: dark) { /* 다크 모드 */
 	#code {
+		border: 1px solid #666;
+		color: #DDD;
+		background-color: #333;
+	}
+	code {
 		border: 1px solid #666;
 		color: #DDD;
 		background-color: #333;

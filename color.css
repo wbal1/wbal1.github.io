@@ -8,3 +8,19 @@ red {
 		color: #D66;
 	}
 }
+blue {
+	color: #00A;
+}
+@media (prefers-color-scheme: dark) {
+	blue {
+		color: #BBF;
+	}
+}
+brown {
+	color: #940;
+}
+@media (prefers-color-scheme: dark) {
+	brown {
+		color: #D96;
+	}
+}

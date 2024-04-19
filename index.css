@@ -9,6 +9,9 @@
 	background-color: #FFB0B0;
 	margin: 0 10px 10px 10px;
 }
+.as2box li::marker {
+	color: #500;
+}
 .as2title {
 	height: 40px;
 	font-size: 24px;
@@ -39,6 +42,9 @@
 	text-align: center;
 	padding-top: 10px;
 }
+jsbox li::marker {
+	color: #004700;
+}
 /* C (파란색) */
 .cbox {
 	width: 400px;
@@ -59,6 +65,9 @@
 	text-align: center;
 	padding-top: 10px;
 }
+.cbox li::marker {
+	color: #000077;
+}
 
 /* 가운데 정렬 */
 @media (max-width: 1299px) {
@@ -74,17 +83,36 @@
 	}
 }
 
+li {
+	margin-left: 1.5em;
+	list-style-position: inside;
+	text-indent: -1.5em;
+}
+
+/* 다크 모드 */
 @media (prefers-color-scheme: dark) {
+	.as2box li::marker, .as2title {
+		color: #FCC;
+	}
+	.jsbox li::marker, .jstitle {
+		color: #CFC;
+	}
+	.cbox li::marker, .ctitle {
+		color: #CCF
+	}
 	.as2box {
-		border-color: #FF0000;
+		border-color: #C22;
+		background-color: #522;
 		color: black;
 	}
 	.jsbox {
-		border-color: #00FF00;
+		border-color: #2C2;
+		background-color: #252;
 		color: black;
 	}
 	.cbox {
-		border-color: #0000FF;
+		border-color: #22C;
+		background-color: #225;
 		color: black;
 	}
 }
