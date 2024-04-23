@@ -69,6 +69,21 @@ jsbox li::marker {
 	color: #000077;
 }
 
+.zuzunza {
+	color: white;
+	background: linear-gradient(180deg, #ff615e 0%, #ffa335 100%);
+	border: 1px solid #D40;
+	padding: 20px 25px 20px 25px;
+	text-align: center;
+	font-size: larger;
+	margin-top: 20px;
+	border-radius: 15px;
+}
+.zuzunza a:link, .zuzunza a:visited {
+	color: white;
+	text-decoration: none;
+}
+
 /* 가운데 정렬 */
 @media (max-width: 1299px) {
 	.center0 {
@@ -114,5 +129,10 @@ li {
 		border-color: #22C;
 		background-color: #225;
 		color: black;
+	}
+
+	.zuzunza {
+		background: linear-gradient(180deg, #a10 0%, #a60 100%);
+		border-color: #ff615e;
 	}
 }
