@@ -1,33 +1,33 @@
 # ruffle-selfhosted
 
-ruffle-selfhosted is the intended way to get Ruffle onto your website.
+ruffle-selfhosted는 Ruffle을 당신의 웹 사이트에 올리기 위한 의도적인 방법입니다.
 
-You may either include it and forget about it, and we will polyfill existing Flash content,
-or use our APIs for custom configurations or more advanced usages of the Ruffle player.
+당신은 이를 포함하고 이에 대해서 잊어버리고, 우리는 존재하는 플래시 컨텐츠를 변환할 것이거나,
+또는 사용자 정의 설정 혹은 Ruffle 플레이어의 더욱 진보된 사용을 위해 우리의 API를 사용할 수 있습니다.
 
-## Using ruffle-selfhosted
+## ruffle-selfhosted의 사용
 
-For more examples and in-depth documentation on how to use Ruffle on your website, please
-[check out our wiki](https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#web).
+더 많은 예시와 당신의 웹사이트 상에서 어떻게 Ruffle을 사용할 지에 대한 심도있는 문서를 원한다면,
+[우리 위키를 방문해 주세요.](https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#web)
 
-### Host Ruffle
+### Ruffle 호스팅하기
 
-The `selfhosted` package is configured for websites that do not use bundlers or npm and just want
-to get up and running. If you'd prefer to use Ruffle through npm and a bundler, please 
-[refer to ruffle core](https://github.com/ruffle-rs/ruffle/tree/master/web/packages/core).
+`selfhosted` 패키지는 번들러나 npm을 쓰지 않고 그냥 작동하기만 하는 것을 원하는 웹사이트들 위해
+설정되었습니다. 만약 당신이 npm과 번들러를 통해 Ruffle을 쓰고 싶다면,
+[ruffle core를 참조해 주세요.](https://github.com/ruffle-rs/ruffle/tree/master/web/packages/core)
 
-Before you can get started with using Ruffle on your website, you must host its files yourself.
-Either take the [latest build](https://github.com/ruffle-rs/ruffle/releases)
-or [build it yourself](https://github.com/ruffle-rs/ruffle/blob/master/web/README.md), and make these files accessible by your web server.
+Ruffle을 당신 웹사이트에 사용하는 것을 시작하기 전에, 당신은 Ruffle의 파일을 직접 호스팅해야 합니다.
+[최신 빌드](https://github.com/ruffle-rs/ruffle/releases)를 가져가거나
+[당신이 직접 만들고](https://github.com/ruffle-rs/ruffle/blob/master/web/README.md), 이러한 파일이 당신 웹 서버로부터 하여금 접근 가능하게 만드십시오.
 
-Please note that the `.wasm` file must be served properly, and some web servers may not do that
-correctly out of the box. Please see [our wiki](https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type)
-for instructions on how to configure this, if you encounter a `Incorrect response MIME type` error.
+`.wasm` 파일은 올바르게 제공되어야 하며, 일부 웹 서버는 이 파일들을 즉시 실행시키지 못하게 할 수 있습니다.
+만일 `Incorrect response MINE type` 오류를 마주친다면 [우리 위키](https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#configure-wasm-mime-type)에서
+이를 어떻게 설정할 지에 대한 지침을 봐 주십시오.
 
-### "Plug and Play"
+### "플러그 앤 플레이"
 
-If you have an existing website with flash content, you can simply include Ruffle as a script and
-our polyfill magic will replace everything for you. No fuss, no mess.
+만약 당신이 플래시 컨텐츠가 있는, 이미 있는 웹 사이트가 있다면, 당신은 단순히 Ruffle을 스크립트로써 포함하고
+우리의 변환 마술은 당신을 위해 모든 것을 대체할 것입니다. 호들갑을 떨지도, 어지럽히지도 않습니다.
 
 ```html
 <script src="path/to/ruffle/ruffle.js"></script>
@@ -35,7 +35,7 @@ our polyfill magic will replace everything for you. No fuss, no mess.
 
 ### Javascript API
 
-If you want to control the Ruffle player, you may use our Javascript API.
+만일 당신이 Ruffle 플레이어를 조작하고 싶으시다면, 당신은 우리의 Javascript API를 사용할 수 있습니다.
 
 ```html
 <script>
@@ -52,6 +52,6 @@ If you want to control the Ruffle player, you may use our Javascript API.
 <script src="path/to/ruffle/ruffle.js"></script>
 ```
 
-## Building, testing or contributing
+## 빌드, 테스트 혹은 기여
 
-Please see [the ruffle-web README](https://github.com/ruffle-rs/ruffle/blob/master/web/README.md).
+[ruffle-web README](https://github.com/ruffle-rs/ruffle/blob/master/web/README.md)를 참조해 주십시오.
