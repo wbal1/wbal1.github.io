@@ -3,10 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>SharedObject 를 사용해서 로컬에 데이터 저장하기 - WBall</title>
-<link href="./../code.css" rel="stylesheet" type="text/css" />
-<link href="./../page.css" rel="stylesheet" type="text/css" />
-<link href="./../color.css" rel="stylesheet" type="text/css" />
-<link href="./../dmode_r.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/code.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/page.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/color.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/dmode_r.css" rel="stylesheet" type="text/css" />
 <style>
 	.back-skyblue {
 		background-color: #3AC;
@@ -27,13 +27,13 @@
 		}
 	}
 </style>
-<script src = "../ruffle/ruffle-2.js"></script>
+<script src = "/assets/ruffle/ruffle-2.js"></script>
 </head>
 
 <body class="font1"><div class="Container">
 <h1 align="center" class="font1">SharedObject 를 사용해서 로컬에 데이터 저장하기</h1>
 <div align="center">
-  <p><a href="https://rinn.tistory.com/18">원글 출처</a>　<a href="https://wbal1.github.io/index">홈으로</a>　　　　본 페이지는 1920px 너비의 브라우저 환경에 최적화되어 있습니다.</p>
+  <p><a href="https://rinn.tistory.com/18">원글 출처</a>　<a href="/">홈으로</a>　　　　본 페이지는 1920px 너비의 브라우저 환경에 최적화되어 있습니다.</p>
 </div>
 <hr />
 <p>SharedObject를 간단하게 이야기 하면 웹브라우저의 쿠키와 비슷하게 개발자가 <span class="back-skyblue">원하는 데이터를 로컬에 저장하는 객체</span>이다.</p>
@@ -52,8 +52,8 @@
 <p>공유객체를 읽어오도록 하면 SharedObject객체가 존재 할때는 <code>data</code>를 읽어오고 데이터가 없으면 새로운 객체를 생성하게 된다.</p>
 <p>간단하게 예제를 보면서 확인 해보자.<br>
 	<div id='ruffle' class="gameloc"></div>
-	<script src='../ruffle/ruffle.js'></script>
-	<script>swfobject.embedSWF("../as2/as2sol-swf1.swf", 'ruffle', 540, 300);</script>
+	<script src='/assets/ruffle/ruffle.js'></script>
+	<script>swfobject.embedSWF("/as2/as2sol-swf1.swf", 'ruffle', 540, 300);</script>
 </p>
 <p>SharedObject 데이터가 있다면 <code>userName</code> 과 <code>description</code> 에 값이 나온다.<br>
 없는경우 왼쪽에서 값을 입력하고 <code>createSo</code> 버튼을 누르면 생성된다.</p>
