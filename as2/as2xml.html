@@ -128,7 +128,7 @@
 			다운로드할 수 있습니다. XML 파일의 구조는 아래에서 나타납니다. 플래시가 아무튼
 			무시할 것이기에 DTD는 사용하지 않을 것임을 알아두십시오.
 		</p>
-		<div style="code">&lt;?xml version="1.0" standalone="yes"?>
+		<div class="code">&lt;?xml version="1.0" standalone="yes"?>
 &lt;news>
 	&lt;header>Vacation is Good&lt;/header>
 	&lt;content>Scientists discovered a cure for the .......&lt;/content>
@@ -177,9 +177,9 @@
 				<p class="ti">
 					예를 들어, <code>&lt;header></code>를 <code>Vacation is Good & Healthy</code>로 대체하려면
 					이렇게 하십시오:
-					<div style="code">&lt;header>Vacation is Good &amp;amp; Healthy&lt;/header></div><br>
+					<div class="code">&lt;header>Vacation is Good &amp;amp; Healthy&lt;/header></div><br>
 					이렇게가 아니라:
-					<div style="code">&lt;header>Vacation is Good & Healthy&lt;/header></div>
+					<div class="code">&lt;header>Vacation is Good & Healthy&lt;/header></div>
 				</p>
 			</div>
 		</p>
@@ -226,7 +226,7 @@
 		<p class="ti">
 			다음 코드는 XML 항목을 불러옵니다:
 		</p>
-		<div style="code">var xmlData=new XML();
+		<div class="code">var xmlData=new XML();
 xmlData.ignoreWhite=true;
 xmlData.load("news.xml");</div>
 		<p style="margin-top: 1.5em;" class="ti">
@@ -251,7 +251,7 @@ xmlData.load("news.xml");</div>
 		<p class="ti">
 			예시는 다음과 같습니다:
 		</p>
-		<div style="code">&lt;?xml version="1.0"?>
+		<div class="code">&lt;?xml version="1.0"?>
 	&lt;cross-domain-policy>
 		&lt;allow-access-from-domain="www.friendofpermadi.com"/>
 	&lt;/cross-domain-policy></div>
@@ -267,7 +267,7 @@ xmlData.load("news.xml");</div>
 			우리만의 함수로 오버라이딩할 것입니다. 우리 핸들러 함수는 <code>processXMLData</code>라고
 			불립니다. 그러면 코드는 다음과 같이 됩니다:
 		</p>
-		<div style="code"><b>function processXMLData(success) {
+		<div class="code"><b>function processXMLData(success) {
 	if (success) {
 &Tab;
 	} else {
@@ -976,13 +976,13 @@ xmlData.load("news.xml");
 			값은 <code>header</code> 노드의 자식 노드가 됩니다. 우리는 이렇게 <code>header</code>의 값을
 			얻을 수 있습니다:
 		</p>
-		<div style="code">newsnode = this.childNodes[0]; // 처음으로 새 노드 갖기
+		<div class="code">newsnode = this.childNodes[0]; // 처음으로 새 노드 갖기
 headerNode = newsNode.childNodes[0]; // 헤더 노드 갖기
 header = headerNode.childNodes[0].nodeValue; // 값 갖기</div>
 		<p style="margin-top: 1.5em;" class="ti">
 			아니면 대안으로:
 		</p>
-		<div style="code">header = this.childNodes[0].childNodes[0].childNodes[0].nodeValue;</div>
+		<div class="code">header = this.childNodes[0].childNodes[0].childNodes[0].nodeValue;</div>
 		<p style="margin-top: 1.5em;" class="ti">
 			그걸 봅시다:
 		</p>
@@ -1285,7 +1285,7 @@ header = headerNode.childNodes[0].nodeValue; // 값 갖기</div>
 		<p class="ti">
 			<code>childNodes[0]</code>를 <code>firstChild</code>로도 일컫을 수 있습니다. 그래서 이렇게도 해볼 수 있습니다:
 		</p>
-		<div style="code">header = this.firstChild.firstChild.firstChild.nodeValue;
+		<div class="code">header = this.firstChild.firstChild.firstChild.nodeValue;
 content = this.firstChild.childNodes[1].firstChild.nodeValue;</div>
 		<p class="ti" style="margin-top: 1.5em;">
 			전에 플래시에서 XML을 전혀 써본 적이 없다면, 이 모든 게 헷갈려 보일 수 있습니다.
@@ -1296,7 +1296,7 @@ content = this.firstChild.childNodes[1].firstChild.nodeValue;</div>
 			한 번만 개념에 익숙해지면, 순차적 단계 없이 XML 파일의 모든 항목에 접근할 수 있게 됩니다.
 			지금은, 플래시 무비에 코드를 사용하기 충분한 정보가 있습니다.
 		</p>
-		<div style="code">function processXMLData(success) {
+		<div class="code">function processXMLData(success) {
 	if (success) {
 		<b>header</b> = this.childNodes[0].childNodes[0].childNodes[0].nodeValue;
 		<b>content</b> = this.firstChild.childNodes[1].firstChild.nodeValue;
@@ -1327,7 +1327,7 @@ stop();</div>
 			<code>&lt;author></code> 노드는 <code>&lt;title></code>보다 한 층 더 깊고 <code>&lt;info</code>
 			노드 하에 네스팅되어 있기에, 노드에 접근하기 위한 긴 코드는:
 		</p>
-		<div style="code">newsNode = this.firstChild;
+		<div class="code">newsNode = this.firstChild;
 infoNode = newsNode.childNodes[2];
 authorNode = firstChild.childNodes[1];
 author = authorNode.firstChild.nodeValue;</div>
@@ -1335,7 +1335,7 @@ author = authorNode.firstChild.nodeValue;</div>
 			이제 코드를 쓰고, 그 동안, 코드를 더 깔끔하게 만들기 위해 노드에 접근하는 방법을 다시
 			써봅시다.
 		</p>
-		<div style="code">function processXMLData(success) {
+		<div class="code">function processXMLData(success) {
 	if (success) {
 		var newsNode=this.firstChild;
 		var headerNode=newsNode.childNodes[0];
@@ -1365,7 +1365,7 @@ stop();</div>
 		<p class="ti">
 			노드를 반환하도록 함수를 작성합시다.
 		</p>
-		<div style="code">function findNode(node, nodeName) {
+		<div class="code">function findNode(node, nodeName) {
 	if (node.nodeName==nodeName) {
 		return node;
 	}
@@ -1398,7 +1398,7 @@ function getValue(node) {
 		<p class="ti">
 			이제 이러한 변화를 포함합시다:
 		</p>
-		<div style="code">function processXMLData(success) {
+		<div class="code">function processXMLData(success) {
 	if (success) {
 		var rootNode=this.firstChild;
 
@@ -1442,7 +1442,7 @@ stop();</div>
 			우리의 예시에서 <code>attributeName</code>가 <code>more_info</code>인 <code>node.attributes.attributeName</code>를
 			사용해서 플래시에서 노드의 속성을 얻을 수 있습니다.
 		</p>
-		<div style="code">function processXMLData(success) {
+		<div class="code">function processXMLData(success) {
 	if (success) {
 		var rootNode=this.firstChild;
 

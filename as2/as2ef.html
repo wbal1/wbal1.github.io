@@ -17,7 +17,7 @@
 <hr />
 외부 파일을 읽어 파일 속의 변수를 가져와 사용할 수 있다.<br>
 먼저 준비작업으로 다음과 같은 파일을 만들어 둔다. </p>
-<div style="code">[data.txt]<br />
+<div class="code">[data.txt]<br />
 &amp;<strong>testVar</strong>=<red>이것은테스트변수</red>
 &amp;<strong>testVar2</strong>=<red>테스트변수2</red></div>
 <p><br>
@@ -29,7 +29,7 @@
 　우리는 아까 <code>data.txt</code>파일에 <code>testVar</code>와 <code>testVar2</code>라고 변수명을 정했으니 그 두 개를 각각 써주면 되겠다.</p>
 <p> 4. 자, 이제 새 레이어를 추가하고 액션을 넣어보자.<br>
 </p>
-<div style="code">System.useCodepage= true;
+<div class="code">System.useCodepage= true;
 loadVariables(&quot;data.txt&quot;,_root);</div>
 <div style="padding-left:1em;"><br>
   이 두줄이다. <code>System.useCodepage = true;</code>는 한글 깨짐 방지 코드라 알아두면 된다.<br>
