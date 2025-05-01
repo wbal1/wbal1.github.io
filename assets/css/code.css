@@ -13,7 +13,7 @@ code { /* 인라인 코드 */
 	line-height:30px;
 	white-space: pre;
 }
-#code { /* 코드 블럭 */
+.code { /* 코드 블럭 */
 	padding: .3em .3em;
 	margin: .3em 0 -1em;
 	background-color: #F1F1F1;
